@@ -46,8 +46,7 @@ function M.get_sections()
     type = "text",
     val = text.align_center({ width = 0 }, {
       "",
-      "lunarvim.org",
-      lvim_version,
+      "Software is like s*x: It's better when it's free.",
     }, 0.5),
     opts = {
       position = "center",
