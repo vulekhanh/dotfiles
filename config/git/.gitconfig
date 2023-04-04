@@ -2,9 +2,10 @@
 	name = vulekhanh
 	email = 61068720+vulekhanh@users.noreply.github.com
 [credential]
-	credentialStore = gpg
+	credentialStore = cache
 	helper = 
-	helper = /usr/local/bin/git-credential-manager
+  helper = /usr/local/bin/git-credential-manager
+	cacheOptions = --timeout 300
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [init]
