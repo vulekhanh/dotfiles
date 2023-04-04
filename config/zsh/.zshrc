@@ -168,6 +168,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/init-nvm.sh
+export PATH="$PATH:/home/vulekhanh/.local/share/JetBrains/Toolbox/scripts"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
