@@ -9,3 +9,4 @@ I added some configurations, including new theme, keybinds to boost up productiv
 - [Oh my posh](https://ohmyposh.dev/docs/)
 - [AwesomeWM](https://awesomewm.org/doc/api/documentation/07-my-first-awesome.md.html#)
 - [KDE plasma](https://userbase.kde.org/Configure_your_desktop)
+- [Catppuccin theme](https://github.com/catppuccin/catppuccin)
