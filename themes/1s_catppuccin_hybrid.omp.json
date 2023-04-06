@@ -1,27 +1,36 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "os": "#ACB0BE",
+        "closer": "p:os",
+        "pink": "#F4B8E4",
+        "lavender": "#BABBF1",
+        "blue":  "#8CAAEE",
+        "white": "#ffffff"
+
+  },
   "blocks": [
     {
       "alignment": "left",
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffbebc",
-          "leading_diamond": "<#ff70a6> \ue200 </>",
+          "foreground": "p:pink",
+          "leading_diamond": "<p:pink> \ue200 </>",
           "properties": {
             "display_host": true
           },
           "style": "diamond",
-          "template": "\uf508 {{ .UserName }} <#ffffff>on</>",
+          "template": "\uf508 {{ .UserName }} <p:white>on</>",
           "type": "session"
         },
         {
-          "foreground": "#95BDFF",
+          "foreground": "p:lavender",
           "properties": {
-            "time_format": "Monday <#ffffff>at</> 3:04 PM"
+            "time_format": "Monday <p:white>at</> 3:04 PM"
           },
           "style": "diamond",
-          "template": " <#95BDFF>\uf5ef</> {{ .CurrentDate | date .Format }} ",
+          "template": " <p:lavender>\uf5ef</> {{ .CurrentDate | date .Format }} ",
           "type": "time"
         },
         {
@@ -96,8 +105,8 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ffafd2",
-          "leading_diamond": "<#00c7fc> \ue285 </><#ffafd2>{</>",
+          "foreground": "p:pink",
+          "leading_diamond": "<p:blue> \ue285 </><#ffafd2>{</>",
           "properties": {
             "folder_icon": "\uf07b",
             "folder_separator_icon": "\uf9e0",
