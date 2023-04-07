@@ -1,5 +1,5 @@
 # Dotfiles
-I added some configurations, including new theme, keybinds to boost up productivity.
+I added some configurations, including new theme, layouts, and keybinds to boost up productivity. You can navigate to the original documentation from the links below to understand and decide what you are going to do with you system.
 
 ## Configurations
 - [Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
@@ -10,3 +10,4 @@ I added some configurations, including new theme, keybinds to boost up productiv
 - [AwesomeWM](https://awesomewm.org/doc/api/documentation/07-my-first-awesome.md.html#)
 - [KDE plasma](https://userbase.kde.org/Configure_your_desktop)
 - [Catppuccin theme](https://github.com/catppuccin/catppuccin)
+- [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
