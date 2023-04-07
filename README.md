@@ -11,3 +11,4 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - [KDE plasma](https://userbase.kde.org/Configure_your_desktop)
 - [Catppuccin theme](https://github.com/catppuccin/catppuccin)
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
+- [Fallout bootloader theme](https://github.com/shvchk/fallout-grub-theme)

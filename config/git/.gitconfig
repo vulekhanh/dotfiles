@@ -10,3 +10,5 @@
 	useHttpPath = true
 [init]
 	defaultBranch = master
+[pull]
+	rebase = true
