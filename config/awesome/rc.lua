@@ -45,7 +45,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/vulekhanh/.config/awesome/theme.lua")
-beautiful.get().wallpaper = "/home/vulekhanh/.dotfiles/wallpapers/sci-fi.jpg"
+beautiful.get().wallpaper = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -61,14 +61,14 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    --awful.layout.suit.tile,
-    --awful.layout.suit.floating,
+    awful.layout.suit.spiral,
+    awful.layout.suit.tile,
+    awful.layout.suit.floating,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
