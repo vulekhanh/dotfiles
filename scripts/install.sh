@@ -5,14 +5,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # install fetch master
 sh -c "$(curl https://codeberg.org/anhsirk0/fetch-master-6000/raw/branch/main/install.sh)"
-# install neovim, awesomewm, nvm and yay package manager for managing AUR packages
-sudo pacman -S neovim python-pynvim nvm awesome yay
+# install neovim, nvm and yay package manager for managing AUR packages
+sudo pacman -S neovim python-pynvim nvm yay
 
 # create symbolic links for .zshrc, .gitconifg, awesome/rc.lua
 rm ~/.zshrc
 ln -s ~/.dotfiles/config/zsh/.zshrc ~/
 ln -s ~/.dotfiles/git/.gitconfig ~/
-ln -s ~/.dotfiles/config/awesome/rc.lua ~/.config/awesome/
 exec zsh
 
 # install nodejs 
