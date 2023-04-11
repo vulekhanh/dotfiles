@@ -35,10 +35,10 @@ end)
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-
+beautiful.init("/home/vulekhanh/.config/awesome/theme.lua")
+beautiful.get().wallpaper = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -76,19 +76,19 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Table of layouts to cover with awful.layout.inc, order matters.
 tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
-        awful.layout.suit.floating,
-        awful.layout.suit.tile,
-        awful.layout.suit.tile.left,
-        awful.layout.suit.tile.bottom,
-        awful.layout.suit.tile.top,
-        awful.layout.suit.fair,
-        awful.layout.suit.fair.horizontal,
-        awful.layout.suit.spiral,
-        awful.layout.suit.spiral.dwindle,
-        awful.layout.suit.max,
-        awful.layout.suit.max.fullscreen,
-        awful.layout.suit.magnifier,
-        awful.layout.suit.corner.nw,
+      awful.layout.suit.tile,
+      awful.layout.suit.spiral,
+      awful.layout.suit.spiral.dwindle,
+        --awful.layout.suit.floating,
+        --awful.layout.suit.tile.left,
+        --awful.layout.suit.tile.bottom,
+        --awful.layout.suit.tile.top,
+        --awful.layout.suit.fair,
+        --awful.layout.suit.fair.horizontal,
+        --awful.layout.suit.max,
+        --awful.layout.suit.max.fullscreen,
+        --awful.layout.suit.magnifier,
+        --awful.layout.suit.corner.nw,
     })
 end)
 -- }}}
@@ -487,7 +487,7 @@ ruled.client.connect_signal("request::rules", function()
     ruled.client.append_rule {
         id         = "titlebars",
         rule_any   = { type = { "normal", "dialog" } },
-        properties = { titlebars_enabled = true      }
+        properties = { titlebars_enabled = false}
     }
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -561,3 +561,5 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:activate { context = "mouse_enter", raise = false }
 end)
+-- Autostart Applications
+awful.spawn.with_shell("picom")
