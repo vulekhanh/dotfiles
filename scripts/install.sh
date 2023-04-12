@@ -8,7 +8,7 @@ sh -c "$(curl https://codeberg.org/anhsirk0/fetch-master-6000/raw/branch/main/in
 # install neovim, nvm and yay package manager for managing AUR packages
 sudo pacman -S neovim python-pynvim nvm yay
 
-# create symbolic links for .zshrc, .gitconifg, awesome/rc.lua
+# create symbolic links for .zshrc, .gitconifg
 rm ~/.zshrc
 ln -s ~/.dotfiles/config/zsh/.zshrc ~/
 ln -s ~/.dotfiles/git/.gitconfig ~/
@@ -44,3 +44,8 @@ sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/sha
 # create symbolic link for kitty config
 rm .config/kitty/kitty.conf 
 ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/
+
+# create symlinks for awesome and picom
+ln -s ~/.dotfiles/config/awesome/rc.lua ~/.config/awesome/
+ln -s ~/.dotfiles/config/awesome/themes/default/theme.lua ~/.config/awesome/
+ln -s ~/.dotfiles/config/picom/picom.conf ~/.config/picom/
