@@ -13,3 +13,4 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
 - [Fallout grub theme](https://github.com/shvchk/fallout-grub-theme)
 - [Fetch master](https://github.com/anhsirk0/fetch-master-6000)
+- [Collection of AwesomeWM theme](https://github.com/lcpz/awesome-copycats)
