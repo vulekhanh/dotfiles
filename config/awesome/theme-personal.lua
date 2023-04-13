@@ -18,12 +18,12 @@ local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = "~/.dotfiles/wallpapers/wallpaper.jpg"
 theme.font                                      = "Monospace Heavy 10"
-theme.menu_bg_normal                            = "#000000"
+theme.menu_bg_normal                            = "#232634"
 theme.menu_bg_focus                             = "#000000"
-theme.bg_normal                                 = "#000000"
+theme.bg_normal                                 = "#232634"
 theme.bg_focus                                  = "#000000"
 theme.bg_urgent                                 = "#000000"
-theme.fg_normal                                 = "#c7cbf3"
+theme.fg_normal                                 = "#b7bdf8"
 theme.fg_focus                                  = "#ff8c00"
 theme.fg_urgent                                 = "#af1d18"
 theme.fg_minimize                               = "#ffffff"
@@ -96,7 +96,7 @@ local markup = lain.util.markup
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup("#7788af", "%A %d %B ") .. markup("#ab7367", ">") .. markup("#b9e3de", " %H:%M "))
+local mytextclock = wibox.widget.textclock(markup("#c6a0f6", "%A %d %B ") .. markup("#ed8796", "😸") .. markup("#b9e3de", " %H:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -162,7 +162,7 @@ theme.mail = lain.widget.imap({
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#ed8699", cpu_now.usage .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, "#f5c2e7", cpu_now.usage .. "% "))
     end
 })
 
@@ -329,8 +329,6 @@ function theme.at_screen_connect(s)
             mytextclock,
         },
     }
-
-    -- Create the bottom wibox
 end
 
 return theme
