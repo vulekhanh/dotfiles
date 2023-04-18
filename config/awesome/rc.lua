@@ -511,7 +511,8 @@ globalkeys = mytable.join(
     -- User programs
     awful.key({ modkey }, "q", function () awful.spawn(browser) end,
               {description = "run browser", group = "launcher"}),
-
+    awful.key({ modkey }, "d", function () awful.spawn("dolphin") end,
+              {description = "run dolphin", group = "launcher"}),
     -- Default
     --[[ Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
