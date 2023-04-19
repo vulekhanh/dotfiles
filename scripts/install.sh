@@ -3,8 +3,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# install fetch master
-sh -c "$(curl https://codeberg.org/anhsirk0/fetch-master-6000/raw/branch/main/install.sh)"
 # install neovim, nvm and yay package manager for managing AUR packages
 sudo pacman -S neovim python-pynvim nvm yay
 
@@ -42,8 +40,7 @@ sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x2
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 
 # create symbolic link for kitty config
-rm .config/kitty/kitty.conf 
-ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/
+rm .config/kitty/kitty.conf && ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/
 
 # create symlinks for awesome and picom
 ln -s ~/.dotfiles/config/awesome/rc.lua ~/.config/awesome/
