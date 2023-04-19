@@ -79,7 +79,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source /usr/share/nvm/init-nvm.sh
 source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
-export PATH="$PATH:/home/vulekhanh/.local/share/JetBrains/Toolbox/scripts"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
