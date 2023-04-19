@@ -1,14 +1,15 @@
 [user]
 	name = vulekhanh
 	email = 61068720+vulekhanh@users.noreply.github.com
-[credential]
-	credentialStore = cache
-	helper = 
-  helper = /usr/local/bin/git-credential-manager
-	cacheOptions = --timeout 300
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [init]
 	defaultBranch = master
 [pull]
 	rebase = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
