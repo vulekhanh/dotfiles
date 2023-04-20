@@ -11,6 +11,11 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - [KDE plasma](https://userbase.kde.org/Configure_your_desktop)
 - [Catppuccin theme](https://github.com/catppuccin/catppuccin)
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
-- [Fallout grub theme](https://github.com/shvchk/fallout-grub-theme)
+- [Dark matter grub theme](https://gitlab.com/VandalByte/darkmatter-grub-theme)
 - [Fetch master](https://github.com/anhsirk0/fetch-master-6000)
 - [Collection of AwesomeWM theme](https://github.com/lcpz/awesome-copycats)
+
+## Screenshots
+
+![My workspace](https://user-images.githubusercontent.com/61068720/233433537-67044238-8c1a-468f-8a5e-7e30eb26711e.png)
+![Opening kitty and dolphin with spiral layout](https://user-images.githubusercontent.com/61068720/233433701-92579937-7376-4cef-aa23-c2f1690a793a.png)
