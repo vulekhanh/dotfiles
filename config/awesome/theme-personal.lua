@@ -17,7 +17,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg" 
-theme.font                                      = "Monospace Heavy 10"
+theme.font                                      = "Terminus Heavy 10"
 theme.menu_bg_normal                            = "#232634"
 theme.menu_bg_focus                             = "#000000"
 theme.bg_normal                                 = "#232634"
@@ -185,22 +185,62 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            netdownicon,
-            netdowninfo,
-            netupicon,
-            netupinfo.widget,
-            volicon,
-            theme.volume.widget,
-            memicon,
-            memory.widget,
-            cpuicon,
-            cpu.widget,
-            tempicon,
-            temp.widget,
-            baticon,
-            bat.widget,
-            clockicon,
-            mytextclock,
+
+          -- Network received
+            wibox.container.margin({{ netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#a9d598',
+	          widget=wibox.container.margin,
+	        },5,5),
+
+          -- Network upload
+            wibox.container.margin({{ netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#e98599',
+	          widget=wibox.container.margin,
+	        },5,5),
+
+          -- Volume control
+            wibox.container.margin({{ volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#7ebfe3',
+	          widget=wibox.container.margin,
+	        },5,5),
+
+          -- MEM info
+            wibox.container.margin({{ memicon, memory.widget, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#eacea2',
+	          widget=wibox.container.margin,
+	        },5,5),
+          
+          -- CPU info
+            wibox.container.margin({{ cpuicon, cpu.widget, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#f5c2e7',
+	          widget=wibox.container.margin,
+	        },5,5),
+
+        -- Temperature info
+            wibox.container.margin({{ tempicon, temp.widget, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#f4a683',
+	          widget=wibox.container.margin,
+	        },5,5),
+
+        -- Battery
+            wibox.container.margin({{ baticon, bat.widget, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color=theme.fg_normal,
+	          widget=wibox.container.margin,
+	        },5,5),
+
+        -- Clock
+            wibox.container.margin({{ clockicon, mytextclock, layout = wibox.layout.align.horizontal },
+	          bottom=4,
+	          color='#91d7e3',
+	          widget=wibox.container.margin,
+	        },5,5),
             s.mylayoutbox,
         },
     }
