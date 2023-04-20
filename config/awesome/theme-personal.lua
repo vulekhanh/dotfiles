@@ -241,7 +241,6 @@ function theme.at_screen_connect(s)
 	          color='#91d7e3',
 	          widget=wibox.container.margin,
 	        },5,5),
-            s.mylayoutbox,
         },
     }
 end
