@@ -44,5 +44,5 @@ rm .config/kitty/kitty.conf && ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.conf
 
 # create symlinks for awesome and picom
 ln -s ~/.dotfiles/config/awesome/rc.lua ~/.config/awesome/
-ln -s ~/.dotfiles/config/awesome/themes/default/theme.lua ~/.config/awesome/
+ln -s ~/.dotfiles/config/awesome/theme-personal.lua ~/.config/awesome/themes/multicolor/
 ln -s ~/.dotfiles/config/picom/picom.conf ~/.config/picom/
