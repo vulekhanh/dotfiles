@@ -16,7 +16,7 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
-theme.wallpaper                                 = "~/.dotfiles/wallpapers/wallpaper.jpg"
+theme.wallpaper                                 = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg" 
 theme.font                                      = "Monospace Heavy 10"
 theme.menu_bg_normal                            = "#232634"
 theme.menu_bg_focus                             = "#000000"
@@ -27,7 +27,7 @@ theme.fg_normal                                 = "#c6a0f6"
 theme.fg_focus                                  = "#000000"
 theme.fg_urgent                                 = "#af1d18"
 theme.fg_minimize                               = "#ffffff"
-theme.border_width                              = dpi(5)
+theme.border_width                              = dpi(4)
 theme.useless_gap                               = dpi(4)
 theme.border_normal                             = "#ffffff"
 theme.border_focus                              = "#83acf0"
@@ -201,6 +201,7 @@ function theme.at_screen_connect(s)
             bat.widget,
             clockicon,
             mytextclock,
+            s.mylayoutbox,
         },
     }
 end
