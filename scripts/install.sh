@@ -22,9 +22,6 @@ exec zsh
 #install LunarVim
 LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 
-#install grub theme - Fallout theme
-wget -P /tmp https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh
-
 # install kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
@@ -42,7 +39,14 @@ sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/sha
 # create symbolic link for kitty config
 rm .config/kitty/kitty.conf && ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/
 
-# create symlinks for awesome and picom
+# create symlinks for awesome, picom, rofi
 ln -s ~/.dotfiles/config/awesome/rc.lua ~/.config/awesome/
 ln -s ~/.dotfiles/config/awesome/theme-personal.lua ~/.config/awesome/themes/multicolor/
+ln -s ~/.dotfiles/config/awesome/icons ~/.config/awesome/themes/multicolor/
 ln -s ~/.dotfiles/config/picom/picom.conf ~/.config/picom/
+ln -s ~/.dotfiles/config/rofi/config.rasi ~/.config/rofi/
+
+# create symlink for neofetch
+rm ~/.config/neofetch/config.conf
+ln ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/
+

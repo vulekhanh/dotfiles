@@ -1,1 +1,1 @@
-yay -Rns kcalc yakuake elisa konsole neofetch
+yay -Rns kcalc yakuake elisa konsole 
