@@ -19,4 +19,3 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 
 ![My workspace](https://user-images.githubusercontent.com/61068720/233433537-67044238-8c1a-468f-8a5e-7e30eb26711e.png)
 ![Custom neofetch with LunarVim](https://user-images.githubusercontent.com/61068720/233548661-acebfc20-e2ec-44a0-9f4a-7725fbca997a.png)
-![Opening kitty and dolphin with spiral layout](https://user-images.githubusercontent.com/61068720/233433701-92579937-7376-4cef-aa23-c2f1690a793a.png)
