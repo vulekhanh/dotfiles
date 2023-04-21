@@ -18,4 +18,4 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 ## Screenshots
 
 ![My workspace](https://user-images.githubusercontent.com/61068720/233433537-67044238-8c1a-468f-8a5e-7e30eb26711e.png)
-![Custom neofetch with LunarVim](https://user-images.githubusercontent.com/61068720/233548661-acebfc20-e2ec-44a0-9f4a-7725fbca997a.png)
+![LunarVim, neofetch and htop](https://user-images.githubusercontent.com/61068720/233560506-580212f6-cc53-4e64-9315-bdc17acacda3.png)
