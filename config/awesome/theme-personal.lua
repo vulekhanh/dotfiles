@@ -41,7 +41,6 @@ theme.menu_bg_normal                            = "#373b54"
 theme.menu_bg_focus                             = "#c6a0f6"
 theme.widget_temp                               = theme.confdir .. "/icons/temp.png"
 theme.widget_uptime                             = theme.confdir .. "/icons/ac.png"
-theme.widget_cpu                                = theme.confdir .. "/icons/cpu.png"
 theme.widget_mem                                = theme.confdir .. "/icons/mem.png"
 theme.widget_note                               = theme.confdir .. "/icons/note.png"
 theme.widget_note_on                            = theme.confdir .. "/icons/note_on.png"
@@ -70,20 +69,22 @@ theme.layout_floating                           = theme.confdir .. "/icons/float
 
 local markup = lain.util.markup
 
+
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
 local mytextclock = wibox.widget.textclock(markup("#91d7e3", " %H:%M "))
 mytextclock.font = theme.font
 
--- CPU
-local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
-local cpu = lain.widget.cpu({
-    settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#f5c2e7", cpu_now.usage .. "% "))
-    end
+-- Calendar
+theme.cal = lain.widget.cal({
+    attach_to = { mytextclock },
+    notification_preset = {
+        font = "Terminus Heavy 10",
+        fg   = theme.fg_normal,
+        bg   = theme.bg_normal
+    }
 })
-
 -- Coretemp
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
@@ -102,7 +103,7 @@ local bat = lain.widget.bat({
             perc = perc .. " plug"
         end
 
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, perc .. " "))
+        widget:set_markup(markup.fontfg(theme.font, "#f5c2e7" , perc .. " "))
     end
 })
 
@@ -214,8 +215,8 @@ function theme.at_screen_connect(s)
 	          widget=wibox.container.margin,
 	        },5,5),
           
-          -- CPU info
-            wibox.container.margin({{ cpuicon, cpu.widget, layout = wibox.layout.align.horizontal },
+        -- Battery
+            wibox.container.margin({{ baticon, bat.widget, layout = wibox.layout.align.horizontal },
 	          bottom=4,
 	          color='#f5c2e7',
 	          widget=wibox.container.margin,
@@ -228,12 +229,6 @@ function theme.at_screen_connect(s)
 	          widget=wibox.container.margin,
 	        },5,5),
 
-        -- Battery
-            wibox.container.margin({{ baticon, bat.widget, layout = wibox.layout.align.horizontal },
-	          bottom=4,
-	          color=theme.fg_normal,
-	          widget=wibox.container.margin,
-	        },5,5),
 
         -- Clock
             wibox.container.margin({{ clockicon, mytextclock, layout = wibox.layout.align.horizontal },
