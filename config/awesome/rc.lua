@@ -394,29 +394,24 @@ globalkeys = mytable.join(
               {description = "run browser", group = "launcher"}),
     awful.key({ modkey }, "e", function () awful.spawn("dolphin") end,
               {description = "run dolphin", group = "launcher"}),
-    -- Default
-    --[[ Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
-    --]]
-    --[[ dmenu
-    awful.key({ modkey }, "x", function ()
-            os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
-            beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
-        end,
-        {description = "show dmenu", group = "launcher"}),
-    --]]
     -- alternatively use rofi, a dmenu-like application with more features
     -- check https://github.com/DaveDavenport/rofi for more details
+    --awful.key({ modkey }, "r", function ()
+    --        os.execute(string.format("rofi -show %s",
+    --        'drun'))
+    --    end,
+    --    {description = "app launcher", group = "launcher"}),
+  
     --rofi
     awful.key({ modkey }, "r", function ()
-            os.execute(string.format("rofi -show %s",
-            'drun'))
-        end,
-        {description = "show rofi", group = "launcher"}),
-    -- Prompt
-    awful.key({ modkey }, "x", function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"})
+            os.execute(string.format("$HOME/.config/rofi/bin/launcher")) end,
+        {description = "app launcher", group = "launcher"}),
+    awful.key({ modkey }, "x", function () os.execute(string.format("$HOME/.config/rofi/bin/runner")) end,
+              {description = "execute prompt", group = "launcher"}),
+    awful.key({ modkey }, "p", function () os.execute(string.format("$HOME/.config/rofi/bin/powermenu")) end,
+              {description = "powermenu", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "s", function () os.execute(string.format("$HOME/.config/rofi/bin/screenshot")) end,
+              {description = "screenshot", group = "launcher"})
   --[[  
   awful.key({ modkey }, "x",
               function ()
