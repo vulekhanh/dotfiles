@@ -85,8 +85,8 @@
           "foreground": "#ffffff",
           "foreground_templates": [
             "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
-            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+            "{{if eq \"Discharging\" .State.String}}#e78284{{end}}",
+            "{{if eq \"Full\" .State.String}}#a6d189{{end}}"
           ],
           "properties": {
             "charged_icon": "\ue22f ",
