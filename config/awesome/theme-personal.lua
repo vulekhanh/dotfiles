@@ -47,7 +47,7 @@ theme.widget_note_on                            = theme.confdir .. "/icons/note_
 theme.widget_netdown                            = theme.confdir .. "/icons/net_down.png"
 theme.widget_netup                              = theme.confdir .. "/icons/net_up.png"
 theme.widget_batt                               = theme.confdir .. "/icons/bat.png"
-theme.widget_clock                              = theme.confdir .. "/icons/clock.png"
+theme.widget_symbol                             = theme.confdir .. "/icons/octocat.png"
 theme.widget_vol                                = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel                       = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
@@ -70,10 +70,10 @@ theme.layout_floating                           = theme.confdir .. "/icons/float
 local markup = lain.util.markup
 
 
--- Textclock
+-- Calendar
 os.setlocale(os.getenv("LANG")) -- to localize the clock
-local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup("#91d7e3", " %H:%M "))
+local symbol = wibox.widget.imagebox(theme.widget_symbol)
+local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " %A %d %B "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -230,10 +230,10 @@ function theme.at_screen_connect(s)
 	        },5,5),
 
 
-        -- Clock
-            wibox.container.margin({{ clockicon, mytextclock, layout = wibox.layout.align.horizontal },
+        -- Calendar
+            wibox.container.margin({{symbol, mytextclock, layout = wibox.layout.align.horizontal },
 	          bottom=4,
-	          color='#91d7e3',
+	          color=theme.fg_normal,
 	          widget=wibox.container.margin,
 	        },5,5),
         },
