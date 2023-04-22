@@ -6,8 +6,10 @@
         "pink": "#F4B8E4",
         "lavender": "#BABBF1",
         "blue":  "#8CAAEE",
-        "white": "#ffffff"
-
+        "white": "#ffffff",
+        "green": "#a6da95",
+        "teal": "#8bd5ca",
+        "red": "#ed8796"
   },
   "blocks": [
     {
@@ -58,13 +60,13 @@
           "type": "text"
         },
         {
-          "foreground": "#a9ffb4",
+          "foreground": "p:teal",
           "properties": {
             "style": "dallas",
             "threshold": 0
           },
           "style": "diamond",
-          "template": "{{ .FormattedMs }}s <#ffffff>\uf85a</>",
+          "template": "{{ .FormattedMs }}s <p:white>\uf85a</>",
           "type": "executiontime"
         },
         {
@@ -78,11 +80,11 @@
         {
           "foreground": "#FFF89A",
           "style": "diamond",
-          "template": " <#ffffff>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
+          "template": " <p:white>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
           "type": "sysinfo"
         },
         {
-          "foreground": "#ffffff",
+          "foreground": "p:white",
           "foreground_templates": [
             "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
             "{{if eq \"Discharging\" .State.String}}#e78284{{end}}",
@@ -119,9 +121,9 @@
           "type": "path"
         },
         {
-          "foreground": "#A9FFB4",
+          "foreground": "p:green",
           "foreground_templates": [
-            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+            "{{ if gt .Code 0 }}p:red{{ end }}"
           ],
           "properties": {
             "always_enabled": true
