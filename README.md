@@ -13,8 +13,13 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
 - [Dark matter grub theme](https://gitlab.com/VandalByte/darkmatter-grub-theme)
 - [Collection of AwesomeWM theme](https://github.com/lcpz/awesome-copycats)
+- [Nitch](https://github.com/ssleert/nitch) - like neofetch, but it's way faster
 
 ## Screenshots
 
 ![My workspace](https://user-images.githubusercontent.com/61068720/233433537-67044238-8c1a-468f-8a5e-7e30eb26711e.png)
 ![Spiral layout workspace](https://user-images.githubusercontent.com/61068720/233825783-6bb20883-e266-44ce-b42c-814ea4edceb1.png)
+
+## Contributors
+Special thanks to:
+- [Hamza](https://github.com/Hamza12700) for improving the installation scripts and recommending useful packages.
