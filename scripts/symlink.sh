@@ -5,9 +5,9 @@ if [ -e ~/.config/kitty/kitty.conf ]; then
   echo "Kitty config found"
   echo "Moving kitty.conf to kitty.conf.bak"
   mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bak
-  ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/
+  ln -s $configDir/kitty/kitty.conf ~/.config/kitty/
 else
-  ln -s ~/.dotfiles/config/kitty/kitty.conf ~/.config/kitty/
+  ln -s $configDir/kitty/kitty.conf ~/.config/kitty/
 fi
 # create symlinks for awesome, picom
 sudo rm -r ~/.config/awesome/themes/multicolor/icons
