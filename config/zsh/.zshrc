@@ -100,8 +100,10 @@ source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#Aliases
+alias ls='exa --icons'
+alias cat='bat'
+
 eval "$(oh-my-posh init zsh --config ../zsh/themes/1s_catppuccin_hybrid.omp.json)"
 nitch
