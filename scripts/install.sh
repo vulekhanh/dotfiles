@@ -5,11 +5,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # install neovim, nvm and yay package manager for managing AUR packages
 sudo pacman -S neovim python-pynvim nvm yay
-
+yay -S oh-my-posh-bin awesome-git picom-git rofi
 # create symbolic links for .zshrc, .gitconifg
-rm ~/.zshrc
-ln -s ~/.dotfiles/config/zsh/.zshrc ~/
-ln -s ~/.dotfiles/git/.gitconfig ~/
+rm ~/.zshrc && ln -s ~/.dotfiles/config/zsh/.zshrc ~/ && ln -s ~/.dotfiles/git/.gitconfig ~/
 exec zsh
 
 # install nodejs 
@@ -17,10 +15,7 @@ nvm install node
 
 # install cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-exec zsh
 
-#install LunarVim
-LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 
 # install kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -47,6 +42,5 @@ ln -s ~/.dotfiles/config/picom/picom.conf ~/.config/picom/
 ln -s ~/.dotfiles/config/rofi/config.rasi ~/.config/rofi/
 
 # create symlink for neofetch
-rm ~/.config/neofetch/config.conf
-ln ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/
+rm ~/.config/neofetch/config.conf && ln ~/.dotfiles/config/neofetch/config.conf ~/.config/neofetch/
 
