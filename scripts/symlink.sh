@@ -10,8 +10,17 @@ else
   ln -s $configDir/kitty/kitty.conf ~/.config/kitty/
 fi
 # create symlinks for awesome, picom
+echo "\nDeleting awesome/themes/multicolor/icons\n"
 sudo rm -r ~/.config/awesome/themes/multicolor/icons
-ln -s $configDir/awesome/rc.lua ~/.config/awesome/
+if [ -e ~/.config/awesome/rc.lua ]; then
+  echo "Awesome rc.lua file found!"
+  echo "Moving rc.lua to rc.lua.bak"
+  mv ~/.config/awesome/rc.lua ~/.config/awesome/rc.lua.bak
+  ln -s $configDir/awesome/rc.lua ~/.config/awesome/
+else
+  ln -s $configDir/awesome/rc.lua ~/.config/awesome/
+fi
+
 ln -s $configDir/awesome/theme-personal.lua ~/.config/awesome/themes/multicolor/
 ln -s $configDir/awesome/icons ~/.config/awesome/themes/multicolor/
 ln -s $configDir/picom/picom.conf ~/.config/picom/
