@@ -10,8 +10,23 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # install neovim, nvm and yay package manager for managing AUR packages
 echo "Installing Packages"
 sudo pacman -Syu
-sudo pacman -S neovim python-pynvim nodejs npm yay kitty exa bat
+sudo pacman -S neovim python-pynvim nodejs npm yay kitty exa bat unzip
 yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli
+
+#Installing Fira Code Font
+echo "\nInstalling Fira Code Font\n"
+unzip $configDir/fonts/Fira\ Code\ .zip
+if [ -e ~/.local/share/fonts/ ]; then
+  mv *.ttf ~/.local/share/fonts/
+  fc-cache -vf
+else
+  echo "Fonts directory don't exist"
+  echo "Creating fonts directory in ~/.local/share/fonts"
+  mkdir ~/.local/share/fonts
+  mv *.ttf ~/.local/share/fonts/
+  fc-cache -vf
+fi
+
 # create symbolic links for .zshrc, .gitconifg
 if [ -e ~/.zshrc ]; then
   echo "ZSH config found"
