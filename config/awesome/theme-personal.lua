@@ -26,7 +26,7 @@ theme.fg_normal                = "#8aadf4"
 theme.fg_focus                 = "#000000"
 theme.fg_urgent                = "#af1d18"
 theme.fg_minimize              = "#ffffff"
-theme.border_width             = dpi(0)
+theme.border_width             = dpi(3)
 theme.useless_gap              = dpi(4)
 theme.border_normal            = "#ffffff"
 theme.border_focus             = "#8caaee"
@@ -190,49 +190,49 @@ function theme.at_screen_connect(s)
       -- Network received
       wibox.container.margin({
         { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 2,
         color = '#a9d598',
         widget = wibox.container.margin,
       }, 5, 5),
       -- Network upload
       wibox.container.margin({
         { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 3,
         color = '#e98599',
         widget = wibox.container.margin,
       }, 5, 5),
       -- Volume control
       wibox.container.margin({
         { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 3,
         color = '#7ebfe3',
         widget = wibox.container.margin,
       }, 5, 5),
       -- MEM info
       wibox.container.margin({
         { memicon, memory.widget, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 3,
         color = '#eacea2',
         widget = wibox.container.margin,
       }, 5, 5),
       -- Battery
       wibox.container.margin({
         { baticon, bat.widget, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 3,
         color = '#f5c2e7',
         widget = wibox.container.margin,
       }, 5, 5),
       -- Temperature info
       wibox.container.margin({
         { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 3,
         color = '#f4a683',
         widget = wibox.container.margin,
       }, 5, 5),
       -- Calendar
       wibox.container.margin({
         { symbol, mytextclock, layout = wibox.layout.align.horizontal },
-        bottom = 4,
+        bottom = 3,
         color = theme.fg_normal,
         widget = wibox.container.margin,
       }, 5, 5),
