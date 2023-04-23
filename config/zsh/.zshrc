@@ -104,4 +104,4 @@ source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(oh-my-posh init zsh --config ~/.dotfiles/themes/1s_catppuccin_hybrid.omp.json)"
-neofetch
+nitch
