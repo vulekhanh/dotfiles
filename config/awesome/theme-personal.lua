@@ -23,7 +23,7 @@ theme.bg_normal                = "#24273A"
 theme.bg_focus                 = "#8aadf4"
 theme.bg_urgent                = "#000000"
 theme.fg_normal                = "#8aadf4"
-theme.fg_focus                 = "#000000"
+theme.fg_focus                 = "#8caaee"
 theme.fg_urgent                = "#af1d18"
 theme.fg_minimize              = "#ffffff"
 theme.border_width             = dpi(3)
@@ -193,49 +193,49 @@ function theme.at_screen_connect(s)
         bottom = 2,
         color = '#a9d598',
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
       -- Network upload
       wibox.container.margin({
         { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
-        bottom = 3,
+        bottom = 2,
         color = '#e98599',
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
       -- Volume control
       wibox.container.margin({
         { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
-        bottom = 3,
+        bottom = 2,
         color = '#7ebfe3',
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
       -- MEM info
       wibox.container.margin({
         { memicon, memory.widget, layout = wibox.layout.align.horizontal },
-        bottom = 3,
+        bottom = 2,
         color = '#eacea2',
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
       -- Battery
       wibox.container.margin({
         { baticon, bat.widget, layout = wibox.layout.align.horizontal },
-        bottom = 3,
+        bottom = 2,
         color = '#f5c2e7',
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
       -- Temperature info
       wibox.container.margin({
         { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
-        bottom = 3,
+        bottom = 2,
         color = '#f4a683',
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
       -- Calendar
       wibox.container.margin({
         { symbol, mytextclock, layout = wibox.layout.align.horizontal },
-        bottom = 3,
+        bottom = 2,
         color = theme.fg_normal,
         widget = wibox.container.margin,
-      }, 5, 5),
+      }, 4, 4),
     },
   }
 end
