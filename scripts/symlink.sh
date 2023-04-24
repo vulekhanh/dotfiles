@@ -24,3 +24,14 @@ fi
 ln -s $configDir/awesome/theme-personal.lua ~/.config/awesome/themes/multicolor/
 ln -s $configDir/awesome/icons ~/.config/awesome/themes/multicolor/
 ln -s $configDir/picom/picom.conf ~/.config/picom/
+
+# create symlink for nitch
+echo "\nDeleting nitch binary file\n"
+sudo rm ~/usr/bin
+if [ -e ~/.config/nitch/nitch ]; then
+  echo "Nitch binary file found!"
+  echo "Creating symlink for nitch to /usr/bin/"
+  ln -s $configDir/nitch/nitch ~/usr/bin
+else
+  ln -s $configDir/nitch/nitch ~/usr/bin
+fi
