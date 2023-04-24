@@ -46,3 +46,22 @@ if [ -e ~/.config/neofetch/config.conf ]; then
 else
   ln $configDir/neofetch/config.conf ~/.config/neofetch/
 fi
+
+# Rofi config
+if [ -e ~/.config/rofi/ ]; then
+  echo "Rofi config directory found"
+  if [ -e ~/.config/rofi/config.rasi ]; then
+    echo "Rofi config found"
+    echo "Moving config.rasi to config.rasi.bak"
+    mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
+    ln -s $configDir/rofi/config/* ~/.config/rofi/
+  else
+    mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
+    ln -s $configDir/rofi/config/* ~/.config/rofi/
+  fi
+else
+  echo "Creating rofi config directory"
+  mkdir ~/.config/rofi
+  mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
+  ln -s $configDir/rofi/config/* ~/.config/rofi/
+fi
