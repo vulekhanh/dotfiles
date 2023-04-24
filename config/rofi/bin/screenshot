@@ -19,11 +19,11 @@ if [[ "$layout" == "TRUE" ]]; then
 	infive="靖"
 	inten="福"
 else
-	screen=" Capture Desktop"
-	area=" Capture Area"
+	screen="  Capture Desktop"
+	area="  Capture Area"
 	window="缾 Capture Window"
-	infive="靖 Take in 3s"
-	inten="福 Take in 10s"
+  infive="  Take in 3s"
+	inten="󰮯  Take in 10s"
 fi
 
 # Notify and view screenshot
