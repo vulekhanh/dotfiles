@@ -29,10 +29,10 @@ ln -s $configDir/picom/picom.conf ~/.config/picom/
 # create symlink for nitch
 echo "\nDeleting nitch binary file\n"
 yay -Rs nitch --noconfirm
-if [ -e ~/.config/nitch/nitch ]; then
-  echo "Nitch binary file found!"
-  echo "Creating symlink for nitch to /usr/bin/"
-  ln -s $configDir/nitch/nitch ~/usr/bin
-else
-  ln -s $configDir/nitch/nitch ~/usr/bin
-fi
+#if [ -e /usr/bin/nitch ]; then
+#  echo "Nitch binary file found!"
+#  echo "Creating symlink for nitch to /usr/bin/"
+#  ln -s $configDir/nitch/nitch /usr/bin
+#else
+#  ln -s $configDir/nitch/nitch /usr/bin
+#fi
