@@ -10,7 +10,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # install neovim, nvm and yay package manager for managing AUR packages
 echo "Installing Packages"
 sudo pacman -Syu
-sudo pacman -S neovim python-pynvim nodejs npm yay kitty exa bat unzip
+sudo pacman -S neovim python-pynvim nodejs npm yay kitty exa bat unzip nim --needed
 yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli
 
 #Installing Fira Code Font
