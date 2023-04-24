@@ -16,9 +16,13 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - [Nitch](https://github.com/ssleert/nitch) - like neofetch, but it's way faster
 
 ## Screenshots
-
+- Desktop preview
 ![My workspace](https://user-images.githubusercontent.com/61068720/233433537-67044238-8c1a-468f-8a5e-7e30eb26711e.png)
+- LunarVim with Neofetch
 ![Spiral layout workspace](https://user-images.githubusercontent.com/61068720/233825783-6bb20883-e266-44ce-b42c-814ea4edceb1.png)
+- Nitch - neofetch substitution
+![Nitch](https://user-images.githubusercontent.com/61068720/233962339-12d3d075-1a6b-476c-be4c-2c68c5f6a805.png)
+
 
 ## Contributors
 Special thanks to:
