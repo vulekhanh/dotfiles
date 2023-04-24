@@ -62,6 +62,5 @@ if [ -e ~/.config/rofi/ ]; then
 else
   echo "Creating rofi config directory"
   mkdir ~/.config/rofi
-  mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
   ln -s $configDir/rofi/config/* ~/.config/rofi/
 fi
