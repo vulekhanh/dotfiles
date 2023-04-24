@@ -2,6 +2,7 @@
 
 echo "Uninstalling nitch\n"
 yay -Rs nitch --noconfirm
+rm ./nitch
 
 echo "Building Nitch\n"
 nimble build
