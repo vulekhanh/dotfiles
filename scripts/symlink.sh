@@ -9,6 +9,7 @@ if [ -e ~/.config/kitty/kitty.conf ]; then
 else
   ln -s $configDir/kitty/kitty.conf ~/.config/kitty/
 fi
+
 # create symlinks for awesome, picom
 echo "\nDeleting awesome/themes/multicolor/icons\n"
 sudo rm -r ~/.config/awesome/themes/multicolor/icons
@@ -27,7 +28,7 @@ ln -s $configDir/picom/picom.conf ~/.config/picom/
 
 # create symlink for nitch
 echo "\nDeleting nitch binary file\n"
-sudo rm ~/usr/bin
+yay -Rs nitch --noconfirm
 if [ -e ~/.config/nitch/nitch ]; then
   echo "Nitch binary file found!"
   echo "Creating symlink for nitch to /usr/bin/"
