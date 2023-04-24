@@ -4,7 +4,7 @@ linkNerd="https://github.com/unxsh/nitch/releases/download/0.1.6/nitchNerd"
 linkNoNerd="https://github.com/unxsh/nitch/releases/download/0.1.6/nitchNoNerd"
 
 echo "Uninstalling nitch\n"
-sudo rm -fv /usr/local/bin/nitch
+yay -Rs nitch --noconfirm
 
 read -p "\nUse nerd font symbols? (y/n): " symbolsYN
 echo "Installation..."
