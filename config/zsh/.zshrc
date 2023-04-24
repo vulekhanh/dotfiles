@@ -105,5 +105,5 @@ source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 alias ls='exa --icons'
 alias cat='bat'
 
-eval "$(oh-my-posh init zsh --config ../zsh/themes/1s_catppuccin_hybrid.omp.json)"
+eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/vulekhanh/dotfiles/master/themes/1s_catppuccin_hybrid.omp.json')"
 nitch
