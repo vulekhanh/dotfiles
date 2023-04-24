@@ -1,7 +1,5 @@
 <div align="center">
 
-# <img src="https://raw.githubusercontent.com/nim-lang/assets/master/Art/logo-crown.png" height="28px"/> Nim
-
 # `NiTch`
 
 <h3>
