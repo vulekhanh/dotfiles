@@ -76,7 +76,6 @@ plugins=(
     zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-source /usr/share/nvm/init-nvm.sh
 source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 # User configuration
 
