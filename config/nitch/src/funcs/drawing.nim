@@ -76,6 +76,7 @@ proc drawInfo*(asciiArt: bool) =
   # colored out
     stdout.styledWrite("\n", styleBright, "《·───────────────·》◈《·──────────────·》\n")
     stdout.styledWrite("\n", styleBright, "  ╭───────────╮\n")
+    stdout.styledWrite("  │ ", color2, hnameIcon, color0, hnameCat, color2, pointer, color2, hostnameInfo, color0, "\n")
     stdout.styledWrite("  │ ", color3, distroIcon, color0, distroCat, color3, pointer, color3, distroInfo, color0, "\n")
     stdout.styledWrite("  │ ", color4, kernelIcon, color0, kernelCat, color4, pointer, color4, kernelInfo, color0, "\n")
     stdout.styledWrite("  │ ", color5, uptimeIcon, color0, uptimeCat, color5, pointer, color5, uptimeInfo, color0, "\n")
