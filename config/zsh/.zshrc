@@ -103,6 +103,7 @@ source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 #Aliases
 alias ls='exa --icons'
 alias cat='bat'
+alias lg='lazygit'
 
 eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/vulekhanh/dotfiles/master/themes/1s_catppuccin_hybrid.omp.json')"
 nitch
