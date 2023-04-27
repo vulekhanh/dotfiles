@@ -13,7 +13,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 echo "Installing Packages"
 sudo pacman -Syu
 sudo pacman -S conky ttf-firacode-nerd python-pynvim nodejs npm yay exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
-yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli
+yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli nvm
 
 # Neovim/LunarVim
 nvimInstaller () {
