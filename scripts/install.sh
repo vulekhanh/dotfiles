@@ -9,14 +9,16 @@ echo "\nInstalling Plugins\n"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 
-# install neovim, nvm and yay package manager for managing AUR packages
+# install neovim, yay package manager for managing AUR packages
 echo "Installing Packages"
 sudo pacman -Syu
+
+# install fonts for rendering glyphs, dependencies for lunarVim, git utilities, bluetooth, audio
 sudo pacman -S ttf-firacode-nerd ttf-droid pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
 
 # Yay installation
 if which yay >/dev/null; then
-  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli starship
+  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli starship ranger
 else
   echo "yay not found!"
   read -p "Do you want to build yay from source? [y/N] " yn
