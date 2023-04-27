@@ -17,11 +17,14 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 
 ## Screenshots
 - Desktop preview
-![My workspace](https://user-images.githubusercontent.com/61068720/233433537-67044238-8c1a-468f-8a5e-7e30eb26711e.png)
-- LunarVim with Neofetch
-![Spiral layout workspace](https://user-images.githubusercontent.com/61068720/233825783-6bb20883-e266-44ce-b42c-814ea4edceb1.png)
-- Nitch - neofetch substitution
-![Nitch](https://user-images.githubusercontent.com/61068720/233962339-12d3d075-1a6b-476c-be4c-2c68c5f6a805.png)
+![Screenshot_20230427_134947](https://user-images.githubusercontent.com/61068720/234782644-b9be706e-eef9-42a3-b736-3920bf7186df.png)
+
+- LunarVim with nitch, inspired by Catppuccin theme
+![Screenshot_20230427_135055](https://user-images.githubusercontent.com/61068720/234782826-e01ab641-e073-4261-bbbb-e51df7530687.png)
+
+
+- Btop++ - Resource monitor
+![Screenshot_20230427_134505](https://user-images.githubusercontent.com/61068720/234781677-5b196fd5-d7d1-4405-ac93-1936f6f146a0.png)
 
 
 ## Contributors
