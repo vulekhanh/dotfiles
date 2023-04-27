@@ -4,16 +4,16 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 ## Configurations
 - [Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 - [Zsh](https://ohmyz.sh/)
-- [LunarVim](https://www.lunarvim.org/docs/installation)
-- [Rofi](https://github.com/catppuccin/rofi/tree/main/deathemonic)
+- [LunarVim](https://www.lunarvim.org/docs/installation) - Neovim but looks like an IDE
+- [Rofi](https://github.com/catppuccin/rofi/tree/main/deathemonic) - Application launcher
 - [Oh my posh](https://ohmyposh.dev/docs/)
-- [AwesomeWM](https://awesomewm.org/doc/api/documentation/07-my-first-awesome.md.html#)
-- [KDE plasma](https://userbase.kde.org/Configure_your_desktop)
+- [AwesomeWM](https://awesomewm.org/doc/api/documentation/07-my-first-awesome.md.html#) - Dynamic tilling window manager
 - [Catppuccin theme](https://github.com/catppuccin/catppuccin)
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
 - [Dark matter grub theme](https://gitlab.com/VandalByte/darkmatter-grub-theme)
 - [Collection of AwesomeWM theme](https://github.com/lcpz/awesome-copycats)
 - [Nitch](https://github.com/ssleert/nitch) - like neofetch, but it's way faster
+- [Ranger](https://ranger.github.io/) - Console file manager
 
 ## Screenshots
 - Desktop preview
