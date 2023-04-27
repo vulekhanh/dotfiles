@@ -65,6 +65,7 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -80,7 +81,7 @@ source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
+export PATH="/home/$USER/.local/bin:$PATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
