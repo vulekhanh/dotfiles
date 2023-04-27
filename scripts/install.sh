@@ -12,11 +12,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # install neovim, nvm and yay package manager for managing AUR packages
 echo "Installing Packages"
 sudo pacman -Syu
-sudo pacman -S conky ttf-firacode-nerd pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
+sudo pacman -S ttf-firacode-nerd ttf-droid pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
 
 # Yay installation
 if which yay >/dev/null; then
-  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli
+  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli starship
 else
   echo "yay not found!"
   read -p "Do you want to build yay from source? [y/N] " yn
