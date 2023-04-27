@@ -14,6 +14,7 @@ echo "Installing Packages"
 sudo pacman -Syu
 sudo pacman -S conky ttf-firacode-nerd python-pynvim nodejs npm yay exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
 yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli nvm
+sudo pacman -S conky ttf-firacode-nerd python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
 
 # Neovim/LunarVim
 nvimInstaller () {
