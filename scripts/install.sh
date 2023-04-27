@@ -12,8 +12,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # install neovim, nvm and yay package manager for managing AUR packages
 echo "Installing Packages"
 sudo pacman -Syu
-sudo pacman -S ttf-firacode-nerd python-pynvim nodejs npm yay exa bat unzip nim --needed
-yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli
+sudo pacman -S conky ttf-firacode-nerd python-pynvim nodejs npm yay exa bat unzip lazygit nim --needed
+yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli catppuccin-cursors-frappe
 
 # Neovim/LunarVim
 nvimInstaller () {
