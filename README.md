@@ -1,4 +1,4 @@
-# Dotfiles
+# Dotfiles.
 I added some configurations, including new theme, layouts, and keybinds to boost up productivity. You can navigate to the original documentation from the links below to understand and decide what you are going to do with your system.
 
 ## Configurations
