@@ -12,9 +12,44 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # install neovim, nvm and yay package manager for managing AUR packages
 echo "Installing Packages"
 sudo pacman -Syu
-sudo pacman -S conky ttf-firacode-nerd python-pynvim nodejs npm yay exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
-yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli nvm
 sudo pacman -S conky ttf-firacode-nerd python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
+
+# Yay installation
+if which yay >/dev/null; then
+  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli
+else
+  echo "yay not found!"
+  read -p "Do you want to build yay from source? [y/N] " yn
+  case "$yn" in
+    y* ) 
+      if which git >/dev/null; then
+        git clone https://aur.archlinux.org/yay.git
+        pushd yay/
+        makepkg -si --noconfirm
+        popd
+        installer
+      else
+        echo "git not found!"
+        echo "Installing git\n"
+        sudo pacman -S git
+        git clone https://aur.archlinux.org/yay.git
+        pushd yay/
+        makepkg -si --noconfirm
+        popd
+        installer
+      fi
+    ;;
+    *) 
+      echo "Yay is not installed!"
+      echo "Existing"
+      exit
+    ;;
+  esac
+fi
+
+# Neovim for node
+echo "Installing neovim for nodejs development\n"
+sudo npm i neovim -g
 
 # Neovim/LunarVim
 nvimInstaller () {
