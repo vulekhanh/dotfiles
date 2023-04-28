@@ -235,10 +235,6 @@ globalkeys = mytable.join(
     { description = "show help", group = "awesome" }),
 
   -- Tag browsing
-  awful.key({ modkey, }, "Left", awful.tag.viewprev,
-    { description = "view previous", group = "tag" }),
-  awful.key({ modkey, }, "Right", awful.tag.viewnext,
-    { description = "view next", group = "tag" }),
   awful.key({ modkey, }, "Escape", awful.tag.history.restore,
     { description = "go back", group = "tag" }),
 
@@ -275,6 +271,10 @@ globalkeys = mytable.join(
     { description = "show main menu", group = "awesome" }),
 
   -- Layout manipulation
+  awful.key({ modkey, }, "Right", function() awful.tag.incmwfact(0.05) end,
+    { description = "increase master width factor", group = "layout" }),
+  awful.key({ modkey, }, "Left", function() awful.tag.incmwfact(-0.05) end,
+    { description = "decrease master width factor", group = "layout" }),
   awful.key({ modkey, "Shift" }, "j", function() awful.client.swap.byidx(1) end,
     { description = "swap with next client by index", group = "client" }),
   awful.key({ modkey, "Shift" }, "k", function() awful.client.swap.byidx(-1) end,
