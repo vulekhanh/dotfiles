@@ -20,6 +20,7 @@ theme.font                     = "Terminus Heavy 10"
 theme.menu_bg_normal           = "#232634"
 theme.menu_bg_focus            = "#000000"
 theme.bg_normal                = "#303446"
+theme.bg_transparent           = "#30344600"
 theme.bg_focus                 = "#8aadf4"
 theme.bg_urgent                = "#000000"
 theme.fg_normal                = "#8aadf4"
@@ -169,7 +170,29 @@ function theme.at_screen_connect(s)
   s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(19), bg = theme.bg_normal, fg = theme.fg_normal })
+  -- We will create 2 wiboxes, the left one is for taglist, the other is resources widgets
+  s.mywibox = awful.wibar({
+    position = "top",
+    screen = s,
+    height = dpi(23),
+    width = dpi(1912),
+    bg = theme.bg_normal,
+    fg = theme.fg_normal
+  })
+  s.mywibox.x = 4
+  s.mywibox.y = 4
+
+  -- Right wibox
+  --s.rightwibox = awful.wibar({
+  --  position = "top",
+  --  screen = s,
+  --  height = dpi(23),
+  --  width = dpi(1912),
+  --  bg = theme.bg_normal,
+  --  fg = theme.fg_normal
+  --})
+  --s.rightwibox.x = 4
+  --s.rightwibox.y = 4
 
   -- Add widgets to the wibox
   s.mywibox:setup {
