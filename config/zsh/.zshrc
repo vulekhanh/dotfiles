@@ -75,6 +75,7 @@ plugins=(
     git
     sudo
     zsh-syntax-highlighting
+    dirhistory
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
