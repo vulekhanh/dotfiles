@@ -283,6 +283,10 @@ globalkeys = mytable.join(
     { description = "focus the next screen", group = "screen" }),
   awful.key({ modkey, "Control" }, "k", function() awful.screen.focus_relative(-1) end,
     { description = "focus the previous screen", group = "screen" }),
+  awful.key({ modkey, "Control" }, "l", function() awful.tag.incncol(-1, nil, true) end,
+    { description = "decrease the number of columns", group = "layout" }),
+  awful.key({ modkey, "Control" }, "h", function() awful.tag.incncol(1, nil, true) end,
+    { description = "increase the number of columns", group = "layout" }),
   awful.key({ modkey, }, "u", awful.client.urgent.jumpto,
     { description = "jump to urgent client", group = "client" }),
   awful.key({ modkey, }, "Tab",
@@ -378,13 +382,6 @@ globalkeys = mytable.join(
       beautiful.volume.update()
     end,
     { description = "volume 0%", group = "hotkeys" }),
-
-  -- Copy primary to clipboard (terminals to gtk)
-  awful.key({ modkey }, "c", function() awful.spawn.with_shell("xsel | xsel -i -b") end,
-    { description = "copy terminal to gtk", group = "hotkeys" }),
-  -- Copy clipboard to primary (gtk to terminals)
-  awful.key({ modkey }, "v", function() awful.spawn.with_shell("xsel -b | xsel") end,
-    { description = "copy gtk to terminal", group = "hotkeys" }),
 
   -- User programs
   awful.key({ modkey }, "q", function() awful.spawn(browser) end,
