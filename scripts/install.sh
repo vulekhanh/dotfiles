@@ -86,40 +86,6 @@ else
   fi
 fi
 
-# create symbolic links for .zshrc, .gitconifg
-if [ -e ~/.zshrc ]; then
-  echo "ZSH config found"
-  echo "Moveing .zshrc to .zshrc.bak"
-  mv ~/.zshrc ~/.zshrc.bak
-  ln -s $configDir/zsh/.zshrc ~/.zshrc
-else
-  ln -s $configDir/zsh/.zshrc ~/.zshrc
-fi
-
-# create symlink for neofetch
-if [ -e ~/.config/neofetch/config.conf ]; then
-  echo "Neofetch config found"
-  echo "Moveing neofetch/config.conf to neofetch/config.conf.bak"
-  mv ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf.bak
-  ln $configDir/neofetch/config.conf ~/.config/neofetch/
-else
-  ln $configDir/neofetch/config.conf ~/.config/neofetch/
-fi
-
-# Rofi config
-if [ -e ~/.config/rofi/ ]; then
-  echo "Rofi config directory found"
-  if [ -e ~/.config/rofi/config.rasi ]; then
-    echo "Rofi config found"
-    echo "Moving config.rasi to config.rasi.bak"
-    mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
-    ln -s $configDir/rofi/config/* ~/.config/rofi/
-  else
-    mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
-    ln -s $configDir/rofi/config/* ~/.config/rofi/
-  fi
-else
-  echo "Creating rofi config directory"
-  mkdir ~/.config/rofi
-  ln -s $configDir/rofi/config/* ~/.config/rofi/
-fi
+# fetch awesome copycat repo from github
+git clone --recurse-submodules --remote-submodules --depth 1 -j 2 https://github.com/lcpz/awesome-copycats.git
+mv -bv awesome-copycats/* ~/.config/awesome; rm -rf awesome-copycats
