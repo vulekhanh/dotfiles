@@ -14,7 +14,7 @@ echo "Installing Packages"
 sudo pacman -Syu
 
 # install fonts for rendering glyphs, dependencies for lunarVim, git utilities, bluetooth, audio
-sudo pacman -S ttf-firacode-nerd ttf-droid pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez lxappearance --needed
+sudo pacman -S ttf-firacode-nerd ttf-droid git pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez lxappearance --needed
 
 # Yay installation
 if which yay >/dev/null; then
@@ -24,22 +24,11 @@ else
   read -p "Do you want to build yay from source? [y/N] " yn
   case "$yn" in
     y* ) 
-      if which git >/dev/null; then
-        git clone https://aur.archlinux.org/yay.git
-        pushd yay/
-        makepkg -si --noconfirm
-        popd
-        installer
-      else
-        echo "git not found!"
-        echo "Installing git\n"
-        sudo pacman -S git
-        git clone https://aur.archlinux.org/yay.git
-        pushd yay/
-        makepkg -si --noconfirm
-        popd
-        installer
-      fi
+      git clone https://aur.archlinux.org/yay.git
+      pushd yay/
+      makepkg -si --noconfirm
+      popd
+      installer
     ;;
     *) 
       echo "Yay is not installed!"
