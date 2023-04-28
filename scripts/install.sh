@@ -14,7 +14,7 @@ echo "Installing Packages"
 sudo pacman -Syu
 
 # install fonts for rendering glyphs, dependencies for lunarVim, git utilities, bluetooth, audio
-sudo pacman -S ttf-firacode-nerd ttf-droid pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez --needed
+sudo pacman -S ttf-firacode-nerd ttf-droid pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez lxappearance --needed
 
 # Yay installation
 if which yay >/dev/null; then
