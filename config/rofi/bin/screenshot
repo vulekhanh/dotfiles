@@ -3,7 +3,7 @@ rofi_command="rofi -theme $HOME/.config/rofi/config/screenshot.rasi"
 
 time=`date +%Y-%m-%d-%I-%M-%S`
 geometry=`xrandr | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-dir="`xdg-user-dir PICTURES`/Screenshots"
+dir="/home/$USER/Pictures/Screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 # Icons
@@ -47,34 +47,34 @@ countdown () {
 
 # take shots
 shotnow () {
-	cd ${dir} && sleep 0.5 && maim -u -f png | tee "$file" | xclip -selection clipboard -t image/png
+  sleep 0.5 && cd ${dir} && maim -u -f png | tee ${file} | xclip -selection clipboard -t image/png
 	notify_view
 }
 
 shot5 () {
 	countdown '3'
-	sleep 1 && cd ${dir} && maim -u -f png | tee "$file" | xclip -selection clipboard -t image/png
+	sleep 1 && cd ${dir} && maim -u -f png | tee ${file} | xclip -selection clipboard -t image/png
 	notify_view
 }
 
 shot10 () {
 	countdown '10'
-	sleep 1 && cd ${dir} && maim -u -f png | tee "$file" | xclip -selection clipboard -t image/png
+	sleep 1 && cd ${dir} && maim -u -f png | tee ${file} | xclip -selection clipboard -t image/png
 	notify_view
 }
 
 shotwin () {
-	cd ${dir} && maim -u -f png -i `xdotool getactivewindow` | tee "$file" | xclip -selection clipboard -t image/png
+  cd ${dir} && maim -u -f png -i  $(xdotool getactivewindow)| tee ${file} | xclip -selection clipboard -t image/png
 	notify_view
 }
 
 shotarea () {
-	cd ${dir} && maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | tee "$file" | xclip -selection clipboard -t image/png
+	cd ${dir} && maim -u -f png -s -b 2 -c 0.35,0.55,0.85,0.25 -l | tee ${file} | xclip -selection clipboard -t image/png
 	notify_view
 }
 
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
+if [ ! -d "$dir" ]; then
+	mkdir -p -v "$dir"
 fi
 
 # Variable passed to rofi
