@@ -14,11 +14,11 @@ echo "Installing Packages"
 sudo pacman -Syu
 
 # install fonts for rendering glyphs, dependencies for lunarVim, git utilities, bluetooth, audio
-sudo pacman -S ttf-firacode-nerd ttf-droid git pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez lxappearance maim xdotool xclip qimgv --needed
+sudo pacman -S ttf-firacode-nerd ttf-droid git pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez lxappearance maim xdotool xclip --needed
 
 # Yay installation
 if which yay >/dev/null; then
-  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli starship ranger
+  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli starship ranger qimgv
 else
   echo "yay not found!"
   read -p "Do you want to build yay from source? [y/N] " yn
