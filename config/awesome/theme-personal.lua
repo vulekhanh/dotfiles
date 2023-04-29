@@ -191,8 +191,8 @@ function theme.at_screen_connect(s)
     bg = theme.bg_normal,
     fg = theme.fg_normal
   })
-  s.mywibox.x = 10
-  s.mywibox.y = 4
+  s.mywibox.x = 6
+  s.mywibox.y = 3
 
   -- Add widgets to the wibox
   s.mywibox:setup {
