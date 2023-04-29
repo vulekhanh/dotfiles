@@ -66,7 +66,19 @@ theme.layout_max               = theme.confdir .. "/icons/max.png"
 theme.layout_fullscreen        = theme.confdir .. "/icons/fullscreen.png"
 theme.layout_magnifier         = theme.confdir .. "/icons/magnifier.png"
 theme.layout_floating          = theme.confdir .. "/icons/floating.png"
-
+theme.pink                     = "#f4b8e4"
+theme.mauve                    = "#ca9ee6"
+theme.red                      = "#e78284"
+theme.maroon                   = "#ea999c"
+theme.peach                    = "#ef9f76"
+theme.yellow                   = "#e5c890"
+theme.green                    = "#a6d189"
+theme.teal                     = "#81c8be"
+theme.cyan                     = "#7ebfe3"
+theme.sky                      = "#99d1db"
+theme.sapphire                 = "#85c1dc"
+theme.blue                     = theme.fg_normal
+theme.lavender                 = "#babbf1"
 local markup                   = lain.util.markup
 
 
@@ -89,7 +101,7 @@ theme.cal = lain.widget.cal({
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
   settings = function()
-    widget:set_markup(markup.fontfg(theme.font, "#f4a683", coretemp_now .. "°C "))
+    widget:set_markup(markup.fontfg(theme.font, theme.maroon, coretemp_now .. "°C "))
   end
 })
 
@@ -103,7 +115,7 @@ local bat = lain.widget.bat({
       perc = perc .. " plug"
     end
 
-    widget:set_markup(markup.fontfg(theme.font, "#f5c2e7", perc .. " "))
+    widget:set_markup(markup.fontfg(theme.font, theme.pink, perc .. " "))
   end
 })
 
@@ -115,7 +127,7 @@ theme.volume = lain.widget.alsa({
       volume_now.level = volume_now.level .. "M"
     end
 
-    widget:set_markup(markup.fontfg(theme.font, "#7ebfe3", volume_now.level .. "% "))
+    widget:set_markup(markup.fontfg(theme.font, theme.cyan, volume_now.level .. "% "))
   end
 })
 
@@ -125,8 +137,8 @@ local netdowninfo = wibox.widget.textbox()
 local netupicon = wibox.widget.imagebox(theme.widget_netup)
 local netupinfo = lain.widget.net({
   settings = function()
-    widget:set_markup(markup.fontfg(theme.font, "#e98599", net_now.sent .. " "))
-    netdowninfo:set_markup(markup.fontfg(theme.font, "#a9d598", net_now.received .. " "))
+    widget:set_markup(markup.fontfg(theme.font, theme.red, net_now.sent .. " "))
+    netdowninfo:set_markup(markup.fontfg(theme.font, theme.green, net_now.received .. " "))
   end
 })
 
@@ -134,7 +146,7 @@ local netupinfo = lain.widget.net({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local memory = lain.widget.mem({
   settings = function()
-    widget:set_markup(markup.fontfg(theme.font, "#eacea2", mem_now.used .. "M "))
+    widget:set_markup(markup.fontfg(theme.font, theme.yellow, mem_now.used .. "M "))
   end
 })
 
@@ -170,29 +182,17 @@ function theme.at_screen_connect(s)
   s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
   -- Create the wibox
-  -- We will create 2 wiboxes, the left one is for taglist, the other is resources widgets
-  s.mywibox = awful.wibar({
+  -- The left one is for taglist, the other is resources widgets
+  s.mywibox = awful.wibox({
     position = "top",
     screen = s,
     height = dpi(23),
-    width = dpi(1912),
+    width = dpi(1908),
     bg = theme.bg_normal,
     fg = theme.fg_normal
   })
-  s.mywibox.x = 4
+  s.mywibox.x = 10
   s.mywibox.y = 4
-
-  -- Right wibox
-  --s.rightwibox = awful.wibar({
-  --  position = "top",
-  --  screen = s,
-  --  height = dpi(23),
-  --  width = dpi(1912),
-  --  bg = theme.bg_normal,
-  --  fg = theme.fg_normal
-  --})
-  --s.rightwibox.x = 4
-  --s.rightwibox.y = 4
 
   -- Add widgets to the wibox
   s.mywibox:setup {
