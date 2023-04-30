@@ -66,6 +66,7 @@ theme.layout_max               = theme.confdir .. "/icons/max.png"
 theme.layout_fullscreen        = theme.confdir .. "/icons/fullscreen.png"
 theme.layout_magnifier         = theme.confdir .. "/icons/magnifier.png"
 theme.layout_floating          = theme.confdir .. "/icons/floating.png"
+-- Catppuccin color palette
 theme.pink                     = "#f4b8e4"
 theme.mauve                    = "#ca9ee6"
 theme.red                      = "#e78284"
@@ -79,8 +80,8 @@ theme.sky                      = "#99d1db"
 theme.sapphire                 = "#85c1dc"
 theme.blue                     = theme.fg_normal
 theme.lavender                 = "#babbf1"
+theme.white                    = "#c6d0f5"
 local markup                   = lain.util.markup
-
 
 -- Calendar
 os.setlocale(os.getenv("LANG")) -- to localize the clock
@@ -259,6 +260,7 @@ function theme.at_screen_connect(s)
         color = theme.fg_normal,
         widget = wibox.container.margin,
       }, 4, 4),
+
     },
   }
 end
