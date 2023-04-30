@@ -16,7 +16,6 @@ require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
-local lain          = require("lain")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
@@ -80,7 +79,7 @@ awful.spawn.with_shell(
 
 -- {{{ Variable definitions
 
-local themes                           = {
+local themes                = {
   "blackburn",       -- 1
   "copland",         -- 2
   "dremora",         -- 3
@@ -93,18 +92,18 @@ local themes                           = {
   "vertex"           -- 10
 }
 
-local chosen_theme                     = themes[5]
-local modkey                           = "Mod4"
-local altkey                           = "Mod1"
-local terminal                         = "kitty"
-local vi_focus                         = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
-local cycle_prev                       = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
-local editor                           = os.getenv("EDITOR") or "nvim"
-local browser                          = "firefox"
+local chosen_theme          = themes[5]
+local modkey                = "Mod4"
+local altkey                = "Mod1"
+local terminal              = "kitty"
+local vi_focus              = false            -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
+local cycle_prev            = true             -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
+local editor                = os.getenv("EDITOR") or "nvim"
+local browser               = "firefox"
 
-awful.util.terminal                    = terminal
-awful.util.tagnames                    = { "1", "2", "3", "4", "5" }
-awful.layout.layouts                   = {
+awful.util.terminal         = terminal
+awful.util.tagnames         = { "1", "2", "3", "4", "5" }
+awful.layout.layouts        = {
   awful.layout.suit.tile,
   awful.layout.suit.spiral,
   awful.layout.suit.fair,
@@ -122,17 +121,7 @@ awful.layout.layouts                   = {
   --awful.layout.suit.corner.se,
 }
 
-lain.layout.termfair.nmaster           = 3
-lain.layout.termfair.ncol              = 1
-lain.layout.termfair.center.nmaster    = 3
-lain.layout.termfair.center.ncol       = 1
-lain.layout.cascade.tile.offset_x      = 2
-lain.layout.cascade.tile.offset_y      = 32
-lain.layout.cascade.tile.extra_padding = 5
-lain.layout.cascade.tile.nmaster       = 5
-lain.layout.cascade.tile.ncol          = 2
-
-awful.util.taglist_buttons             = mytable.join(
+awful.util.taglist_buttons  = mytable.join(
   awful.button({}, 1, function(t) t:view_only() end),
   awful.button({ modkey }, 1, function(t)
     if client.focus then client.focus:move_to_tag(t) end
@@ -145,7 +134,7 @@ awful.util.taglist_buttons             = mytable.join(
   awful.button({}, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
-awful.util.tasklist_buttons            = mytable.join(
+awful.util.tasklist_buttons = mytable.join(
   awful.button({}, 1, function(c)
     if c == client.focus then
       c.minimized = true
@@ -301,17 +290,6 @@ globalkeys = mytable.join(
     end,
     { description = "toggle wibox", group = "awesome" }),
 
-  -- Dynamic tagging
-  awful.key({ modkey, "Shift" }, "n", function() lain.util.add_tag() end,
-    { description = "add new tag", group = "tag" }),
-  awful.key({ modkey, "Shift" }, "r", function() lain.util.rename_tag() end,
-    { description = "rename tag", group = "tag" }),
-  awful.key({ modkey, "Shift" }, "Left", function() lain.util.move_tag(-1) end,
-    { description = "move tag to the left", group = "tag" }),
-  awful.key({ modkey, "Shift" }, "Right", function() lain.util.move_tag(1) end,
-    { description = "move tag to the right", group = "tag" }),
-  awful.key({ modkey, "Shift" }, "d", function() lain.util.delete_tag() end,
-    { description = "delete tag", group = "tag" }),
 
   -- Standard program
   awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
@@ -409,8 +387,6 @@ globalkeys = mytable.join(
 )
 
 clientkeys = mytable.join(
-  awful.key({ altkey, "Shift" }, "m", lain.util.magnify_client,
-    { description = "magnify client", group = "client" }),
   awful.key({ modkey, }, "f",
     function(c)
       c.fullscreen = not c.fullscreen
