@@ -390,8 +390,6 @@ globalkeys = mytable.join(
   -- User programs
   awful.key({ modkey }, "q", function() awful.spawn(browser) end,
     { description = "run browser", group = "launcher" }),
-  awful.key({ modkey }, "e", function() awful.spawn("dolphin") end,
-    { description = "run dolphin", group = "launcher" }),
   -- alternatively use rofi, a dmenu-like application with more features
   -- check https://github.com/DaveDavenport/rofi for more details
   --awful.key({ modkey }, "r", function()
