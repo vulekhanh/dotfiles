@@ -651,7 +651,7 @@ tag.connect_signal("property::selected", backham)
 
 -- }}}
 -- Autostart Applications
-awful.spawn.with_shell("picom")
 collectgarbage()
 collectgarbage('setpause', 110)
 collectgarbage('setstepmul', 1000)
+awful.spawn.with_shell("picom")
