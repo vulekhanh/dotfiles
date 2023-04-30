@@ -21,13 +21,20 @@ if [ -e ~/.config/awesome/rc.lua ]; then
 else
   ln -s $configDir/awesome/rc.lua ~/.config/awesome/
 fi
-
-ln -s $configDir/awesome/theme-personal.lua ~/.config/awesome/themes/multicolor/
-ln -s $configDir/awesome/icons ~/.config/awesome/themes/multicolor/
+# symlink for theme.lua
+if [ -e ~/.config/awesome/theme.lua ]; then
+  echo "Awesome theme.lua file found!"
+  echo "Moving theme.lua to theme.lua.bak"
+  mv ~/.config/awesome/theme.lua ~/.config/awesome/theme.lua.bak
+  ln -s $configDir/awesome/theme.lua ~/.config/awesome/
+else
+  ln -s $configDir/awesome/theme.lua ~/.config/awesome/
+fi
+ln -s $configDir/awesome/icons ~/.config/awesome/
 ln -s $configDir/picom/picom.conf ~/.config/picom/
 
 
-# create symbolic links for .zshrc, .gitconifg
+# create symbolic links for .zshrc
 if [ -e ~/.zshrc ]; then
   echo "ZSH config found"
   echo "Moveing .zshrc to .zshrc.bak"
@@ -62,5 +69,5 @@ if [ -e ~/.config/rofi/ ]; then
 else
   echo "Creating rofi config directory"
   mkdir ~/.config/rofi
-  ln -s $configDir/rofi/config/* ~/.config/rofi/
+  ln -s $configDir/rofi/ ~/.config/
 fi
