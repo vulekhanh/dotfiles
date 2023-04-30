@@ -12,9 +12,10 @@ local dpi                      = require("beautiful.xresources").apply_dpi
 
 local os                       = os
 local my_table                 = awful.util.table or gears.table -- 4.{0,1} compatibility
-
 local theme                    = {}
 theme.confdir                  = os.getenv("HOME") .. "/.config/awesome/"
+
+-- Widgets import
 theme.wallpaper                = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 theme.font                     = "Terminus Heavy 10"
 theme.menu_bg_normal           = "#232634"
@@ -233,12 +234,12 @@ function theme.at_screen_connect(s)
         widget = wibox.container.margin,
       }, 4, 4),
       -- MEM info
-      wibox.container.margin({
-        { memicon, memory.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#eacea2',
-        widget = wibox.container.margin,
-      }, 4, 4),
+      --wibox.container.margin({
+      --  { memicon, memory.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#eacea2',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       -- Battery
       wibox.container.margin({
         { baticon, bat.widget, layout = wibox.layout.align.horizontal },
@@ -247,12 +248,12 @@ function theme.at_screen_connect(s)
         widget = wibox.container.margin,
       }, 4, 4),
       -- Temperature info
-      wibox.container.margin({
-        { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#f4a683',
-        widget = wibox.container.margin,
-      }, 4, 4),
+      --wibox.container.margin({
+      --  { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#f4a683',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       -- Calendar
       wibox.container.margin({
         { symbol, mytextclock, layout = wibox.layout.align.horizontal },
