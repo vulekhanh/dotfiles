@@ -4,12 +4,15 @@
         "os": "#ACB0BE",
         "closer": "p:os",
         "pink": "#F4B8E4",
+        "yellow": "#e5c890",
         "lavender": "#BABBF1",
         "blue":  "#8CAAEE",
         "white": "#ffffff",
         "green": "#a6da95",
         "teal": "#8bd5ca",
-        "red": "#ed8796"
+        "red": "#ed8796",
+        "peach": "#ef9f76",
+        "mauve": "#ca9ee6"
   },
   "blocks": [
     {
@@ -23,17 +26,8 @@
             "display_host": true
           },
           "style": "diamond",
-          "template": "\uf508 {{ .UserName }} <p:white>on</>",
+          "template": "\uf508 {{ .UserName }} <p:white>on <p:blue>\uF303 {{ .HostName}}</>",
           "type": "session"
-        },
-        {
-          "foreground": "p:lavender",
-          "properties": {
-            "time_format": "Monday <p:white>at</> 3:04 PM"
-          },
-          "style": "diamond",
-          "template": " <p:lavender>\uf5ef</> {{ .CurrentDate | date .Format }} ",
-          "type": "time"
         },
         {
           "foreground": "#ee79d1",
@@ -54,51 +48,12 @@
     {
       "alignment": "right",
       "segments": [
-        {
-          "foreground": "#a9ffb4",
-          "style": "plain",
-          "type": "text"
-        },
-        {
-          "foreground": "p:teal",
-          "properties": {
-            "style": "dallas",
-            "threshold": 0
-          },
-          "style": "diamond",
-          "template": "{{ .FormattedMs }}s <p:white>\uf85a</>",
-          "type": "executiontime"
-        },
-        {
-          "properties": {
-            "root_icon": "\uf292 "
-          },
-          "style": "diamond",
-          "template": " \uf0e7 ",
-          "type": "root"
-        },
-        {
-          "foreground": "#FFF89A",
-          "style": "diamond",
-          "template": " <p:white>CPU:</> {{ round .PhysicalPercentUsed .Precision }}% ",
-          "type": "sysinfo"
-        },
-        {
-          "foreground": "p:white",
-          "foreground_templates": [
-            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-            "{{if eq \"Discharging\" .State.String}}#e78284{{end}}",
-            "{{if eq \"Full\" .State.String}}#a6d189{{end}}"
-          ],
-          "properties": {
-            "charged_icon": "\ue22f ",
-            "charging_icon": "\ue234 ",
-            "discharging_icon": "\ue231 "
-          },
-          "style": "diamond",
-          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 ",
-          "type": "battery"
-        }
+      {
+        "type": "text",
+        "style": "plain",
+        "foreground": "#E06C75",
+        "template": "<p:yellow>󰮯  <p:red>\ue29b  <p:pink>\udb80\udea0  <p:red>\udb80\udea0  <p:peach>\udb80\udea0  <p:green>\udb80\udea0  <p:teal>\udb80\udea0  <p:blue>\udb80\udea0  <p:mauve>\udb80\udea0 "
+      }
       ],
       "type": "prompt"
     },
