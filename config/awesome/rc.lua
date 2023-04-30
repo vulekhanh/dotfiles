@@ -53,30 +53,6 @@ do
   end)
 end
 
--- }}}
-
--- {{{ Autostart windowless processes
-
--- This function will run once every time Awesome is started
---local function run_once(cmd_arr)
---  for _, cmd in ipairs(cmd_arr) do
---    awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
---  end
---end
---
---run_once({ "urxvtd", "unclutter -root" }) -- comma-separated entries
-
--- This function implements the XDG autostart specification
---[[
-awful.spawn.with_shell(
-    'if (xrdb -query | grep -q "^awesome\\.started:\\s*true$"); then exit; fi;' ..
-    'xrdb -merge <<< "awesome.started:true";' ..
-    -- list each of your autostart commands, followed by ; inside single quotes, followed by ..
-    'dex --environment Awesome --autostart --search-paths "$XDG_CONFIG_DIRS/autostart:$XDG_CONFIG_HOME/autostart"' -- https://github.com/jceb/dex
-)
---]]
--- }}}
-
 -- {{{ Variable definitions
 
 local themes                = {
@@ -96,8 +72,8 @@ local chosen_theme          = themes[5]
 local modkey                = "Mod4"
 local altkey                = "Mod1"
 local terminal              = "kitty"
-local vi_focus              = false            -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
-local cycle_prev            = true             -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
+local vi_focus              = false -- vi-like client focus https://github.com/lcpz/awesome-copycats/issues/275
+local cycle_prev            = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
 local editor                = os.getenv("EDITOR") or "nvim"
 local browser               = "firefox"
 
@@ -149,7 +125,8 @@ awful.util.tasklist_buttons = mytable.join(
   awful.button({}, 5, function() awful.client.focus.byidx(-1) end)
 )
 
-beautiful.init(string.format("%s/.config/awesome/themes/%s/theme-personal.lua", os.getenv("HOME"), chosen_theme))
+--beautiful.init(string.format("%s/.config/awesome/themes/%s/theme-personal.lua", os.getenv("HOME"), chosen_theme))
+beautiful.init(string.format("%s/.config/awesome/theme.lua", os.getenv("HOME")))
 
 -- }}}
 
