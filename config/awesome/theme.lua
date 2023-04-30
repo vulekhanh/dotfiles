@@ -154,7 +154,7 @@ local memory = lain.widget.mem({
 
 function theme.at_screen_connect(s)
   -- Quake application
-  s.quake = lain.util.quake({ app = awful.util.terminal })
+  --s.quake = lain.util.quake({ app = awful.util.terminal })
 
   -- If wallpaper is a function, call it with the screen
   local wallpaper = theme.wallpaper
@@ -166,8 +166,6 @@ function theme.at_screen_connect(s)
   -- Tags
   awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
 
-  -- Create a promptbox for each screen
-  s.mypromptbox = awful.widget.prompt()
   -- Create an imagebox widget which will contains an icon indicating which layout we're using.
   -- We need one layoutbox per screen.
   s.mylayoutbox = awful.widget.layoutbox(s)
@@ -179,9 +177,6 @@ function theme.at_screen_connect(s)
     awful.button({}, 5, function() awful.layout.inc(-1) end)))
   -- Create a taglist widget
   s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
-
-  -- Create a tasklist widget
-  s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
   -- Create the wibox
   -- The left one is for taglist, the other is resources widgets
@@ -204,7 +199,6 @@ function theme.at_screen_connect(s)
       layout = wibox.layout.fixed.horizontal,
       --s.mylayoutbox,
       s.mytaglist,
-      s.mypromptbox,
     },
     --s.mytasklist, -- Middle widget
     nil,
@@ -213,19 +207,19 @@ function theme.at_screen_connect(s)
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
       -- Network received
-      --wibox.container.margin({
-      --  { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#a9d598',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
-      ---- Network upload
-      --wibox.container.margin({
-      --  { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#e98599',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
+      wibox.container.margin({
+        { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
+        bottom = 2,
+        color = '#a9d598',
+        widget = wibox.container.margin,
+      }, 4, 4),
+      -- Network upload
+      wibox.container.margin({
+        { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
+        bottom = 2,
+        color = '#e98599',
+        widget = wibox.container.margin,
+      }, 4, 4),
       -- Volume control
       wibox.container.margin({
         { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
@@ -234,12 +228,12 @@ function theme.at_screen_connect(s)
         widget = wibox.container.margin,
       }, 4, 4),
       -- MEM info
-      --wibox.container.margin({
-      --  { memicon, memory.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#eacea2',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
+      wibox.container.margin({
+        { memicon, memory.widget, layout = wibox.layout.align.horizontal },
+        bottom = 2,
+        color = '#eacea2',
+        widget = wibox.container.margin,
+      }, 4, 4),
       -- Battery
       wibox.container.margin({
         { baticon, bat.widget, layout = wibox.layout.align.horizontal },
@@ -248,12 +242,12 @@ function theme.at_screen_connect(s)
         widget = wibox.container.margin,
       }, 4, 4),
       -- Temperature info
-      --wibox.container.margin({
-      --  { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#f4a683',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
+      wibox.container.margin({
+        { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
+        bottom = 2,
+        color = '#f4a683',
+        widget = wibox.container.margin,
+      }, 4, 4),
       -- Calendar
       wibox.container.margin({
         { symbol, mytextclock, layout = wibox.layout.align.horizontal },
