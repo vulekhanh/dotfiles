@@ -213,19 +213,19 @@ function theme.at_screen_connect(s)
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
       -- Network received
-      wibox.container.margin({
-        { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#a9d598',
-        widget = wibox.container.margin,
-      }, 4, 4),
-      -- Network upload
-      wibox.container.margin({
-        { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#e98599',
-        widget = wibox.container.margin,
-      }, 4, 4),
+      --wibox.container.margin({
+      --  { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#a9d598',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
+      ---- Network upload
+      --wibox.container.margin({
+      --  { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#e98599',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       -- Volume control
       wibox.container.margin({
         { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
