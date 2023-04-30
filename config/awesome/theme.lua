@@ -87,7 +87,7 @@ local markup                   = lain.util.markup
 -- Calendar
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local symbol = wibox.widget.imagebox(theme.widget_symbol)
-local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " %A %d %B "))
+local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " %H:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -107,19 +107,19 @@ local temp = lain.widget.temp({
   end
 })
 
--- Battery
-local baticon = wibox.widget.imagebox(theme.widget_batt)
-local bat = lain.widget.bat({
-  settings = function()
-    local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
-
-    if bat_now.ac_status == 1 then
-      perc = perc .. " plug"
-    end
-
-    widget:set_markup(markup.fontfg(theme.font, theme.pink, perc .. " "))
-  end
-})
+---- Battery
+--local baticon = wibox.widget.imagebox(theme.widget_batt)
+--local bat = lain.widget.bat({
+--  settings = function()
+--    local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
+--
+--    if bat_now.ac_status == 1 then
+--      perc = perc .. " plug"
+--    end
+--
+--    widget:set_markup(markup.fontfg(theme.font, theme.pink, perc .. " "))
+--  end
+--})
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
@@ -133,24 +133,24 @@ theme.volume = lain.widget.alsa({
   end
 })
 
--- Net
-local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
-local netdowninfo = wibox.widget.textbox()
-local netupicon = wibox.widget.imagebox(theme.widget_netup)
-local netupinfo = lain.widget.net({
-  settings = function()
-    widget:set_markup(markup.fontfg(theme.font, theme.red, net_now.sent .. " "))
-    netdowninfo:set_markup(markup.fontfg(theme.font, theme.green, net_now.received .. " "))
-  end
-})
-
--- MEM
-local memicon = wibox.widget.imagebox(theme.widget_mem)
-local memory = lain.widget.mem({
-  settings = function()
-    widget:set_markup(markup.fontfg(theme.font, theme.yellow, mem_now.used .. "M "))
-  end
-})
+---- Net
+--local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
+--local netdowninfo = wibox.widget.textbox()
+--local netupicon = wibox.widget.imagebox(theme.widget_netup)
+--local netupinfo = lain.widget.net({
+--  settings = function()
+--    widget:set_markup(markup.fontfg(theme.font, theme.red, net_now.sent .. " "))
+--    netdowninfo:set_markup(markup.fontfg(theme.font, theme.green, net_now.received .. " "))
+--  end
+--})
+--
+---- MEM
+--local memicon = wibox.widget.imagebox(theme.widget_mem)
+--local memory = lain.widget.mem({
+--  settings = function()
+--    widget:set_markup(markup.fontfg(theme.font, theme.yellow, mem_now.used .. "M "))
+--  end
+--})
 
 function theme.at_screen_connect(s)
   -- Quake application
@@ -206,20 +206,20 @@ function theme.at_screen_connect(s)
       -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
-      -- Network received
-      wibox.container.margin({
-        { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#a9d598',
-        widget = wibox.container.margin,
-      }, 4, 4),
-      -- Network upload
-      wibox.container.margin({
-        { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#e98599',
-        widget = wibox.container.margin,
-      }, 4, 4),
+      ---- Network received
+      --wibox.container.margin({
+      --  { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#a9d598',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
+      ---- Network upload
+      --wibox.container.margin({
+      --  { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#e98599',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       -- Volume control
       wibox.container.margin({
         { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
@@ -227,20 +227,20 @@ function theme.at_screen_connect(s)
         color = '#7ebfe3',
         widget = wibox.container.margin,
       }, 4, 4),
-      -- MEM info
-      wibox.container.margin({
-        { memicon, memory.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#eacea2',
-        widget = wibox.container.margin,
-      }, 4, 4),
-      -- Battery
-      wibox.container.margin({
-        { baticon, bat.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#f5c2e7',
-        widget = wibox.container.margin,
-      }, 4, 4),
+      ---- MEM info
+      --wibox.container.margin({
+      --  { memicon, memory.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#eacea2',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
+      ---- Battery
+      --wibox.container.margin({
+      --  { baticon, bat.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#f5c2e7',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       -- Temperature info
       wibox.container.margin({
         { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
@@ -248,7 +248,7 @@ function theme.at_screen_connect(s)
         color = '#f4a683',
         widget = wibox.container.margin,
       }, 4, 4),
-      -- Calendar
+      -- Date widget
       wibox.container.margin({
         { symbol, mytextclock, layout = wibox.layout.align.horizontal },
         bottom = 2,
