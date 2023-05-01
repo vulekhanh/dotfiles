@@ -349,8 +349,6 @@ globalkeys = mytable.join(
     { description = "app launcher", group = "launcher" }),
   awful.key({ modkey }, "x", function() os.execute(string.format("$HOME/.config/rofi/bin/runner")) end,
     { description = "execute prompt", group = "launcher" }),
-  awful.key({ modkey }, "p", function() os.execute(string.format("$HOME/.config/rofi/bin/powermenu")) end,
-    { description = "powermenu", group = "launcher" }),
   awful.key({ modkey, "Shift" }, "s", function() os.execute(string.format("$HOME/.config/rofi/bin/screenshot")) end,
     { description = "screenshot", group = "launcher" })
 --[[
