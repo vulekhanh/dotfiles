@@ -18,13 +18,13 @@ proc drawInfo*(asciiArt: bool) =
     # (fgRed, nitchLogo)
 
   const  # icons before cotegores
-    userIcon   = " "  # recomended: " " or "|>"
-    hnameIcon  = " "  # recomended: " " or "|>"
-    distroIcon = " "  # recomended: " " or "|>"
-    kernelIcon = " "  # recomended: " " or "|>"
+    userIcon   = " "  # recomended: " " or "|>"
+    hnameIcon  = " "  # recomended: " " or "|>"
+    distroIcon = " "  # recomended: " " or "|>"
+    kernelIcon = " "  # recomended: " " or "|>"
     uptimeIcon = " "  # recomended: " " or "|>"
     shellIcon  = " "  # recomended: " " or "|>"
-    pkgsIcon   = " "  # recomended: " " or "|>"
+    pkgsIcon   = " "  # recomended: " " or "|>"
     ramIcon    = " "  # recomended: " " or "|>"
     pacman = "󰮯 "  # recomended: " " or "->"
     # please insert any char after the icon
@@ -37,7 +37,7 @@ proc drawInfo*(asciiArt: bool) =
 
   const  # categories
     userCat   = " user   │ "  # recomended: " user   │ "
-    hnameCat  = " hname  │ "  # recomended: " hname  │ "
+    hnameCat  = " laptop │ "  # recomended: " hname  │ "
     distroCat = " distro │ "  # recomended: " distro │ "
     kernelCat = " kernel │ "  # recomended: " kernel │ "-
     uptimeCat = " uptime │ "  # recomended: " uptime │ "
