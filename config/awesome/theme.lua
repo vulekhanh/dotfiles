@@ -9,19 +9,19 @@ local lain                     = require("lain")
 local awful                    = require("awful")
 local wibox                    = require("wibox")
 local dpi                      = require("beautiful.xresources").apply_dpi
-
 local os                       = os
 local my_table                 = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                    = {}
 theme.confdir                  = os.getenv("HOME") .. "/.config/awesome/"
 
 -- Widgets import
+local batteryarc_widget        = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local calendar_widget          = require("awesome-wm-widgets.calendar-widget.calendar")
 theme.wallpaper                = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 theme.font                     = "Terminus Heavy 10"
 theme.menu_bg_normal           = "#232634"
 theme.menu_bg_focus            = "#000000"
 theme.bg_normal                = "#303446"
-theme.bg_transparent           = "#30344600"
 theme.bg_focus                 = "#8aadf4"
 theme.bg_urgent                = "#000000"
 theme.fg_normal                = "#8aadf4"
@@ -40,15 +40,6 @@ theme.menu_fg_normal           = "#deb2ee"
 theme.menu_fg_focus            = "#ff8c00"
 theme.menu_bg_normal           = "#24273A"
 theme.menu_bg_focus            = "#8aadf4"
-theme.widget_temp              = theme.confdir .. "/icons/temp.png"
-theme.widget_uptime            = theme.confdir .. "/icons/ac.png"
-theme.widget_mem               = theme.confdir .. "/icons/mem.png"
-theme.widget_note              = theme.confdir .. "/icons/note.png"
-theme.widget_note_on           = theme.confdir .. "/icons/note_on.png"
-theme.widget_netdown           = theme.confdir .. "/icons/net_down.png"
-theme.widget_netup             = theme.confdir .. "/icons/net_up.png"
-theme.widget_batt              = theme.confdir .. "/icons/bat.png"
-theme.widget_symbol            = theme.confdir .. "/icons/octocat.png"
 theme.widget_vol               = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel      = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel    = theme.confdir .. "/icons/square_b.png"
@@ -84,46 +75,9 @@ theme.lavender                 = "#babbf1"
 theme.white                    = "#c6d0f5"
 local markup                   = lain.util.markup
 
--- Calendar
-os.setlocale(os.getenv("LANG")) -- to localize the clock
-local symbol = wibox.widget.imagebox(theme.widget_symbol)
-local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, " %H:%M "))
-mytextclock.font = theme.font
-
--- Calendar
-theme.cal = lain.widget.cal({
-  attach_to = { mytextclock },
-  notification_preset = {
-    font = "Terminus Heavy 10",
-    fg   = theme.fg_normal,
-    bg   = theme.bg_normal
-  }
-})
--- Coretemp
---local tempicon = wibox.widget.imagebox(theme.widget_temp)
---local temp = lain.widget.temp({
---  settings = function()
---    widget:set_markup(markup.fontfg(theme.font, theme.maroon, coretemp_now .. "°C "))
---  end
---})
-
----- Battery
---local baticon = wibox.widget.imagebox(theme.widget_batt)
---local bat = lain.widget.bat({
---  settings = function()
---    local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
---
---    if bat_now.ac_status == 1 then
---      perc = perc .. " plug"
---    end
---
---    widget:set_markup(markup.fontfg(theme.font, theme.pink, perc .. " "))
---  end
---})
-
 -- ALSA volume
-local volicon = wibox.widget.imagebox(theme.widget_vol)
-theme.volume = lain.widget.alsa({
+local volicon                  = wibox.widget.imagebox(theme.widget_vol)
+theme.volume                   = lain.widget.alsa({
   settings = function()
     if volume_now.status == "off" then
       volume_now.level = volume_now.level .. "M"
@@ -133,25 +87,21 @@ theme.volume = lain.widget.alsa({
   end
 })
 
----- Net
---local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
---local netdowninfo = wibox.widget.textbox()
---local netupicon = wibox.widget.imagebox(theme.widget_netup)
---local netupinfo = lain.widget.net({
---  settings = function()
---    widget:set_markup(markup.fontfg(theme.font, theme.red, net_now.sent .. " "))
---    netdowninfo:set_markup(markup.fontfg(theme.font, theme.green, net_now.received .. " "))
---  end
---})
---
----- MEM
---local memicon = wibox.widget.imagebox(theme.widget_mem)
---local memory = lain.widget.mem({
---  settings = function()
---    widget:set_markup(markup.fontfg(theme.font, theme.yellow, mem_now.used .. "M "))
---  end
---})
-
+--Calendar
+local mytextclock              = wibox.widget.textclock()
+local cw                       = calendar_widget({
+  theme = 'outrun',
+  placement = 'top_right',
+  start_sunday = true,
+  radius = 8,
+  -- with customized next/previous (see table above)
+  previous_month_button = 1,
+  next_month_button = 3,
+})
+mytextclock:connect_signal("button::press",
+  function(_, _, _, button)
+    if button == 1 then cw.toggle() end
+  end)
 function theme.at_screen_connect(s)
   -- Quake application
   --s.quake = lain.util.quake({ app = awful.util.terminal })
@@ -183,16 +133,20 @@ function theme.at_screen_connect(s)
     position = "top",
     screen = s,
     height = dpi(23),
+    width = dpi(1900),
+    border_width = 3,
+    border_color = theme.blue,
     bg = theme.bg_normal,
     fg = theme.fg_normal
   })
+  s.mywibox.x = 6
   s.mywibox.y = 3
 
   s.mypopup = awful.popup {
     widget  = {
       {
         {
-          forced_height = dpi(15),
+          forced_height = dpi(17),
           forced_width  = 200,
           widget        = s.mytaglist
         },
@@ -204,7 +158,7 @@ function theme.at_screen_connect(s)
     --border_color = theme.blue,
     --border_width = 3,
     x       = dpi(1920 / 2 - 100),
-    y       = 4,
+    y       = dpi(5.5),
     shape   = gears.shape.rounded_rect,
     ontop   = true,
     visible = true,
@@ -224,53 +178,20 @@ function theme.at_screen_connect(s)
       -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
-      ---- Network received
-      --wibox.container.margin({
-      --  { netdownicon, netdowninfo, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#a9d598',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
-      ---- Network upload
-      --wibox.container.margin({
-      --  { netupicon, netupinfo.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#e98599',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
-      -- Volume control
       wibox.container.margin({
         { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#7ebfe3',
         widget = wibox.container.margin,
       }, 4, 4),
-      ---- MEM info
-      --wibox.container.margin({
-      --  { memicon, memory.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#eacea2',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
-      ---- Battery
-      --wibox.container.margin({
-      --  { baticon, bat.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#f5c2e7',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
-      -- Temperature info
-      --wibox.container.margin({
-      --  { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
-      --  bottom = 2,
-      --  color = '#f4a683',
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
+
+      --battery_widget
+      wibox.container.margin({
+        { batteryarc_widget, layout = wibox.layout.align.horizontal },
+        widget = wibox.container.margin,
+      }, 4, 4),
+
       -- Date widget
       wibox.container.margin({
-        { symbol, mytextclock, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = theme.fg_normal,
+        { mytextclock, layout = wibox.layout.align.horizontal },
         widget = wibox.container.margin,
       }, 4, 4),
 
