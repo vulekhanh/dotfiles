@@ -333,21 +333,13 @@ globalkeys = mytable.join(
     { description = "run browser", group = "launcher" }),
   -- alternatively use rofi, a dmenu-like application with more features
   -- check https://github.com/DaveDavenport/rofi for more details
-  --awful.key({ modkey }, "r", function()
-  --    os.execute(string.format("rofi -show %s",
-  --      'drun'))
-  --  end,
-  --  { description = "app launcher", group = "launcher" })
-
   --rofi
   awful.key({ modkey }, "r", function()
-      os.execute(string.format("$HOME/.config/rofi/bin/launcher"))
+      os.execute(string.format("rofi -show %s",
+        'drun'))
     end,
-    { description = "app launcher", group = "launcher" }),
-  awful.key({ modkey }, "x", function() os.execute(string.format("$HOME/.config/rofi/bin/runner")) end,
-    { description = "execute prompt", group = "launcher" }),
-  awful.key({ modkey, "Shift" }, "s", function() os.execute(string.format("$HOME/.config/rofi/bin/screenshot")) end,
-    { description = "screenshot", group = "launcher" })
+    { description = "app launcher", group = "launcher" })
+
 --[[
   awful.key({ modkey }, "x",
               function ()
