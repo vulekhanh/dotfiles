@@ -188,7 +188,7 @@ function theme.at_screen_connect(s)
   })
   s.mywibox.y = 3
 
-  s.mid_widget = awful.popup {
+  s.mypopup = awful.popup {
     widget  = {
       {
         {
