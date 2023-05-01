@@ -26,8 +26,9 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - Btop++ - Resource monitor
 ![Screenshot_20230427_134505](https://user-images.githubusercontent.com/61068720/234781677-5b196fd5-d7d1-4405-ac93-1936f6f146a0.png)
 
-- Current workspace
-![Screenshot_2023-05-01-02-12-36_1920x1080](https://user-images.githubusercontent.com/61068720/235372049-0ed93785-67d2-4bcd-8bd6-7c1f63d907b4.png)
+- Latest version
+![Screenshot_2023-05-02-02-40-45_1920x1080](https://user-images.githubusercontent.com/61068720/235518690-e8f664c8-b3ef-4534-8b31-bf57119279fb.png)
+
 
 
 ## Contributors
