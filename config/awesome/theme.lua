@@ -100,12 +100,12 @@ theme.cal = lain.widget.cal({
   }
 })
 -- Coretemp
-local tempicon = wibox.widget.imagebox(theme.widget_temp)
-local temp = lain.widget.temp({
-  settings = function()
-    widget:set_markup(markup.fontfg(theme.font, theme.maroon, coretemp_now .. "°C "))
-  end
-})
+--local tempicon = wibox.widget.imagebox(theme.widget_temp)
+--local temp = lain.widget.temp({
+--  settings = function()
+--    widget:set_markup(markup.fontfg(theme.font, theme.maroon, coretemp_now .. "°C "))
+--  end
+--})
 
 ---- Battery
 --local baticon = wibox.widget.imagebox(theme.widget_batt)
@@ -179,26 +179,44 @@ function theme.at_screen_connect(s)
   s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
   -- Create the wibox
-  -- The left one is for taglist, the other is resources widgets
   s.mywibox = awful.wibox({
     position = "top",
     screen = s,
     height = dpi(23),
-    width = dpi(1908),
     bg = theme.bg_normal,
     fg = theme.fg_normal
   })
-  s.mywibox.x = 6
   s.mywibox.y = 3
 
+  s.mid_widget = awful.popup {
+    widget  = {
+      {
+        {
+          forced_height = dpi(15),
+          forced_width  = 200,
+          widget        = s.mytaglist
+        },
+        layout = wibox.layout.fixed.vertical,
+      },
+      margins = 3,
+      widget  = wibox.container.margin
+    },
+    --border_color = theme.blue,
+    --border_width = 3,
+    x       = dpi(1920 / 2 - 100),
+    y       = 4,
+    shape   = gears.shape.rounded_rect,
+    ontop   = true,
+    visible = true,
+  }
   -- Add widgets to the wibox
   s.mywibox:setup {
     layout = wibox.layout.align.horizontal,
     {
       -- Left widgets
       layout = wibox.layout.fixed.horizontal,
-      --s.mylayoutbox,
-      s.mytaglist,
+      s.mylayoutbox,
+      --s.mytaglist,
     },
     --s.mytasklist, -- Middle widget
     nil,
@@ -242,12 +260,12 @@ function theme.at_screen_connect(s)
       --  widget = wibox.container.margin,
       --}, 4, 4),
       -- Temperature info
-      wibox.container.margin({
-        { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
-        bottom = 2,
-        color = '#f4a683',
-        widget = wibox.container.margin,
-      }, 4, 4),
+      --wibox.container.margin({
+      --  { tempicon, temp.widget, layout = wibox.layout.align.horizontal },
+      --  bottom = 2,
+      --  color = '#f4a683',
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       -- Date widget
       wibox.container.margin({
         { symbol, mytextclock, layout = wibox.layout.align.horizontal },
