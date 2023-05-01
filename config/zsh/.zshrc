@@ -106,5 +106,6 @@ export PATH="/home/$USER/.local/bin:$PATH"
 alias ls='exa --icons'
 alias cat='bat'
 alias lg='lazygit'
+alias sn='shutdown now'
 eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/vulekhanh/dotfiles/master/themes/1s_catppuccin_hybrid.omp.json')"
 nitch
