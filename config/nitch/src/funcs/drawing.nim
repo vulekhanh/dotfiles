@@ -30,7 +30,13 @@ proc drawInfo*(asciiArt: bool) =
     # please insert any char after the icon
     # to avoid the bug with cropping the edge of the icon
 
-    ghostIcon = "󰊠 "  # recomended: "" or "■"
+    tux = " "
+    arch = " "
+    debian = " "
+    alma= " "
+    fedora = " "
+    opensuse = " "
+    kali = " "
     specIcon = " "
     pointer = "► "
     # icon for demonstrate colors
@@ -83,6 +89,6 @@ proc drawInfo*(asciiArt: bool) =
     stdout.styledWrite("  │ ", color6, shellIcon, color0, shellCat, color6, pointer, color6, shellInfo, color0, "\n")
     stdout.styledWrite("  │ ", color1, pkgsIcon, color0, pkgsCat, color1, pointer, color1, pkgsInfo, color0, "\n")
     stdout.styledWrite("  ├───────────┤\n")
-    stdout.styledWrite("  │ ", color0, specIcon, color0, specCat, color2, pacman," ", color7, ghostIcon, " ", color1, ghostIcon, " ", color3, ghostIcon, " ", color4, ghostIcon, " ", color5, ghostIcon, " ", color6, ghostIcon, " ", color0, "\n")
+    stdout.styledWrite("  │ ", color0, specIcon, color0, specCat, color2, tux," ", color7, kali, " ", color1, debian, " ", color3, opensuse, " ", color4, fedora, " ", color5, arch, " ", color6, alma, " ", color0, "\n")
     stdout.styledWrite("  ╰───────────╯\n\n")
     stdout.styledWrite("《·───────────────·》◈《·──────────────·》\n\n")
