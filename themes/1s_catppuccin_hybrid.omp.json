@@ -26,7 +26,7 @@
             "display_host": true
           },
           "style": "diamond",
-          "template": "\uf508 {{ .UserName }} <p:white>on <p:blue>\uF303 {{ .HostName}}</>",
+          "template": "\uebc6 {{ .UserName }} <p:white>on <p:blue>\uF303 {{ .HostName}}</>",
           "type": "session"
         },
         {
@@ -66,12 +66,12 @@
           "leading_diamond": "<p:blue> \ue285 </><#ffafd2>{</>",
           "properties": {
             "folder_icon": "\uf07b",
-            "folder_separator_icon": "\uf9e0",
+            "folder_separator_icon": "  ",
             "home_icon": "home",
             "style": "agnoster_full"
           },
           "style": "diamond",
-          "template": " \ue5ff {{ .Path }} ",
+          "template": "  {{ .Path }} ",
           "trailing_diamond": "<#ffafd2>}</>",
           "type": "path"
         },
