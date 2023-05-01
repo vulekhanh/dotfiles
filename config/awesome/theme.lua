@@ -88,7 +88,8 @@ theme.volume                   = lain.widget.alsa({
 })
 
 --Calendar
-local mytextclock              = wibox.widget.textclock()
+local mytextclock              = wibox.widget.textclock('<span color="#8aadf4" font="Terminus Heavy 10"> %H %M </span>',
+  5)
 local cw                       = calendar_widget({
   theme = 'outrun',
   placement = 'top_right',
