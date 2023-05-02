@@ -5,7 +5,6 @@
 
 --]]
 local gears                    = require("gears")
-local lain                     = require("lain")
 local awful                    = require("awful")
 local wibox                    = require("wibox")
 local dpi                      = require("beautiful.xresources").apply_dpi
@@ -16,6 +15,10 @@ theme.confdir                  = os.getenv("HOME") .. "/.config/awesome/"
 
 -- Widgets import
 local batteryarc_widget        = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local net_speed_widget         = require("awesome-wm-widgets.net-speed-widget.net-speed")
+local volume_widget            = require('awesome-wm-widgets.volume-widget.volume')
+
+--Defining theme
 theme.wallpaper                = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 theme.font                     = "Terminus Heavy 10"
 theme.menu_bg_normal           = "#232634"
@@ -72,19 +75,6 @@ theme.sapphire                 = "#85c1dc"
 theme.blue                     = theme.fg_normal
 theme.lavender                 = "#babbf1"
 theme.white                    = "#c6d0f5"
-local markup                   = lain.util.markup
-
--- ALSA volume
-local volicon                  = wibox.widget.imagebox(theme.widget_vol)
-theme.volume                   = lain.widget.alsa({
-  settings = function()
-    if volume_now.status == "off" then
-      volume_now.level = volume_now.level .. "M"
-    end
-
-    widget:set_markup(markup.fontfg(theme.font, theme.cyan, volume_now.level .. "% "))
-  end
-})
 
 --Calendar
 local mytextclock              = wibox.widget.textclock(
@@ -166,14 +156,39 @@ function theme.at_screen_connect(s)
       -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
+      -- Net widgets
       wibox.container.margin({
-        { volicon, theme.volume.widget, layout = wibox.layout.align.horizontal },
+        { net_speed_widget(), layout = wibox.layout.align.horizontal },
+        widget = wibox.container.margin,
+      }, 4, 4),
+      --volume
+      wibox.container.margin({
+        {
+          volume_widget({
+            step = 2,
+          }),
+          layout = wibox.layout.align.horizontal
+        },
         widget = wibox.container.margin,
       }, 4, 4),
 
       --battery_widget
       wibox.container.margin({
-        { batteryarc_widget, layout = wibox.layout.align.horizontal },
+        {
+          batteryarc_widget({
+            arc_thickness = 2,
+            low_level_color = theme.red,
+            medium_level_color = theme.yellow,
+            charging_color = theme.green,
+            main_color = theme.blue,
+            warning_msg_title = 'Houston, we have a problem!',
+            warning_msg_text = 'Battery is f*cking dying!',
+            warning_msg_position = 'top_right',
+            enable_battery_warning = true,
+            size = 20,
+          }),
+          layout = wibox.layout.align.horizontal
+        },
         widget = wibox.container.margin,
       }, 4, 4),
 
