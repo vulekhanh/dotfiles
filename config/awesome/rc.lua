@@ -61,7 +61,7 @@ local vi_focus              = false -- vi-like client focus https://github.com/l
 local cycle_prev            = true  -- cycle with only the previously focused client or all https://github.com/lcpz/awesome-copycats/issues/274
 local editor                = os.getenv("EDITOR") or "nvim"
 local browser               = "firefox"
-
+local multi_monitor         = "arandr"
 awful.util.terminal         = terminal
 awful.util.tagnames         = { " 󰍹 ", " 󰈹 ", "  ", "  ", "  ", "  " }
 awful.layout.layouts        = {
@@ -305,14 +305,18 @@ globalkeys = mytable.join(
   -- User programs
   awful.key({ modkey }, "q", function() awful.spawn(browser) end,
     { description = "run browser", group = "launcher" }),
-  -- alternatively use rofi, a dmenu-like application with more features
-  -- check https://github.com/DaveDavenport/rofi for more details
-  --rofi
   --awful.key({ modkey }, "r", function()
   --    os.execute(string.format("rofi -show %s",
   --      'drun'))
   --  end,
   --  { description = "app launcher", group = "launcher" })
+  --multi monitor configuration - arandr
+  awful.key({ modkey }, "p", function()
+      awful.spawn(multi_monitor)
+    end,
+    { description = "toggle multi monitor", group = "launcher" }),
+
+  --rofi
   awful.key({ modkey }, "r", function()
       os.execute(string.format("$HOME/.config/rofi/bin/launcher"))
     end,
