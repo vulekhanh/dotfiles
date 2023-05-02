@@ -17,18 +17,10 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 
 ## Screenshots
 - Desktop preview
-![Screenshot_20230427_134947](https://user-images.githubusercontent.com/61068720/234782644-b9be706e-eef9-42a3-b736-3920bf7186df.png)
+![Screenshot_2023-05-02-10-48-57_1920x1080](https://user-images.githubusercontent.com/61068720/235718995-d3bd1bd9-53cc-45e7-b44f-ab0e184fd57a.png)
 
 - LunarVim with nitch, inspired by Catppuccin theme
-![Screenshot_20230427_135055](https://user-images.githubusercontent.com/61068720/234782826-e01ab641-e073-4261-bbbb-e51df7530687.png)
-
-
-- Btop++ - Resource monitor
-![Screenshot_20230427_134505](https://user-images.githubusercontent.com/61068720/234781677-5b196fd5-d7d1-4405-ac93-1936f6f146a0.png)
-
-- Latest version
-![Screenshot_2023-05-02-02-40-45_1920x1080](https://user-images.githubusercontent.com/61068720/235518690-e8f664c8-b3ef-4534-8b31-bf57119279fb.png)
-
+![Screenshot_2023-05-02-10-48-43_1920x1080](https://user-images.githubusercontent.com/61068720/235719073-25941152-3121-41b6-b869-a163c3523a5d.png)
 
 
 ## Contributors
