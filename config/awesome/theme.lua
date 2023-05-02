@@ -157,10 +157,11 @@ function theme.at_screen_connect(s)
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
       -- Net widgets
-      wibox.container.margin({
-        { net_speed_widget(), layout = wibox.layout.align.horizontal },
-        widget = wibox.container.margin,
-      }, 4, 4),
+      net_speed_widget(),
+      --wibox.container.margin({
+      --  { net_speed_widget(), layout = wibox.layout.align.horizontal },
+      --  widget = wibox.container.margin,
+      --}, 4, 4),
       --volume
       wibox.container.margin({
         {
