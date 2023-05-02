@@ -16,7 +16,6 @@ theme.confdir                  = os.getenv("HOME") .. "/.config/awesome/"
 
 -- Widgets import
 local batteryarc_widget        = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local calendar_widget          = require("awesome-wm-widgets.calendar-widget.calendar")
 theme.wallpaper                = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 theme.font                     = "Terminus Heavy 10"
 theme.menu_bg_normal           = "#232634"
@@ -88,21 +87,9 @@ theme.volume                   = lain.widget.alsa({
 })
 
 --Calendar
-local mytextclock              = wibox.widget.textclock('<span color="#8aadf4" font="Terminus Heavy 10"> %H %M </span>',
+local mytextclock              = wibox.widget.textclock(
+  '<span color="#8aadf4" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
-local cw                       = calendar_widget({
-  theme = 'outrun',
-  placement = 'top_right',
-  start_sunday = true,
-  radius = 8,
-  -- with customized next/previous (see table above)
-  previous_month_button = 1,
-  next_month_button = 3,
-})
-mytextclock:connect_signal("button::press",
-  function(_, _, _, button)
-    if button == 1 then cw.toggle() end
-  end)
 function theme.at_screen_connect(s)
   -- Quake application
   --s.quake = lain.util.quake({ app = awful.util.terminal })
