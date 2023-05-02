@@ -14,11 +14,11 @@ echo "Installing Packages"
 sudo pacman -Syu
 
 # install fonts for rendering glyphs, dependencies for lunarVim, git utilities, bluetooth, audio
-sudo pacman -S ttf-firacode-nerd ttf-droid git pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware pipewire-audio pipewire-alsa pipewire-pulse bluez lxappearance maim xdotool xclip --needed
+sudo pacman -S ttf-firacode-nerd ttf-droid git pacman-contrib python-pynvim nodejs npm exa bat unzip lazygit nim alsa-utils alsa-firmware bluez lxappearance maim xdotool xclip pulseaudio pulseaudio-alsa pulseaudio-bluetooth --needed
 
 # Yay installation
 if which yay >/dev/null; then
-  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli starship ranger qimgv candy-icons-git --needed
+  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli ranger qimgv candy-icons-git p7zip --needed
 else
   echo "yay not found!"
   read -p "Do you want to build yay from source? [y/N] " yn
@@ -85,4 +85,6 @@ else
     nvimInstaller
   fi
 fi
-
+# Awesome-wm-widget
+git clone https://github.com/streetturtle/awesome-wm-widgets.git
+mv awesome-wm-widgets ~/.config/awesome/
