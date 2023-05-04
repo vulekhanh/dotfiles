@@ -15,9 +15,7 @@ theme.confdir                  = os.getenv("HOME") .. "/.config/awesome/"
 
 -- Widgets import
 local batteryarc_widget        = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local net_speed_widget         = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local volume_widget            = require('awesome-wm-widgets.volume-widget.volume')
-
 --Defining theme
 theme.wallpaper                = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 theme.font                     = "Terminus Heavy 10"
@@ -156,12 +154,7 @@ function theme.at_screen_connect(s)
       -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
-      -- Net widgets
-      net_speed_widget(),
-      --wibox.container.margin({
-      --  { net_speed_widget(), layout = wibox.layout.align.horizontal },
-      --  widget = wibox.container.margin,
-      --}, 4, 4),
+
       --volume
       wibox.container.margin({
         {
@@ -198,7 +191,6 @@ function theme.at_screen_connect(s)
         { mytextclock, layout = wibox.layout.align.horizontal },
         widget = wibox.container.margin,
       }, 4, 4),
-
     },
   }
 end
