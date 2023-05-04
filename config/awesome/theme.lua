@@ -40,7 +40,6 @@ theme.menu_fg_normal           = "#deb2ee"
 theme.menu_fg_focus            = "#ff8c00"
 theme.menu_bg_normal           = "#24273A"
 theme.menu_bg_focus            = "#8aadf4"
-theme.widget_vol               = theme.confdir .. "/icons/spkr.png"
 theme.taglist_squares_sel      = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel    = theme.confdir .. "/icons/square_b.png"
 theme.tasklist_plain_task_name = true
@@ -117,28 +116,6 @@ function theme.at_screen_connect(s)
   })
   s.mywibox.x = 6
   s.mywibox.y = 3
-
-  s.mypopup = awful.popup {
-    widget  = {
-      {
-        {
-          forced_height = dpi(17),
-          forced_width  = 200,
-          widget        = s.mytaglist
-        },
-        layout = wibox.layout.fixed.vertical,
-      },
-      margins = 3,
-      widget  = wibox.container.margin
-    },
-    --border_color = theme.blue,
-    --border_width = 3,
-    x       = dpi(1920 / 2 - 100),
-    y       = dpi(5.5),
-    shape   = gears.shape.rounded_rect,
-    ontop   = true,
-    visible = true,
-  }
   -- Add widgets to the wibox
   s.mywibox:setup {
     layout = wibox.layout.align.horizontal,
@@ -149,7 +126,10 @@ function theme.at_screen_connect(s)
       --s.mytaglist,
     },
     --s.mytasklist, -- Middle widget
-    nil,
+    wibox.container.margin({
+      { s.mytaglist, layout = wibox.layout.align.horizontal },
+      widget = wibox.container.margin,
+    }, dpi(1920 / 2 - 140), 4),
     {
       -- Right widgets
       layout = wibox.layout.fixed.horizontal,
