@@ -63,7 +63,7 @@ local editor                = os.getenv("EDITOR") or "nvim"
 local browser               = "firefox"
 local multi_monitor         = "arandr"
 awful.util.terminal         = terminal
-awful.util.tagnames         = { " 󰍹 ", " 󰈹 ", "  ", "  ", "  ", "  " }
+awful.util.tagnames         = { " 󰍹 ", " 󰈹 ", "  ", "  ", "  ", "  " }
 awful.layout.layouts        = {
   awful.layout.suit.tile,
   awful.layout.suit.spiral,
