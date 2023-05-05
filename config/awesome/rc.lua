@@ -244,9 +244,6 @@ globalkeys = mytable.join(
   awful.key({ modkey }, "b", function()
       for s in screen do
         s.mywibox.visible = not s.mywibox.visible
-        if s.mybottomwibox then
-          s.mybottomwibox.visible = not s.mybottomwibox.visible
-        end
       end
     end,
     { description = "toggle wibox", group = "awesome" }),
@@ -300,6 +297,11 @@ globalkeys = mytable.join(
     end,
     { description = "volume 0%", group = "hotkeys" }),
 
+  -- Screen brightness
+  awful.key({ modkey }, ";", function() os.execute("brightnessctl -q set 10%+") end,
+    { description = "+10%", group = "hotkeys" }),
+  awful.key({ modkey, "Shift" }, ";", function() os.execute("brightnessctl -q set 10%-") end,
+    { description = "-10%", group = "hotkeys" }),
   -- User programs
   awful.key({ modkey }, "q", function() awful.spawn(browser) end,
     { description = "run browser", group = "launcher" }),
