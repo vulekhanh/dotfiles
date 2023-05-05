@@ -75,7 +75,7 @@ theme.white                    = "#c6d0f5"
 
 --Clock
 local mytextclock              = wibox.widget.textclock(
-  '<span color="#8aadf4" font="Terminus Heavy 10"> %d %B %H %M </span>',
+  '<span color="#e5c890" font="Terminus Heavy 10"> %H %M </span>',
   5)
 
 function theme.at_screen_connect(s)
@@ -140,6 +140,12 @@ function theme.at_screen_connect(s)
       wibox.container.margin({
         {
           volume_widget({
+            widget_type = 'horizontal_bar',
+            with_icon = true,
+            main_color = theme.green,
+            mute_color = theme.peach,
+            bg_color = '#ffffff55',
+            width = dpi(50),
             step = 2,
           }),
           layout = wibox.layout.align.horizontal
@@ -155,7 +161,7 @@ function theme.at_screen_connect(s)
             low_level_color = theme.red,
             medium_level_color = theme.yellow,
             charging_color = theme.green,
-            main_color = theme.blue,
+            main_color = theme.cyan,
             warning_msg_title = 'Houston, we have a problem!',
             warning_msg_text = 'Battery is f*cking dying!',
             warning_msg_position = 'top_right',
