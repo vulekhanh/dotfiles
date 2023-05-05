@@ -18,7 +18,7 @@ sudo pacman -S ttf-firacode-nerd ttf-droid git pacman-contrib python-pynvim node
 
 # Yay installation
 if which yay >/dev/null; then
-  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli ranger qimgv candy-icons-git p7zip --needed
+  yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli ranger qimgv candy-icons-git p7zip lazydocker --needed
 else
   echo "yay not found!"
   read -p "Do you want to build yay from source? [y/N] " yn
