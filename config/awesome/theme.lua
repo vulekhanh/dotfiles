@@ -73,10 +73,11 @@ theme.blue                     = theme.fg_normal
 theme.lavender                 = "#babbf1"
 theme.white                    = "#c6d0f5"
 
---Calendar
+--Clock
 local mytextclock              = wibox.widget.textclock(
   '<span color="#8aadf4" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
+
 function theme.at_screen_connect(s)
   -- Quake application
   --s.quake = lain.util.quake({ app = awful.util.terminal })
