@@ -9,16 +9,17 @@ local awful = require("awful")
 local dpi   = require("beautiful.xresources").apply_dpi
 require("awful.autofocus")
 -- Widget and layout library
-local wibox             = require("wibox")
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
+local wibox              = require("wibox")
+local batteryarc_widget  = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget      = require('awesome-wm-widgets.volume-widget.volume')
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 -- Theme handling library
-local beautiful         = require("beautiful")
+local beautiful          = require("beautiful")
 -- Notification library
-local naughty           = require("naughty")
+local naughty            = require("naughty")
 -- Declarative object management
-local ruled             = require("ruled")
-local hotkeys_popup     = require("awful.hotkeys_popup")
+local ruled              = require("ruled")
+local hotkeys_popup      = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -121,6 +122,7 @@ tag.connect_signal("request::default_layouts", function()
     awful.layout.suit.tile,
     awful.layout.suit.spiral,
     awful.layout.suit.fair,
+    awful.layout.suit.floating,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
@@ -209,33 +211,42 @@ screen.connect_signal("request::desktop_decoration", function(s)
   s.mywibox = awful.wibar {
     position     = "top",
     screen       = s,
-    height       = dpi(23),
+    height       = dpi(21),
     border_width = 3,
     border_color = "#8aadf4",
     bg           = "#303446",
     fg           = "#8aadf4",
     widget       = {
       layout = wibox.layout.align.horizontal,
+      expand = "none",
       {
         -- Left widgets
         layout = wibox.layout.fixed.horizontal,
         s.mylayoutbox,
       },
       -- Middle widget
-      wibox.container.margin({
-        { s.mytaglist, layout = wibox.layout.align.horizontal },
-        widget = wibox.container.margin,
-      }, dpi(1920 / 2 - 130), 4),
+      s.mytaglist,
       {
         -- Right widgets
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
+        -- logout menu widget
+        wibox.container.margin({
+          {
+            logout_menu_widget {
+              font = 'Terminus Heavy 9',
+            },
+            layout = wibox.layout.align.horizontal
+          },
+          widget = wibox.container.margin,
+        }, 4, 0),
         -- keyboardlayout widget
         wibox.container.margin({
           { mykeyboardlayout, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
         }, 4, 4),
-        --volume
+
+        --Volume widget
         wibox.container.margin({
           {
             volume_widget({
@@ -617,10 +628,10 @@ ruled.client.connect_signal("request::rules", function()
   }
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
-  -- ruled.client.append_rule {
-  --     rule       = { class = "Firefox"     },
-  --     properties = { screen = 1, tag = "2" }
-  -- }
+  --ruled.client.append_rule {
+  --  rule       = { class = "firefox" },
+  --  properties = { screen = 1, tag = "2" }
+  --}
 end)
 -- }}}
 

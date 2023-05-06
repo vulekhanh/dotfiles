@@ -69,7 +69,7 @@ theme.menu_width        = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
+theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.png"
 
 -- You can use your own layout icons like this:
 theme.layout_tile       = theme.confdir .. "/icons/tile.png"
