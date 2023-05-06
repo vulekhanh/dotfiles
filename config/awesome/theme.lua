@@ -24,7 +24,7 @@ theme.fg_focus              = "#24273A"
 theme.fg_urgent             = "#af1d18"
 theme.fg_minimize           = "#ffffff"
 theme.border_width          = dpi(3)
-theme.useless_gap           = dpi(5)
+theme.useless_gap           = dpi(4)
 theme.border_normal         = "#ffffff"
 theme.border_focus          = "#8caaee"
 theme.border_marked         = "#3ca4d8"
@@ -84,7 +84,7 @@ theme.menu_width        = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper         = themes_path .. "default/background.png"
+theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_tile       = theme.confdir .. "/icons/tile.png"

@@ -6,16 +6,19 @@ pcall(require, "luarocks.loader")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
+local dpi   = require("beautiful.xresources").apply_dpi
 require("awful.autofocus")
 -- Widget and layout library
-local wibox = require("wibox")
+local wibox             = require("wibox")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
 -- Theme handling library
-local beautiful = require("beautiful")
+local beautiful         = require("beautiful")
 -- Notification library
-local naughty = require("naughty")
+local naughty           = require("naughty")
 -- Declarative object management
-local ruled = require("ruled")
-local hotkeys_popup = require("awful.hotkeys_popup")
+local ruled             = require("ruled")
+local hotkeys_popup     = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -54,6 +57,23 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/theme.lua")
+-- Catppuccin color palette
+local catppuccin    = {
+  pink     = "#f4b8e4",
+  mauve    = "#ca9ee6",
+  red      = "#e78284",
+  maroon   = "#ea999c",
+  peach    = "#ef9f76",
+  yellow   = "#e5c890",
+  green    = "#a6d189",
+  teal     = "#81c8be",
+  cyan     = "#7ebfe3",
+  sky      = "#99d1db",
+  sapphire = "#85c1dc",
+  blue     = "#8aadf4",
+  lavender = "#babbf1",
+  white    = "#c6d0f5",
+}
 
 -- This is used later as the default terminal and editor to run.
 local modkey        = "Mod4"
@@ -138,12 +158,14 @@ end)
 -- }}}
 
 -- {{{ Wibar
-
+--
 -- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
+mykeyboardlayout  = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+local mytextclock = wibox.widget.textclock(
+  '<span color="#e5c890" font="Terminus Heavy 10"> %H %M </span>',
+  5)
 
 screen.connect_signal("request::desktop_decoration", function(s)
   -- Each screen has its own tag table.
@@ -185,25 +207,76 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
   -- Create the wibox
   s.mywibox = awful.wibar {
-    position = "top",
-    screen   = s,
-    widget   = {
+    position     = "top",
+    screen       = s,
+    height       = dpi(23),
+    border_width = 3,
+    border_color = "#8aadf4",
+    bg           = "#303446",
+    fg           = "#8aadf4",
+    widget       = {
       layout = wibox.layout.align.horizontal,
       {
         -- Left widgets
         layout = wibox.layout.fixed.horizontal,
-        mylauncher,
-        s.mytaglist,
+        s.mylayoutbox,
       },
       -- Middle widget
-      nil,
+      wibox.container.margin({
+        { s.mytaglist, layout = wibox.layout.align.horizontal },
+        widget = wibox.container.margin,
+      }, dpi(1920 / 2 - 130), 4),
       {
         -- Right widgets
         layout = wibox.layout.fixed.horizontal,
-        mykeyboardlayout,
         wibox.widget.systray(),
-        mytextclock,
-        s.mylayoutbox,
+        -- keyboardlayout widget
+        wibox.container.margin({
+          { mykeyboardlayout, layout = wibox.layout.align.horizontal },
+          widget = wibox.container.margin,
+        }, 4, 4),
+        --volume
+        wibox.container.margin({
+          {
+            volume_widget({
+              widget_type = 'horizontal_bar',
+              with_icon = true,
+              main_color = catppuccin.green,
+              mute_color = catppuccin.peach,
+              bg_color = '#ffffff55',
+              width = dpi(50),
+              step = 2,
+            }),
+            layout = wibox.layout.align.horizontal
+          },
+          widget = wibox.container.margin,
+        }, 4, 4),
+
+        --battery_widget
+        wibox.container.margin({
+          {
+            batteryarc_widget({
+              arc_thickness = 2,
+              low_level_color = catppuccin.red,
+              medium_level_color = catppuccin.yellow,
+              charging_color = catppuccin.green,
+              main_color = catppuccin.cyan,
+              warning_msg_title = 'Houston, we have a problem!',
+              warning_msg_text = 'Battery is f*cking dying!',
+              warning_msg_position = 'top_right',
+              enable_battery_warning = true,
+              size = 20,
+            }),
+            layout = wibox.layout.align.horizontal
+          },
+          widget = wibox.container.margin,
+        }, 4, 4),
+
+        -- Date widget
+        wibox.container.margin({
+          { mytextclock, layout = wibox.layout.align.horizontal },
+          widget = wibox.container.margin,
+        }, 4, 4),
       },
     }
   }
