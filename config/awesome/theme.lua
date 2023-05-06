@@ -17,7 +17,7 @@ theme.font                  = "Terminus Heavy 10"
 theme.menu_bg_normal        = "#232634"
 theme.menu_bg_focus         = "#000000"
 theme.bg_normal             = "#303446"
-theme.bg_focus              = "#ef9f76"
+theme.bg_focus              = "#d20f39"
 theme.bg_urgent             = "#000000"
 theme.fg_normal             = "#8aadf4"
 theme.fg_focus              = "#24273A"
@@ -69,7 +69,7 @@ theme.menu_width        = dpi(100)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/wallpaper.png"
+theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/minimalism.png"
 
 -- You can use your own layout icons like this:
 theme.layout_tile       = theme.confdir .. "/icons/tile.png"
