@@ -62,7 +62,7 @@ beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/theme.lua")
 local catppuccin    = {
   pink     = "#f4b8e4",
   mauve    = "#ca9ee6",
-  red      = "#e78284",
+  red      = "#d20f39",
   maroon   = "#ea999c",
   peach    = "#ef9f76",
   yellow   = "#e5c890",
@@ -213,7 +213,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     screen   = s,
     height   = dpi(21),
     bg       = "#30344600",
-    fg       = catppuccin.peach,
+    fg       = catppuccin.blue,
     widget   = {
       layout = wibox.layout.align.horizontal,
       expand = "none",
