@@ -9,17 +9,16 @@ local awful = require("awful")
 local dpi   = require("beautiful.xresources").apply_dpi
 require("awful.autofocus")
 -- Widget and layout library
-local wibox              = require("wibox")
-local batteryarc_widget  = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
-local volume_widget      = require('awesome-wm-widgets.volume-widget.volume')
-local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local wibox             = require("wibox")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
 -- Theme handling library
-local beautiful          = require("beautiful")
+local beautiful         = require("beautiful")
 -- Notification library
-local naughty            = require("naughty")
+local naughty           = require("naughty")
 -- Declarative object management
-local ruled              = require("ruled")
-local hotkeys_popup      = require("awful.hotkeys_popup")
+local ruled             = require("ruled")
+local hotkeys_popup     = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -234,18 +233,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         -- Right widgets
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
-        -- logout menu widget
-        wibox.container.margin({
-          {
-            logout_menu_widget {
-              font = 'Terminus Heavy 9',
-            },
-            layout = wibox.layout.align.horizontal
-          },
-          widget = wibox.container.margin,
-          bottom = 2,
-          color = catppuccin.white,
-        }, 4, 4),
         -- keyboardlayout widget
         wibox.container.margin({
           { mykeyboardlayout, layout = wibox.layout.align.horizontal },
