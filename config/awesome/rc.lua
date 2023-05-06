@@ -213,7 +213,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     screen   = s,
     height   = dpi(21),
     bg       = "#30344600",
-    fg       = catppuccin.red,
+    fg       = catppuccin.peach,
     widget   = {
       layout = wibox.layout.align.horizontal,
       expand = "none",
@@ -251,7 +251,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           { mykeyboardlayout, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
           bottom = 2,
-          color = catppuccin.red,
+          color = catppuccin.peach,
         }, 4, 4),
 
         --Volume widget
