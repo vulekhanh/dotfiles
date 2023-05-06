@@ -209,20 +209,24 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
   -- Create the wibox
   s.mywibox = awful.wibar {
-    position     = "top",
-    screen       = s,
-    height       = dpi(21),
-    border_width = 3,
-    border_color = "#8aadf4",
-    bg           = "#303446",
-    fg           = "#8aadf4",
-    widget       = {
+    position = "top",
+    screen   = s,
+    height   = dpi(21),
+    bg       = "#30344600",
+    fg       = catppuccin.red,
+    widget   = {
       layout = wibox.layout.align.horizontal,
       expand = "none",
       {
         -- Left widgets
         layout = wibox.layout.fixed.horizontal,
-        s.mylayoutbox,
+
+        wibox.container.margin({
+          { s.mylayoutbox, layout = wibox.layout.align.horizontal },
+          widget = wibox.container.margin,
+          bottom = 2,
+          color = catppuccin.blue,
+        }, dpi(10), 4),
       },
       -- Middle widget
       s.mytaglist,
@@ -239,11 +243,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
-        }, 4, 0),
+          bottom = 2,
+          color = catppuccin.white,
+        }, 4, 4),
         -- keyboardlayout widget
         wibox.container.margin({
           { mykeyboardlayout, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
+          bottom = 2,
+          color = catppuccin.red,
         }, 4, 4),
 
         --Volume widget
@@ -254,13 +262,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
               with_icon = true,
               main_color = catppuccin.green,
               mute_color = catppuccin.peach,
-              bg_color = '#ffffff55',
+              bg_color = '#ffffffff',
               width = dpi(50),
               step = 2,
             }),
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
+          bottom = 2,
+          color = catppuccin.green,
         }, 4, 4),
 
         --battery_widget
@@ -276,18 +286,22 @@ screen.connect_signal("request::desktop_decoration", function(s)
               warning_msg_text = 'Battery is f*cking dying!',
               warning_msg_position = 'top_right',
               enable_battery_warning = true,
-              size = 20,
+              size = 15,
             }),
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
+          bottom = 2,
+          color = catppuccin.cyan,
         }, 4, 4),
 
         -- Date widget
         wibox.container.margin({
           { mytextclock, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
-        }, 4, 4),
+          bottom = 2,
+          color = catppuccin.yellow,
+        }, 4, dpi(10)),
       },
     }
   }
