@@ -21,6 +21,8 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - LunarVim with nitch, inspired by Catppuccin theme
 ![Screenshot_2023-05-02-10-48-43_1920x1080](https://user-images.githubusercontent.com/61068720/235719073-25941152-3121-41b6-b869-a163c3523a5d.png)
 
+- Current workspace
+![workspace](https://user-images.githubusercontent.com/61068720/236637222-4b855001-17c6-4b46-a7b2-96ebd28115ce.png)
 
 ## Contributors
 Special thanks to:
