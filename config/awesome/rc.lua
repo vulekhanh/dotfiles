@@ -258,13 +258,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         wibox.container.margin({
           {
             volume_widget({
-              widget_type = 'horizontal_bar',
+              widget_type = 'arc',
+              thickness = 3,
               with_icon = true,
               main_color = catppuccin.green,
               mute_color = catppuccin.peach,
-              bg_color = '#ffffffff',
-              width = dpi(50),
-              step = 2,
+              bg_color = '#ffffff11',
+              size = 20,
             }),
             layout = wibox.layout.align.horizontal
           },
@@ -277,7 +277,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         wibox.container.margin({
           {
             batteryarc_widget({
-              arc_thickness = 2,
+              arc_thickness = 3,
               low_level_color = catppuccin.red,
               medium_level_color = catppuccin.yellow,
               charging_color = catppuccin.green,
@@ -286,7 +286,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
               warning_msg_text = 'Battery is f*cking dying!',
               warning_msg_position = 'top_right',
               enable_battery_warning = true,
-              size = 15,
+              size = 20,
             }),
             layout = wibox.layout.align.horizontal
           },
