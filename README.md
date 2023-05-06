@@ -11,7 +11,6 @@ I added some configurations, including new theme, layouts, and keybinds to boost
 - [Catppuccin theme](https://github.com/catppuccin/catppuccin)
 - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
 - [Dark matter grub theme](https://gitlab.com/VandalByte/darkmatter-grub-theme)
-- [Collection of AwesomeWM theme](https://github.com/lcpz/awesome-copycats)
 - [Nitch](https://github.com/ssleert/nitch) - like neofetch, but it's way faster
 - [Ranger](https://ranger.github.io/) - Console file manager
 
