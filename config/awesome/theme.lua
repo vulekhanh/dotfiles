@@ -38,21 +38,6 @@ theme.menu_bg_focus         = "#8aadf4"
 -- taglist markers
 theme.taglist_squares_sel   = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel = theme.confdir .. "/icons/square_b.png"
--- Catppuccin color palette
-theme.pink                  = "#f4b8e4"
-theme.mauve                 = "#ca9ee6"
-theme.red                   = "#e78284"
-theme.maroon                = "#ea999c"
-theme.peach                 = "#ef9f76"
-theme.yellow                = "#e5c890"
-theme.green                 = "#a6d189"
-theme.teal                  = "#81c8be"
-theme.cyan                  = "#7ebfe3"
-theme.sky                   = "#99d1db"
-theme.sapphire              = "#85c1dc"
-theme.blue                  = theme.fg_normal
-theme.lavender              = "#babbf1"
-theme.white                 = "#c6d0f5"
 
 -- There are other variable sets
 -- overriding the default one when
