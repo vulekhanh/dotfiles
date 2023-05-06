@@ -1,9 +1,3 @@
---[[
-
-     Multicolor Awesome WM theme 2.0
-     github.com/lcpz
-
---]]
 local gears                    = require("gears")
 local awful                    = require("awful")
 local wibox                    = require("wibox")
