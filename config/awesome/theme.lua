@@ -17,7 +17,7 @@ theme.font                  = "Terminus Heavy 10"
 theme.menu_bg_normal        = "#232634"
 theme.menu_bg_focus         = "#000000"
 theme.bg_normal             = "#303446"
-theme.bg_focus              = "#d20f39"
+theme.bg_focus              = "#e78284"
 theme.bg_urgent             = "#000000"
 theme.fg_normal             = "#8aadf4"
 theme.fg_focus              = "#24273A"
@@ -62,7 +62,7 @@ theme.taglist_squares_unsel = theme.confdir .. "/icons/square_b.png"
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_height       = dpi(15)
-theme.menu_width        = dpi(100)
+theme.menu_width        = dpi(150)
 
 -- You can add as many variables as
 -- you wish and access them by using

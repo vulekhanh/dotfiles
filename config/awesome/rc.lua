@@ -61,7 +61,7 @@ beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/theme.lua")
 local catppuccin    = {
   pink     = "#f4b8e4",
   mauve    = "#ca9ee6",
-  red      = "#d20f39",
+  red      = "#e78284",
   maroon   = "#ea999c",
   peach    = "#ef9f76",
   yellow   = "#e5c890",
