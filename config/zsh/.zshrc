@@ -107,7 +107,6 @@ alias ls='exa --icons'
 alias cat='bat'
 alias lg='lazygit'
 alias lzd='lazydocker'
-alias sn='shutdown now'
 #eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/vulekhanh/dotfiles/master/themes/1s_catppuccin_hybrid.omp.json')"
 eval "$(oh-my-posh init zsh --config '/home/vulekhanh/.dotfiles/themes/1s_catppuccin_hybrid.omp.json')"
 nitch
