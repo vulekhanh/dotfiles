@@ -165,7 +165,7 @@ mykeyboardlayout  = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
 local mytextclock = wibox.widget.textclock(
-  '<span color="#e5c890" font="Terminus Heavy 10"> %H %M </span>',
+  '<span color="#e5c890" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
 
 screen.connect_signal("request::desktop_decoration", function(s)
