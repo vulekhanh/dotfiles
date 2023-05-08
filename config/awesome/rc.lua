@@ -75,6 +75,19 @@ local catppuccin    = {
   white    = "#c6d0f5",
 }
 
+-- Gruvbox color palette
+local gruvbox       = {
+  black  = "#282828",
+  red    = "#cc241d",
+  green  = "#98971a",
+  yellow = "#d79921",
+  blue   = "#458588",
+  purple = "#b16286",
+  aqua   = "#689d6a",
+  gray   = "#a89984",
+  orange = "#fe8019",
+  white  = "#ebdbb2",
+}
 -- This is used later as the default terminal and editor to run.
 local modkey        = "Mod4"
 local altkey        = "Mod1"
@@ -211,8 +224,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     position = "top",
     screen   = s,
     height   = dpi(21),
-    bg       = "#30344600",
-    fg       = catppuccin.red,
+    bg       = "#00000000",
     widget   = {
       layout = wibox.layout.align.horizontal,
       expand = "none",
