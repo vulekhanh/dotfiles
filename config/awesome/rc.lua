@@ -313,6 +313,9 @@ awful.mouse.append_global_mousebindings({
 
 -- General Awesome keys
 awful.keyboard.append_global_keybindings({
+  -- Destroy all notifications
+  awful.key({ "Control", }, "space", function() naughty.destroy_all_notifications() end,
+    { description = "destroy all notifications", group = "hotkeys" }),
   awful.key({ modkey, }, "s", hotkeys_popup.show_help,
     { description = "show help", group = "awesome" }),
   awful.key({ modkey, "Control" }, "r", awesome.restart,
