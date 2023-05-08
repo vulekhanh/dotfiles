@@ -74,8 +74,8 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     sudo
+    zsh-autosuggestions
     zsh-syntax-highlighting
-    dirhistory
 )
 source $ZSH/oh-my-zsh.sh
 source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
@@ -109,4 +109,5 @@ alias lg='lazygit'
 alias lzd='lazydocker'
 #eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/vulekhanh/dotfiles/master/themes/1s_catppuccin_hybrid.omp.json')"
 eval "$(oh-my-posh init zsh --config '/home/vulekhanh/.dotfiles/themes/1s_catppuccin_hybrid.omp.json')"
+eval "$(zoxide init zsh)"
 nitch
