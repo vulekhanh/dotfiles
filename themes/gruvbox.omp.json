@@ -10,7 +10,7 @@
   "aqua" : "#689d6a",
   "gray" : "#a89984",
   "orange" : "#fe8019",
-  "white" : "#ebdbb2",
+  "white" : "#ebdbb2"
   },
   "blocks": [
     {
@@ -18,8 +18,8 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "p:pink",
-          "leading_diamond": "<p:pink> \ue200 </>",
+          "foreground": "p:orange",
+          "leading_diamond": "<p:orange> \ue200 </>",
           "properties": {
             "display_host": true
           },
@@ -28,7 +28,7 @@
           "type": "session"
         },
         {
-          "foreground": "#ee79d1",
+          "foreground": "p:red",
           "properties": {
             "branch_icon": "\ue725 ",
             "fetch_stash_count": true,
@@ -50,7 +50,7 @@
         "type": "text",
         "style": "plain",
         "foreground": "#E06C75",
-        "template": "<p:yellow>󰮯  <p:red>\ue29b  <p:pink>\udb80\udea0  <p:red>\udb80\udea0  <p:peach>\udb80\udea0  <p:green>\udb80\udea0  <p:teal>\udb80\udea0  <p:blue>\udb80\udea0  <p:mauve>\udb80\udea0 "
+        "template": "<p:yellow>󰮯  <p:red>\ue29b  <p:green>\udb80\udea0  <p:purple>\udb80\udea0  <p:blue>\udb80\udea0  <p:aqua>\udb80\udea0  <p:orange>\udb80\udea0  <p:white>\udb80\udea0 "
       }
       ],
       "type": "prompt"
@@ -60,8 +60,8 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "p:pink",
-          "leading_diamond": "<p:blue> \ue285 </><#ffafd2>{</>",
+          "foreground": "p:yellow",
+          "leading_diamond": "<p:aqua> \ue285 </><p:yellow>{</>",
           "properties": {
             "folder_icon": "\uf07b",
             "folder_separator_icon": "  ",
@@ -70,7 +70,7 @@
           },
           "style": "diamond",
           "template": "  {{ .Path }} ",
-          "trailing_diamond": "<#ffafd2>}</>",
+          "trailing_diamond": "<p:yellow>}</>",
           "type": "path"
         },
         {
