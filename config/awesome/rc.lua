@@ -178,7 +178,7 @@ mykeyboardlayout  = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
 local mytextclock = wibox.widget.textclock(
-  '<span color="#e5c890" font="Terminus Heavy 10"> %d %B %H %M </span>',
+  '<span color="#d79921" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -236,7 +236,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           { s.mylayoutbox, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
           bottom = 2,
-          color = catppuccin.blue,
+          color = gruvbox.white,
         }, dpi(10), 4),
       },
       -- Middle widget
@@ -245,13 +245,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         -- Right widgets
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
-        -- keyboardlayout widget
-        wibox.container.margin({
-          { mykeyboardlayout, layout = wibox.layout.align.horizontal },
-          widget = wibox.container.margin,
-          bottom = 2,
-          color = catppuccin.red,
-        }, 4, 4),
 
         --Volume widget
         wibox.container.margin({
@@ -260,16 +253,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
               widget_type = 'arc',
               thickness = 3,
               with_icon = true,
-              main_color = catppuccin.green,
-              mute_color = catppuccin.peach,
+              main_color = gruvbox.green,
+              mute_color = gruvbox.orange,
               bg_color = '#ffffff11',
-              size = 20,
+              size = 19,
             }),
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
           bottom = 2,
-          color = catppuccin.green,
+          color = gruvbox.green,
         }, 4, 4),
 
         --battery_widget
@@ -277,21 +270,21 @@ screen.connect_signal("request::desktop_decoration", function(s)
           {
             batteryarc_widget({
               arc_thickness = 3,
-              low_level_color = catppuccin.red,
-              medium_level_color = catppuccin.yellow,
-              charging_color = catppuccin.green,
-              main_color = catppuccin.cyan,
+              low_level_color = gruvbox.red,
+              medium_level_color = gruvbox.yellow,
+              charging_color = gruvbox.green,
+              main_color = gruvbox.blue,
               warning_msg_title = 'Houston, we have a problem!',
               warning_msg_text = 'Battery is f*cking dying!',
               warning_msg_position = 'top_right',
               enable_battery_warning = true,
-              size = 20,
+              size = 19,
             }),
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
           bottom = 2,
-          color = catppuccin.cyan,
+          color = gruvbox.blue,
         }, 4, 4),
 
         -- Date widget
@@ -299,7 +292,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           { mytextclock, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
           bottom = 2,
-          color = catppuccin.yellow,
+          color = gruvbox.yellow,
         }, 4, dpi(10)),
       },
     }
