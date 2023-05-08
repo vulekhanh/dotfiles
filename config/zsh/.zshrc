@@ -78,7 +78,6 @@ plugins=(
     zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-source ~/.dotfiles/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
