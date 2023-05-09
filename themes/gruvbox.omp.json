@@ -50,7 +50,7 @@
         "type": "text",
         "style": "plain",
         "foreground": "#E06C75",
-        "template": "<p:yellow>󰮯  <p:red>\ue29b  <p:green>\udb80\udea0  <p:purple>\udb80\udea0  <p:blue>\udb80\udea0  <p:aqua>\udb80\udea0  <p:orange>\udb80\udea0  <p:white>\udb80\udea0 "
+        "template": "<p:yellow>󰮯  <#d3869b>\udb80\udea0  <p:blue>\udb80\udea0  <p:orange>\udb80\udea0  <p:red>\udb80\udea0 "
       }
       ],
       "type": "prompt"
