@@ -179,7 +179,7 @@ mykeyboardlayout  = awful.widget.keyboardlayout()
 
 -- Create a textclock widget
 local mytextclock = wibox.widget.textclock(
-  '<span color="#fabd2f" font="Terminus Heavy 10"> %d %B %H %M </span>',
+  '<span color="#b16286" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -265,8 +265,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
               thickness = 3,
               with_icon = true,
               main_color = gruvbox.green,
-              mute_color = gruvbox.orange,
-              bg_color = '#ffffff11',
+              mute_color = gruvbox.red,
               size = 19,
             }),
             layout = wibox.layout.align.horizontal
@@ -303,7 +302,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           { mytextclock, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
           bottom = 2,
-          color = gruvbox.yellow,
+          color = gruvbox.purple,
         }, 4, dpi(10)),
       },
     }
