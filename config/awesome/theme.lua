@@ -8,6 +8,7 @@ local rnotification         = require("ruled.notification")
 local dpi                   = xresources.apply_dpi
 local os                    = os
 local gfs                   = require("gears.filesystem")
+local gears                 = require("gears")
 local themes_path           = gfs.get_themes_dir()
 
 local theme                 = {}
@@ -15,7 +16,7 @@ local theme                 = {}
 theme.confdir               = os.getenv("HOME") .. "/.config/awesome/"
 theme.font                  = "Terminus Heavy 10"
 theme.menu_bg_focus         = "#000000"
-theme.bg_normal             = "#303446"
+theme.bg_normal             = "#282828"
 theme.bg_focus              = "#fe8019"
 theme.bg_urgent             = "#cc241d"
 theme.fg_normal             = "#ebdbb2"
@@ -28,7 +29,6 @@ theme.border_normal         = "#00000000"
 theme.border_focus          = "#ebdbb2"
 theme.border_marked         = "#98971a"
 theme.menu_border_width     = 0
-theme.menu_width            = dpi(130)
 theme.menu_submenu_icon     = theme.confdir .. "/icons/submenu.png"
 theme.menu_fg_normal        = "#deb2ee"
 theme.menu_fg_focus         = "#ff8c00"
@@ -52,37 +52,41 @@ theme.taglist_squares_unsel = theme.confdir .. "/icons/square_b.png"
 
 -- Variables set for theming notifications:
 -- notification_font
--- notification_[bg|fg]
+theme.notification_bg           = "#282828"
+theme.notification_fg           = "#ebdbb2"
+theme.notification_border_width = dpi(5)
+theme.notification_border_color = "#ebdbb2"
+theme.notification_shape        = gears.shape.rounded_rect
 -- notification_[width|height|margin]
 -- notification_[border_color|border_width|shape|opacity]
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height       = dpi(15)
-theme.menu_width        = dpi(150)
+theme.menu_height               = dpi(15)
+theme.menu_width                = dpi(150)
 
 -- You can add as many variables as
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/half_life.png"
+theme.wallpaper                 = "/home/vulekhanh/.dotfiles/wallpapers/half_life.png"
 
 -- You can use your own layout icons like this:
-theme.layout_tile       = theme.confdir .. "/icons/tile.png"
-theme.layout_tilegaps   = theme.confdir .. "/icons/tilegaps.png"
-theme.layout_tileleft   = theme.confdir .. "/icons/tileleft.png"
-theme.layout_tilebottom = theme.confdir .. "/icons/tilebottom.png"
-theme.layout_tiletop    = theme.confdir .. "/icons/tiletop.png"
-theme.layout_fairv      = theme.confdir .. "/icons/fairv.png"
-theme.layout_fairh      = theme.confdir .. "/icons/fairh.png"
-theme.layout_spiral     = theme.confdir .. "/icons/spiral.png"
-theme.layout_dwindle    = theme.confdir .. "/icons/dwindle.png"
-theme.layout_max        = theme.confdir .. "/icons/max.png"
-theme.layout_fullscreen = theme.confdir .. "/icons/fullscreen.png"
-theme.layout_magnifier  = theme.confdir .. "/icons/magnifier.png"
-theme.layout_floating   = theme.confdir .. "/icons/floating.png"
+theme.layout_tile               = theme.confdir .. "/icons/tile.png"
+theme.layout_tilegaps           = theme.confdir .. "/icons/tilegaps.png"
+theme.layout_tileleft           = theme.confdir .. "/icons/tileleft.png"
+theme.layout_tilebottom         = theme.confdir .. "/icons/tilebottom.png"
+theme.layout_tiletop            = theme.confdir .. "/icons/tiletop.png"
+theme.layout_fairv              = theme.confdir .. "/icons/fairv.png"
+theme.layout_fairh              = theme.confdir .. "/icons/fairh.png"
+theme.layout_spiral             = theme.confdir .. "/icons/spiral.png"
+theme.layout_dwindle            = theme.confdir .. "/icons/dwindle.png"
+theme.layout_max                = theme.confdir .. "/icons/max.png"
+theme.layout_fullscreen         = theme.confdir .. "/icons/fullscreen.png"
+theme.layout_magnifier          = theme.confdir .. "/icons/magnifier.png"
+theme.layout_floating           = theme.confdir .. "/icons/floating.png"
 
 
 -- Define the icon theme for application icons. If not set then the icons
@@ -93,7 +97,7 @@ theme.icon_theme = nil
 rnotification.connect_signal('request::rules', function()
     rnotification.append_rule {
         rule       = { urgency = 'critical' },
-        properties = { bg = '#ff0000', fg = '#ffffff' }
+        properties = { bg = '#fe8019', fg = '#282828' }
     }
 end)
 
