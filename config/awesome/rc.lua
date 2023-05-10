@@ -12,6 +12,7 @@ require("awful.autofocus")
 local wibox             = require("wibox")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
+local net_speed_widget  = require("awesome-wm-widgets.net-speed-widget.net-speed")
 -- Theme handling library
 local beautiful         = require("beautiful")
 -- Notification library
@@ -246,6 +247,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
 
+        --Net speed widget
+        wibox.container.margin({
+          {
+            net_speed_widget(),
+            layout = wibox.layout.align.horizontal
+          },
+          widget = wibox.container.margin,
+          bottom = 2,
+          color = gruvbox.red,
+        }, 4, 4),
         --Volume widget
         wibox.container.margin({
           {
