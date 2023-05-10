@@ -171,7 +171,23 @@ screen.connect_signal("request::wallpaper", function(s)
   }
 end)
 -- }}}
-
+-- FontAwesome
+--------------------------
+-- WIDGET CONFIGURATION
+--------------------------
+local icon_size = 12
+local icon_font = "Font Awesome 5 Free-Solid-900 "
+local function make_fa_icon(code, icon_color)
+  return wibox.widget {
+    font   = icon_font .. icon_size,
+    markup = '<span color="' .. icon_color .. '">' .. code .. '</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+  }
+end
+local baticon     = make_fa_icon('󰁹', gruvbox.blue)
+local volicon     = make_fa_icon('', gruvbox.green)
 -- {{{ Wibar
 --
 -- Keyboard map indicator and switcher
@@ -260,10 +276,11 @@ screen.connect_signal("request::desktop_decoration", function(s)
         --Volume widget
         wibox.container.margin({
           {
+            volicon,
             volume_widget({
-              widget_type = 'arc',
+              widget_type = 'vertical_bar',
+              with_icon = false,
               thickness = 3,
-              with_icon = true,
               main_color = gruvbox.green,
               mute_color = gruvbox.red,
               size = 19,
@@ -278,6 +295,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         --battery_widget
         wibox.container.margin({
           {
+            baticon,
             batteryarc_widget({
               arc_thickness = 3,
               low_level_color = gruvbox.red,
