@@ -206,7 +206,7 @@ local mytextclock  = wibox.widget.textclock(
 
 screen.connect_signal("request::desktop_decoration", function(s)
   -- Each screen has its own tag table.
-  awful.tag({ " 󰍹 ", " 󰈹 ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
+  awful.tag({ "  ", "  ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
 
   -- Create an imagebox widget which will contain an icon indicating which layout we're using.
   -- We need one layoutbox per screen.
