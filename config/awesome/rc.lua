@@ -196,6 +196,7 @@ mykeyboardlayout   = awful.widget.keyboardlayout()
 -- Wireless widget
 local net_wireless = net_widgets.wireless({
   interface = "wlp5s0",
+  popup_position = "top_right",
   indent = 0,
 })
 -- Create a textclock widget

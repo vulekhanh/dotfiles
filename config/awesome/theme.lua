@@ -56,6 +56,7 @@ naughty.config.defaults.icon_size     = dpi(32)
 naughty.config.defaults.timeout       = 10
 naughty.config.defaults.hover_timeout = 300
 naughty.config.defaults.title         = 'Status'
+naughty.config.defaults.position      = "top_middle"
 naughty.config.defaults.margin        = dpi(10)
 naughty.config.defaults.border_width  = 2
 naughty.config.defaults.shape         = function(cr, w, h)
