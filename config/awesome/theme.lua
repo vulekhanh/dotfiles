@@ -58,7 +58,6 @@ naughty.config.defaults.hover_timeout = 300
 naughty.config.defaults.title         = 'System Notification Title'
 naughty.config.defaults.margin        = dpi(10)
 naughty.config.defaults.border_width  = 2
-naughty.config.defaults.position      = 'top_middle'
 naughty.config.defaults.shape         = function(cr, w, h)
     gears.shape.rounded_rect(cr, w, h, dpi(10))
 end
