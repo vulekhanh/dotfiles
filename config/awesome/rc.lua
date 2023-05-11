@@ -12,7 +12,7 @@ require("awful.autofocus")
 local wibox             = require("wibox")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
-local net_speed_widget  = require("awesome-wm-widgets.net-speed-widget.net-speed")
+local net_widgets       = require("net_widgets")
 -- Theme handling library
 local beautiful         = require("beautiful")
 -- Notification library
@@ -186,15 +186,17 @@ local function make_fa_icon(code, icon_color)
     widget = wibox.widget.textbox
   }
 end
-local baticon     = make_fa_icon('󰁹', gruvbox.blue)
-local volicon     = make_fa_icon('', gruvbox.green)
+local baticon      = make_fa_icon(' ', gruvbox.blue)
+local volicon      = make_fa_icon('', gruvbox.green)
+local wifiicon     = make_fa_icon('', gruvbox.red)
 -- {{{ Wibar
 --
 -- Keyboard map indicator and switcher
-mykeyboardlayout  = awful.widget.keyboardlayout()
-
+mykeyboardlayout   = awful.widget.keyboardlayout()
+-- Wireless widget
+local net_wireless = net_widgets.wireless({ interface = "wlp5s0" })
 -- Create a textclock widget
-local mytextclock = wibox.widget.textclock(
+local mytextclock  = wibox.widget.textclock(
   '<span color="#b16286" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
 
@@ -263,10 +265,11 @@ screen.connect_signal("request::desktop_decoration", function(s)
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
 
-        --Net speed widget
+        --Wifi widget
         wibox.container.margin({
           {
-            net_speed_widget(),
+            wifiicon,
+            net_wireless,
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
