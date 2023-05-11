@@ -85,6 +85,3 @@ else
     nvimInstaller
   fi
 fi
-# Awesome-wm-widget
-git clone https://github.com/streetturtle/awesome-wm-widgets.git
-mv awesome-wm-widgets ~/.config/awesome/
