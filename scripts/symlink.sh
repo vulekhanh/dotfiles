@@ -11,26 +11,16 @@ else
 fi
 
 # create symlinks for awesome, picom
-echo "\nDeleting awesome/themes/multicolor/icons\n"
+echo "\nIf config exists, we will delete it\n"
 sudo rm -r ~/.config/awesome/themes/multicolor/icons
-if [ -e ~/.config/awesome/rc.lua ]; then
-  echo "Awesome rc.lua file found!"
-  echo "Moving rc.lua to rc.lua.bak"
-  mv ~/.config/awesome/rc.lua ~/.config/awesome/rc.lua.bak
-  ln -s $configDir/awesome/rc.lua ~/.config/awesome/
+if [ -e ~/.config/awesome/ ]; then
+  echo "Awesome dir found!"
+  echo "Deleting old config dir and update with the latest..."
+  rm -r ~/.config/awesome/
+  ln -s $configDir/awesome/ ~/.config/
 else
-  ln -s $configDir/awesome/rc.lua ~/.config/awesome/
+  ln -s $configDir/awesome/ ~/.config/
 fi
-# symlink for theme.lua
-if [ -e ~/.config/awesome/theme.lua ]; then
-  echo "Awesome theme.lua file found!"
-  echo "Moving theme.lua to theme.lua.bak"
-  mv ~/.config/awesome/theme.lua ~/.config/awesome/theme.lua.bak
-  ln -s $configDir/awesome/theme.lua ~/.config/awesome/
-else
-  ln -s $configDir/awesome/theme.lua ~/.config/awesome/
-fi
-ln -s $configDir/awesome/icons ~/.config/awesome/
 ln -s $configDir/picom/picom.conf ~/.config/picom/
 
 
@@ -67,7 +57,6 @@ if [ -e ~/.config/rofi/ ]; then
     ln -s $configDir/rofi/config/* ~/.config/rofi/
   fi
 else
-  echo "Creating rofi config directory"
-  mkdir ~/.config/rofi
+  echo "Creating symlink for rofi config directory"
   ln -s $configDir/rofi/ ~/.config/
 fi
