@@ -194,7 +194,10 @@ local wifiicon     = make_fa_icon('', gruvbox.red)
 -- Keyboard map indicator and switcher
 mykeyboardlayout   = awful.widget.keyboardlayout()
 -- Wireless widget
-local net_wireless = net_widgets.wireless({ interface = "wlp5s0" })
+local net_wireless = net_widgets.wireless({
+  interface = "wlp5s0",
+  indent = 0,
+})
 -- Create a textclock widget
 local mytextclock  = wibox.widget.textclock(
   '<span color="#b16286" font="Terminus Heavy 10"> %d %B %H %M </span>',
