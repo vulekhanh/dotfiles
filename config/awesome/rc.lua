@@ -64,7 +64,7 @@ end
 --  "noire"       --3
 --}
 --local chosen_theme = themes[2]
-beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/themes/noir/theme.lua")
+beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/themes/catppuccin/theme.lua")
 --beautiful.init(string.format("%s/.dotfiles/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- Catppuccin color palette
 local catppuccin    = {
