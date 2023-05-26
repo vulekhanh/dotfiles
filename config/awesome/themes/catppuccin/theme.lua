@@ -19,17 +19,17 @@ theme.font                  = "Terminus Heavy 10"
 theme.menu_bg_normal        = "#232634"
 theme.menu_bg_focus         = "#000000"
 theme.bg_normal             = "#303446"
-theme.bg_focus              = "#c6d0f5"
+theme.bg_focus              = "#8caaee"
 theme.bg_urgent             = "#000000"
-theme.fg_normal             = "#8aadf4"
+theme.fg_normal             = "#8caaee"
 theme.fg_focus              = "#24273A"
-theme.fg_urgent             = "#af1d18"
+theme.fg_urgent             = "#e78284"
 theme.fg_minimize           = "#ffffff"
 theme.border_width          = dpi(3)
 theme.useless_gap           = dpi(4)
 theme.border_normal         = "#00000000"
 theme.border_focus          = "#8caaee"
-theme.border_marked         = "#3ca4d8"
+theme.border_marked         = "#e78284"
 theme.menu_border_width     = 0
 theme.menu_width            = dpi(130)
 theme.menu_submenu_icon     = theme.confdir .. "/icons/submenu.png"
@@ -52,7 +52,7 @@ local catppuccin    = {
   cyan     = "#7ebfe3",
   sky      = "#99d1db",
   sapphire = "#85c1dc",
-  blue     = "#8aadf4",
+  blue     = "#8caaee",
   lavender = "#babbf1",
   white    = "#c6d0f5",
 }
@@ -103,7 +103,7 @@ theme.menu_width        = dpi(150)
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
-theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/cube.png"
+theme.wallpaper         = "/home/vulekhanh/.dotfiles/wallpapers/arch.png"
 
 -- You can use your own layout icons like this:
 theme.layout_tile       = theme.confdir .. "/icons/tile.png"
