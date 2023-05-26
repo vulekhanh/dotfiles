@@ -24,6 +24,9 @@ AwesomeWM is a dynamic tiling window manager. It is highly customizable and you 
 - Gruvbox:
 ![Screenshot_2023-05-11-02-08-45_1920x1080](https://github.com/vulekhanh/dotfiles/assets/61068720/b845e4d3-698b-4d93-916f-e71ff97e351e)
 
+- Noir:
+![Screenshot_2023-05-26-08-48-21_1920x1080](https://github.com/vulekhanh/dotfiles/assets/61068720/13664fc3-d35b-4459-bf59-799f792f00de)
+
 
 ## Contributors
 Special thanks to:
