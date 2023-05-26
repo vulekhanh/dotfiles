@@ -10,9 +10,10 @@ local dpi   = require("beautiful.xresources").apply_dpi
 require("awful.autofocus")
 -- Widget and layout library
 local wibox             = require("wibox")
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
 local net_widgets       = require("net_widgets")
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 -- Theme handling library
 local beautiful         = require("beautiful")
 -- Notification library
@@ -57,13 +58,13 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-local themes       = {
-  "catppuccin", --1
-  "gruvbox",    --2
-  "noire"       --3
-}
-local chosen_theme = themes[2]
-beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/themes/gruvbox/theme.lua")
+--local themes       = {
+--  "catppuccin", --1
+--  "gruvbox",    --2
+--  "noire"       --3
+--}
+--local chosen_theme = themes[2]
+beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/themes/noir/theme.lua")
 --beautiful.init(string.format("%s/.dotfiles/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- Catppuccin color palette
 local catppuccin    = {
@@ -95,6 +96,14 @@ local gruvbox       = {
   gray   = "#a89984",
   orange = "#fe8019",
   white  = "#ebdbb2",
+}
+local noir = {
+ black  = "#000000",
+ blue   = "#0000FF",
+ red    = "#FF0000",
+ green  = "#00FF00",
+ yellow = "#FFFF00",
+ white  = "#ffffff",
 }
 -- This is used later as the default terminal and editor to run.
 local modkey        = "Mod4"
@@ -182,7 +191,7 @@ end)
 --------------------------
 -- WIDGET CONFIGURATION
 --------------------------
-local icon_size = 12
+local icon_size = 9
 local icon_font = "Font Awesome 5 Free-Solid-900 "
 local function make_fa_icon(code, icon_color)
   return wibox.widget {
@@ -193,9 +202,7 @@ local function make_fa_icon(code, icon_color)
     widget = wibox.widget.textbox
   }
 end
-local baticon      = make_fa_icon(' ', gruvbox.blue)
-local volicon      = make_fa_icon('', gruvbox.green)
-local wifiicon     = make_fa_icon('', gruvbox.red)
+local wifiicon     = make_fa_icon('', noir.white)
 -- {{{ Wibar
 --
 -- Keyboard map indicator and switcher
@@ -208,7 +215,7 @@ local net_wireless = net_widgets.wireless({
 })
 -- Create a textclock widget
 local mytextclock  = wibox.widget.textclock(
-  '<span color="#b16286" font="Terminus Heavy 10"> %d %B %H %M </span>',
+  '<span color="#FFFFFF" font="Terminus Heavy 10"> %d %B %H %M </span>',
   5)
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -261,13 +268,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
       {
         -- Left widgets
         layout = wibox.layout.fixed.horizontal,
-
         wibox.container.margin({
-          { s.mylayoutbox, layout = wibox.layout.align.horizontal },
+          {
+	    logout_menu_widget(),
+            layout = wibox.layout.align.horizontal
+          },
           widget = wibox.container.margin,
-          bottom = 2,
-          color = gruvbox.white,
-        }, dpi(10), 4),
+          bottom = 1,
+          color = noir.white,
+        }, 10, 4),
       },
       -- Middle widget
       s.mytaglist,
@@ -284,57 +293,42 @@ screen.connect_signal("request::desktop_decoration", function(s)
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
-          bottom = 2,
-          color = gruvbox.red,
+          bottom = 1,
+          color = noir.white,
         }, 4, 4),
         --Volume widget
         wibox.container.margin({
           {
-            volicon,
             volume_widget({
-              widget_type = 'vertical_bar',
-              with_icon = false,
-              thickness = 3,
-              main_color = gruvbox.green,
-              mute_color = gruvbox.red,
-              size = 19,
+              widget_type = 'icon_and_text',
             }),
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
-          bottom = 2,
-          color = gruvbox.green,
+          bottom = 1,
+          color = noir.white,
         }, 4, 4),
 
         --battery_widget
         wibox.container.margin({
           {
-            baticon,
-            batteryarc_widget({
-              arc_thickness = 3,
-              low_level_color = gruvbox.red,
-              medium_level_color = gruvbox.yellow,
-              charging_color = gruvbox.green,
-              main_color = gruvbox.blue,
-              warning_msg_title = 'Houston, we have a problem!',
-              warning_msg_text = 'Battery is f*cking dying!',
-              warning_msg_position = 'top_right',
-              enable_battery_warning = true,
-              size = 19,
-            }),
+	    battery_widget{
+		font = "Terminus Heavy 9",
+		show_current_level = true,
+	    },
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
-          bottom = 2,
-          color = gruvbox.blue,
+          bottom = 1,
+          color = noir.white,
         }, 4, 4),
 
         -- Date widget
         wibox.container.margin({
           { mytextclock, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
-          bottom = 2,
-          color = gruvbox.purple,
+          bottom = 1,
+          color = noir.white,
         }, 4, dpi(10)),
       },
     }
