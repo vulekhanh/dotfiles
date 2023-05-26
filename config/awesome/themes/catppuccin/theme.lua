@@ -39,24 +39,6 @@ theme.menu_bg_focus         = "#8aadf4"
 theme.taglist_squares_sel   = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel = theme.confdir .. "/icons/square_b.png"
 
-
--- Catppuccin color palette
-local catppuccin = {
-    pink     = "#f4b8e4",
-    mauve    = "#ca9ee6",
-    red      = "#e78284",
-    maroon   = "#ea999c",
-    peach    = "#ef9f76",
-    yellow   = "#e5c890",
-    green    = "#a6d189",
-    teal     = "#81c8be",
-    cyan     = "#7ebfe3",
-    sky      = "#99d1db",
-    sapphire = "#85c1dc",
-    blue     = "#8aadf4",
-    lavender = "#babbf1",
-    white    = "#c6d0f5",
-}
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
