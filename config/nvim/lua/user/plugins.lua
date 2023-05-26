@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"folke/which-key.nvim",
 	"folke/neodev.nvim",
+	-- Colorscheme
 	{ "catppuccin/nvim", name = "catppuccin" },
 
 	-- Icons
@@ -24,12 +25,31 @@ require("lazy").setup({
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
  	},
-
+	
+	-- Bufferline
+	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	-- Neovim dashboard
 	{
 	   'goolord/alpha-nvim',
 	    config = function ()
 		    require'alpha'.setup(require'alpha.themes.dashboard'.config)
 	    end
-	}
+	},
+	-- Nvimtree (File Explorer)
+    {
+        'nvim-tree/nvim-tree.lua',
+        lazy = true,
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    },
+
+    -- Telescope (Fuzzy Finder)
+    {
+        'nvim-telescope/telescope.nvim',
+        lazy = true,
+        dependencies = {
+            {'nvim-lua/plenary.nvim'},
+        }
+    },
 })
