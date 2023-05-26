@@ -52,7 +52,7 @@
         "type": "text",
         "style": "plain",
         "foreground": "#E06C75",
-        "template": "<p:yellow>󰮯  <p:red>\ue29b  <p:pink>\udb80\udea0  <p:red>\udb80\udea0  <p:peach>\udb80\udea0  <p:green>\udb80\udea0  <p:teal>\udb80\udea0  <p:blue>\udb80\udea0  <p:mauve>\udb80\udea0 "
+        "template": "<p:yellow>󰮯  <p:red>\udb80\udea0  <p:peach>\udb80\udea0  <p:pink>\udb80\udea0  <p:blue>\udb80\udea0 "
       }
       ],
       "type": "prompt"
