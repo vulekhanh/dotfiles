@@ -9,6 +9,8 @@ local dpi                   = xresources.apply_dpi
 local os                    = os
 local gfs                   = require("gears.filesystem")
 local themes_path           = gfs.get_themes_dir()
+local naughty = require("naughty")
+local gears = require("gears")
 
 local theme                 = {}
 
@@ -17,7 +19,7 @@ theme.font                  = "Terminus Heavy 10"
 theme.menu_bg_normal        = "#232634"
 theme.menu_bg_focus         = "#000000"
 theme.bg_normal             = "#303446"
-theme.bg_focus              = "#a6d189"
+theme.bg_focus              = "#c6d0f5"
 theme.bg_urgent             = "#000000"
 theme.fg_normal             = "#8aadf4"
 theme.fg_focus              = "#24273A"
@@ -25,7 +27,7 @@ theme.fg_urgent             = "#af1d18"
 theme.fg_minimize           = "#ffffff"
 theme.border_width          = dpi(3)
 theme.useless_gap           = dpi(4)
-theme.border_normal         = "#ffffff"
+theme.border_normal         = "#00000000"
 theme.border_focus          = "#8caaee"
 theme.border_marked         = "#3ca4d8"
 theme.menu_border_width     = 0
@@ -38,7 +40,22 @@ theme.menu_bg_focus         = "#8aadf4"
 -- taglist markers
 theme.taglist_squares_sel   = theme.confdir .. "/icons/square_a.png"
 theme.taglist_squares_unsel = theme.confdir .. "/icons/square_b.png"
-
+local catppuccin    = {
+  pink     = "#f4b8e4",
+  mauve    = "#ca9ee6",
+  red      = "#e78284",
+  maroon   = "#ea999c",
+  peach    = "#ef9f76",
+  yellow   = "#e5c890",
+  green    = "#a6d189",
+  teal     = "#81c8be",
+  cyan     = "#7ebfe3",
+  sky      = "#99d1db",
+  sapphire = "#85c1dc",
+  blue     = "#8aadf4",
+  lavender = "#babbf1",
+  white    = "#c6d0f5",
+}
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -50,7 +67,24 @@ theme.taglist_squares_unsel = theme.confdir .. "/icons/square_b.png"
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
-
+-- notification_font
+-- NAUGHTY CONFIGURATION--
+--------------------------
+naughty.config.defaults.ontop         = true
+naughty.config.defaults.icon_size     = dpi(32)
+naughty.config.defaults.timeout       = 10
+naughty.config.defaults.hover_timeout = 300
+naughty.config.defaults.title         = 'Status'
+naughty.config.defaults.position      = "top_middle"
+naughty.config.defaults.margin        = dpi(10)
+naughty.config.defaults.border_width  = 2
+naughty.config.defaults.shape         = function(cr, w, h)
+    gears.shape.rounded_rect(cr, w, h, dpi(10))
+end
+theme.notification_bg                 = "#303446"
+theme.notification_fg                 = "#8caaee"
+theme.notification_border_color       = "#8caaee"
+theme.notification_shape              = gears.shape.rounded_rect
 
 -- Variables set for theming notifications:
 -- notification_font
