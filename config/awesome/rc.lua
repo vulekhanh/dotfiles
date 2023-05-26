@@ -10,7 +10,7 @@ local dpi   = require("beautiful.xresources").apply_dpi
 require("awful.autofocus")
 -- Widget and layout library
 local wibox             = require("wibox")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 -- Theme handling library
@@ -190,7 +190,7 @@ end)
 --------------------------
 -- WIDGET CONFIGURATION
 --------------------------
-local icon_size = 9
+local icon_size = 10
 local icon_font = "Font Awesome 5 Free-Solid-900 "
 local function make_fa_icon(code, icon_color)
   return wibox.widget {
@@ -202,6 +202,7 @@ local function make_fa_icon(code, icon_color)
   }
 end
 local calendar     = make_fa_icon('', catppuccin.mauve)
+local volicon     = make_fa_icon('', catppuccin.green)
 -- {{{ Wibar
 --
 -- Keyboard map indicator and switcher
@@ -280,29 +281,36 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
         --Volume widget
         wibox.container.margin({
-          {
+          { volicon,
             volume_widget({
-              widget_type = 'icon_and_text',
+              widget_type = 'horizontal_bar',
+	      main_color = catppuccin.green,
+	      mute_color = catppuccin.red,
+	      width = 40,
+	      shape = gears.shape.powerline,
+	      margins = 8,
             }),
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
-          bottom = 1,
-          color = catppuccin.white,
         }, 4, 4),
 
         --battery_widget
         wibox.container.margin({
           {
-	    battery_widget{
-		font = "Terminus Heavy 9",
-		show_current_level = true,
+	    batteryarc_widget{
+		    main_color = catppuccin.blue,
+		    low_level_color = catppuccin.red,
+		    medium_level_color = catppuccin.yellow,
+		    charging_color = catppuccin.green,
+		    warning_msg_title = "Houston, we have a problem!",
+		    warning_msg_text = "Plug the battery now, b*tch!",
 	    },
             layout = wibox.layout.align.horizontal
           },
           widget = wibox.container.margin,
           bottom = 1,
-          color = catppuccin.white,
+          color = catppuccin.blue,
         }, 4, 4),
 
         -- Date widget
