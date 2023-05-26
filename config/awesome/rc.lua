@@ -12,7 +12,6 @@ require("awful.autofocus")
 local wibox             = require("wibox")
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local volume_widget     = require('awesome-wm-widgets.volume-widget.volume')
-local net_widgets       = require("net_widgets")
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 -- Theme handling library
 local beautiful         = require("beautiful")
@@ -79,7 +78,7 @@ local catppuccin    = {
   cyan     = "#7ebfe3",
   sky      = "#99d1db",
   sapphire = "#85c1dc",
-  blue     = "#8aadf4",
+  blue     = "#8caaee",
   lavender = "#babbf1",
   white    = "#c6d0f5",
 }
@@ -202,20 +201,14 @@ local function make_fa_icon(code, icon_color)
     widget = wibox.widget.textbox
   }
 end
-local wifiicon     = make_fa_icon('', noir.white)
+local calendar     = make_fa_icon('', catppuccin.mauve)
 -- {{{ Wibar
 --
 -- Keyboard map indicator and switcher
 mykeyboardlayout   = awful.widget.keyboardlayout()
--- Wireless widget
-local net_wireless = net_widgets.wireless({
-  interface = "wlp5s0",
-  popup_position = "top_right",
-  indent = 0,
-})
 -- Create a textclock widget
 local mytextclock  = wibox.widget.textclock(
-  '<span color="#FFFFFF" font="Terminus Heavy 10"> %d %B %H %M </span>',
+  '<span color="#ca9ee6" font="Terminus Heavy 10">%d %B %H %M </span>',
   5)
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -275,7 +268,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           },
           widget = wibox.container.margin,
           bottom = 1,
-          color = noir.white,
+          color = catppuccin.white,
         }, 10, 4),
       },
       -- Middle widget
@@ -285,17 +278,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         layout = wibox.layout.fixed.horizontal,
         wibox.widget.systray(),
 
-        --Wifi widget
-        wibox.container.margin({
-          {
-            wifiicon,
-            net_wireless,
-            layout = wibox.layout.align.horizontal
-          },
-          widget = wibox.container.margin,
-          bottom = 1,
-          color = noir.white,
-        }, 4, 4),
         --Volume widget
         wibox.container.margin({
           {
@@ -306,7 +288,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
           },
           widget = wibox.container.margin,
           bottom = 1,
-          color = noir.white,
+          color = catppuccin.white,
         }, 4, 4),
 
         --battery_widget
@@ -320,15 +302,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
           },
           widget = wibox.container.margin,
           bottom = 1,
-          color = noir.white,
+          color = catppuccin.white,
         }, 4, 4),
 
         -- Date widget
         wibox.container.margin({
-          { mytextclock, layout = wibox.layout.align.horizontal },
+          { calendar,
+	   mytextclock, layout = wibox.layout.align.horizontal },
           widget = wibox.container.margin,
           bottom = 1,
-          color = noir.white,
+          color = catppuccin.mauve,
         }, 4, dpi(10)),
       },
     }
