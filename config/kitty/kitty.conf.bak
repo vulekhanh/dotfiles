@@ -2291,6 +2291,6 @@ tab_bar_style fade
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Gruvbox Dark
 include current-theme.conf
 # END_KITTY_THEME

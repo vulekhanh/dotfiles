@@ -74,8 +74,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     sudo
-    zsh-autosuggestions
-    zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 # User configuration
@@ -108,6 +106,6 @@ alias lg='lazygit'
 alias lzd='lazydocker'
 alias rr='ranger'
 #eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/vulekhanh/dotfiles/master/themes/1s_catppuccin_hybrid.omp.json')"
-eval "$(oh-my-posh init zsh --config '/home/vulekhanh/.dotfiles/themes/gruvbox.omp.json')"
+eval "$(oh-my-posh init zsh --config '/home/vulekhanh/.dotfiles/themes/noir.omp.json')"
 eval "$(zoxide init zsh)"
 neofetch
