@@ -57,7 +57,14 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/theme.lua")
+local themes       = {
+  "catppuccin", --1
+  "gruvbox",    --2
+  "noire"       --3
+}
+local chosen_theme = themes[2]
+beautiful.init("/home/vulekhanh/.dotfiles/config/awesome/themes/gruvbox/theme.lua")
+--beautiful.init(string.format("%s/.dotfiles/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
 -- Catppuccin color palette
 local catppuccin    = {
   pink     = "#f4b8e4",
