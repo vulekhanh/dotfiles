@@ -15,4 +15,21 @@ require("lazy").setup({
 	"folke/which-key.nvim",
 	"folke/neodev.nvim",
 	{ "catppuccin/nvim", name = "catppuccin" },
+
+	-- Icons
+	"nvim-tree/nvim-web-devicons",
+
+	--Status line
+	{
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+ 	},
+
+	-- Neovim dashboard
+	{
+	   'goolord/alpha-nvim',
+	    config = function ()
+		    require'alpha'.setup(require'alpha.themes.dashboard'.config)
+	    end
+	}
 })
