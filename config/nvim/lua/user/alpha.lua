@@ -8,29 +8,26 @@ end
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
 
-    [[          ▀████▀▄▄              ▄█ ]],
-    [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-    [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-    [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-    [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-    [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-    [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-    [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-    [[   █   █  █      ▄▄           ▄▀   ]],
+[[★Merry★* 。 • ˚ ˚ ˛ ˚ ˛ • ˛ ˚ ˛ • ˛ ]],
+[[•。★Christmas★ 。* 。 。* 。 。* 。 ]],
+[[° 。 ° ˛˚˛ * _Π_____*。*˚ *。*˚*。*˚]],
+[[˚ ˛ •˛•˚ */______/~＼。˚ ˚ ˛  ˛ •˛•˚]],
+[[˚ ˛ •˛• ˚ ｜ 田田 ｜門｜ ˚ ☃        ]],
+[[☆¸.•°*”˜˜”*°•.¸☆ ★ ☆¸.•°*”˜˜”*°•.¸☆ ]],
 
 }
 
  dashboard.section.buttons.val = {
-   dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-   dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-   dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-   dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-   dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim<CR>"),
-   dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+   dashboard.button("f", "󰈞  Find file", ":Telescope find_files <CR>"),
+   dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+   dashboard.button("r", "󱈖  Recently used files", ":Telescope oldfiles <CR>"),
+   dashboard.button("t", "󰊄  Find text", ":Telescope live_grep <CR>"),
+   dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua<CR>"),
+   dashboard.button("q", "󰅙  Quit Neovim", ":qa<CR>"),
 }
 
 local function footer()
- return "Software is like s*x: It's better when it's free..."
+ return "I go to work so my Teddy can buy everything she wants ^^"
 end
 
 dashboard.section.footer.val = footer()
