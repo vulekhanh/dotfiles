@@ -28,6 +28,7 @@ require("lazy").setup({
 	
 	-- Bufferline
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+
 	-- Neovim dashboard
 	{
 	   'goolord/alpha-nvim',
@@ -35,7 +36,7 @@ require("lazy").setup({
 		    require'alpha'.setup(require'alpha.themes.dashboard'.config)
 	    end
 	},
-	-- Nvimtree (File Explorer)
+  -- Nvimtree (File Explorer)
     {
         'nvim-tree/nvim-tree.lua',
         lazy = true,
@@ -52,4 +53,7 @@ require("lazy").setup({
             {'nvim-lua/plenary.nvim'},
         }
     },
+
+    -- Syntax highlighting
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
 })
