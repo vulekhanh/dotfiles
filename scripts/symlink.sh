@@ -10,6 +10,16 @@ else
   ln -s $configDir/kitty/kitty.conf ~/.config/kitty/
 fi
 
+# create symbolic link for neovim
+if [ -e ~/.config/nvim/init.lua ]; then
+  echo "Neovim config found"
+  echo "Backing up old configurations..."
+  mv ~/.config/nvim/ ~/.config/nvim-backup
+  ln -s $configDir/nvim/ ~/.config/
+else
+  ln -s $configDir/nvim/ ~/.config/
+fi
+
 # create symlinks for awesome, picom
 echo "\nIf config exists, we will delete it\n"
 sudo rm -r ~/.config/awesome/themes/multicolor/icons
