@@ -33,8 +33,8 @@ theme.border_marked         = "#e78284"
 theme.menu_border_width     = 0
 theme.menu_width            = dpi(130)
 theme.menu_submenu_icon     = theme.confdir .. "/icons/submenu.png"
-theme.menu_fg_normal        = "#deb2ee"
-theme.menu_fg_focus         = "#ff8c00"
+theme.menu_fg_normal        = "#8caaee"
+theme.menu_fg_focus         = "#232634"
 theme.menu_bg_normal        = "#24273A"
 theme.menu_bg_focus         = "#8aadf4"
 -- taglist markers
