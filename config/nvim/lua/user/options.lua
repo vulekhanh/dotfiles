@@ -36,6 +36,8 @@ local options = {
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
+  foldmethod = "expr",                     -- set folding method
+  foldexpr = "nvim_treesitter#foldexpr()",
 }
 
 for k, v in pairs(options) do
