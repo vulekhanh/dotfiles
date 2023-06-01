@@ -26,7 +26,7 @@ require("lazy").setup({
 	{
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
- 	},
+  },
 	
 	-- Bufferline
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
@@ -64,4 +64,5 @@ require("lazy").setup({
 
     -- Project management for neovim
   { "ahmedkhalf/project.nvim" },
+
 })
