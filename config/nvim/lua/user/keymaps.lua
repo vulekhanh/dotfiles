@@ -36,6 +36,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Close buffers
+keymap("n", "<S-q>", "<cmd>bdelete!<CR>", opts)
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
@@ -62,3 +64,13 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Plugins --
+
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- Telescope
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
