@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- Example using a list of specs with the default options
 require("lazy").setup({
+
+  -- Shortcuts
 	"folke/which-key.nvim",
 	"folke/neodev.nvim",
 	-- Colorscheme
@@ -24,7 +26,7 @@ require("lazy").setup({
 	{
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
- 	},
+  },
 	
 	-- Bufferline
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
@@ -55,5 +57,12 @@ require("lazy").setup({
     },
 
     -- Syntax highlighting
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+
+    -- Indentation
+  { "lukas-reineke/indent-blankline.nvim" },
+
+    -- Project management for neovim
+  { "ahmedkhalf/project.nvim" },
+
 })

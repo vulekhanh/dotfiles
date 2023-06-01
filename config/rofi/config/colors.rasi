@@ -1,10 +1,10 @@
 * {
-    BG:    #282828ff;
-    BGA:   #a89984ff;
+    BG:    #303446ff;
+    BGA:   #8caaeeff;
     FG:    #D9E0EEff;
     FGA:   #F28FADff;
-    BDR:   #a89984ff;
-    SEL:   #1E1E2Eff;
+    BDR:   #8caaeeff;
+    SEL:   #232634ff;
     UGT:   #F28FADff;
     IMG:   #FAE3B0ff;
     OFF:   #575268ff;
