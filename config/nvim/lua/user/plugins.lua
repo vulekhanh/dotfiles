@@ -59,4 +59,6 @@ require("lazy").setup({
     -- Syntax highlighting
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
+    -- Indentation
+  { "lukas-reineke/indent-blankline.nvim" },
 })
