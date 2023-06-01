@@ -61,4 +61,7 @@ require("lazy").setup({
 
     -- Indentation
   { "lukas-reineke/indent-blankline.nvim" },
+
+    -- Project management for neovim
+  { "ahmedkhalf/project.nvim" },
 })
