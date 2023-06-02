@@ -27,7 +27,6 @@ require("lazy").setup({
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
-	
 	-- Bufferline
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
@@ -72,6 +71,7 @@ require("lazy").setup({
     dependencies = {
       -- LSP Support
       {'neovim/nvim-lspconfig'},             -- Required
+      {"jose-elias-alvarez/null-ls.nvim"},
       {                                      -- Optional
         'williamboman/mason.nvim',
         build = function()
