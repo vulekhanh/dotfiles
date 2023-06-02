@@ -46,6 +46,9 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- Inline paste
 keymap("v", "p", 'P', opts)
+
+-- Format on save 
+keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts)
 ------------
 ---Insert---
 ------------
