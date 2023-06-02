@@ -2,6 +2,11 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      require'luasnip'.lsp_expand(args.body)
+    end
+  },
   sources = {
   { name = 'buffer',
     option = {
@@ -16,6 +21,7 @@ cmp.setup({
     }
   },
     { name = 'path' },
+    { name = 'luasnip' },
   },
   mapping = {
     -- `Enter` key to confirm completion
