@@ -93,4 +93,7 @@ require("lazy").setup({
       },
     }
   },
+
+  -- Autopairs
+  {"windwp/nvim-autopairs"},
 })
