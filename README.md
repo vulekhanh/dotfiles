@@ -4,7 +4,6 @@ AwesomeWM is a dynamic tiling window manager. It is highly customizable and you 
 ## Configurations
 - [Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) - Version control software
 - [Zsh](https://ohmyz.sh/) - Z shell, really powerful
-- [LunarVim](https://www.lunarvim.org/docs/installation) - Neovim but looks like an IDE
 - [Rofi](https://github.com/catppuccin/rofi/tree/main/deathemonic) - Application launcher
 - [Oh my posh](https://ohmyposh.dev/docs/) - Customize your terminal
 - [AwesomeWM](https://awesomewm.org/doc/api/documentation/07-my-first-awesome.md.html#) - Dynamic tilling window manager
@@ -15,6 +14,7 @@ AwesomeWM is a dynamic tiling window manager. It is highly customizable and you 
 - [Nitch](https://github.com/ssleert/nitch) - like neofetch, but it's way faster
 - [Ranger](https://ranger.github.io/) - Console file manager
 - [Zoxide](https://github.com/ajeetdsouza/zoxide) - Tired of using `cd` command? Try this out
+- [Neovim from scratch](https://github.com/vulekhanh/dotfiles/tree/master/config/nvim) - Built from scratch. Comes with tons of useful keybindings and plugins.
 
 ## Screenshots
 ### More themes will come in the future.
