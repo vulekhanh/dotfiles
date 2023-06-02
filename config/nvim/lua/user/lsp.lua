@@ -5,13 +5,15 @@ lsp.on_attach(function(client, bufnr)
 end)
 vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
 vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
-
+-- diagnostics for specific cursor position
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 -- LSP settings (for overriding per client)
 local handlers =  {
   ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
   ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = 'rounded' }),
 }
 
+-- Customizing how diagnostics are displayed
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
@@ -30,7 +32,7 @@ require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
-  opts.border = opts.border or border
+  opts.border = opts.border or 'rounded'
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 lsp.setup()
