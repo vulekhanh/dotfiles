@@ -38,6 +38,7 @@ local options = {
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
   foldmethod = "expr",                     -- set folding method
   foldexpr = "nvim_treesitter#foldexpr()",
+  list = true,
 }
 
 for k, v in pairs(options) do
