@@ -47,6 +47,9 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 -- Inline paste
 keymap("v", "p", 'P', opts)
 
+-- Find and replace 
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- Format on save 
 keymap("n", "<leader>lf", ":lua vim.lsp.buf.format{async = true}<CR>", opts)
 ------------
