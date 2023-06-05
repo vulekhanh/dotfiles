@@ -72,12 +72,7 @@ require("lazy").setup({
       -- LSP Support
       {'neovim/nvim-lspconfig'},             -- Required
       {"jose-elias-alvarez/null-ls.nvim"},
-      {                                      -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
+      {'williamboman/mason.nvim'},
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       -- Autocompletion

@@ -1,5 +1,5 @@
 local lsp = require("lsp-zero").preset({})
-
+local lspconfig = require("lspconfig")
 lsp.on_attach(function(client, bufnr)
 	lsp.default_keymaps({ buffer = bufnr })
 end)
@@ -48,4 +48,18 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+lspconfig["html"].setup({
+  capabilities = capabilities,
+})
+
+lspconfig["tsserver"].setup({
+  capabilities = capabilities,
+})
+lspconfig["cssls"].setup({
+  capabilities = capabilities,
+})
+lspconfig["tailwindcss"].setup({
+  capabilities = capabilities,
+})
 lsp.setup()
