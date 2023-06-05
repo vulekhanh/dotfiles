@@ -13,13 +13,20 @@ bufferline.setup({
 			},
 		},
 		indicator = {
-			style = "underline",
+			icon = " ",
+			style = "icon",
 		},
 		buffer_close_icon = "",
-    diagnostics = "nvim_lsp",
-    diagnostics_indicator = function(count, level)
-        local icon = level:match("error") and " " or ""
-        return " " .. icon .. count
-    end
+		diagnostics = "nvim_lsp",
+		diagnostics_indicator = function(count, level)
+			local icon = level:match("error") and " " or ""
+			return " " .. icon .. count
+		end,
+	},
+	highlights = {
+		indicator_selected = {
+			fg = "#ea999c",
+			bg = "#303446",
+		},
 	},
 })
