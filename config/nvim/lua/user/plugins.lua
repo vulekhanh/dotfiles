@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Example using a list of specs with the default options
 require("lazy").setup({
 
-  -- Shortcuts
+	-- Shortcuts
 	"folke/which-key.nvim",
 	"folke/neodev.nvim",
 	-- Colorscheme
@@ -24,71 +24,77 @@ require("lazy").setup({
 
 	--Status line
 	{
-	  'nvim-lualine/lualine.nvim',
-	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  },
+		"nvim-lualine/lualine.nvim",
+		requires = { "nvim-tree/nvim-web-devicons", opt = true },
+	},
 	-- Bufferline
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 
 	-- Neovim dashboard
 	{
-	   'goolord/alpha-nvim',
-	    config = function ()
-		    require'alpha'.setup(require'alpha.themes.dashboard'.config)
-	    end
+		"goolord/alpha-nvim",
+		config = function()
+			require("alpha").setup(require("alpha.themes.dashboard").config)
+		end,
 	},
-  -- Nvimtree (File Explorer)
-    {
-        'nvim-tree/nvim-tree.lua',
-        lazy = true,
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-        },
-    },
+	-- Nvimtree (File Explorer)
+	{
+		"nvim-tree/nvim-tree.lua",
+		lazy = true,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 
-    -- Telescope (Fuzzy Finder)
-    {
-        'nvim-telescope/telescope.nvim',
-        lazy = true,
-        dependencies = {
-            {'nvim-lua/plenary.nvim'},
-        }
-    },
+	-- Telescope (Fuzzy Finder)
+	{
+		"nvim-telescope/telescope.nvim",
+		lazy = true,
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
 
-    -- Syntax highlighting
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+	-- Syntax highlighting
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
-    -- Indentation
-  { "lukas-reineke/indent-blankline.nvim" },
+	-- Indentation
+	{ "lukas-reineke/indent-blankline.nvim" },
 
-    -- Project management for neovim
-  { "ahmedkhalf/project.nvim" },
+	-- Project management for neovim
+	{ "ahmedkhalf/project.nvim" },
 
-    -- Lsp
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {"jose-elias-alvarez/null-ls.nvim"},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+	-- Lsp
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v2.x",
+		dependencies = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" }, -- Required
+			{ "jose-elias-alvarez/null-ls.nvim" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'hrsh7th/cmp-buffer'}, -- Required
-      {'hrsh7th/cmp-path'}, -- Required
-      { 'saadparwaiz1/cmp_luasnip' },
-      -- Snippets
-      {
-        "L3MON4D3/LuaSnip",
-        dependencies = { "rafamadriz/friendly-snippets" },
-      },
-    }
-  },
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "hrsh7th/cmp-buffer" }, -- Required
+			{ "hrsh7th/cmp-path" }, -- Required
+			{ "saadparwaiz1/cmp_luasnip" },
+			-- Snippets
+			{
+				"L3MON4D3/LuaSnip",
+				dependencies = { "rafamadriz/friendly-snippets" },
+			},
+		},
+	},
 
-  -- Autopairs
-  {"windwp/nvim-autopairs"},
+	-- Autopairs
+	{ "windwp/nvim-autopairs" },
+
+	--Debug adapter protocol
+	{ "mfussenegger/nvim-dap" },
+
+	-- Git interation
+	{ "lewis6991/gitsigns.nvim" },
 })
