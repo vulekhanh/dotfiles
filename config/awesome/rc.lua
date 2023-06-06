@@ -328,7 +328,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 							charging_color = catppuccin.green,
 							warning_msg_title = "Houston, we have a problem!",
 							warning_msg_text = "Plug the battery now, b*tch!",
-							warning_msg_position = "top_left",
+							warning_msg_position = "top_right",
 						}),
 						layout = wibox.layout.align.horizontal,
 					},
