@@ -97,4 +97,9 @@ require("lazy").setup({
 
 	-- Git interation
 	{ "lewis6991/gitsigns.nvim" },
+
+	-- Comment
+	{
+		"numToStr/Comment.nvim",
+	},
 })
