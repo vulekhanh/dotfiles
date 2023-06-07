@@ -13,7 +13,7 @@ bufferline.setup({
 			},
 		},
 		indicator = {
-			icon = " ",
+			icon = " ",
 			style = "icon",
 		},
 		buffer_close_icon = "",
@@ -25,7 +25,7 @@ bufferline.setup({
 	},
 	highlights = {
 		indicator_selected = {
-			fg = "#ea999c",
+			fg = "#e5c890",
 			bg = "#303446",
 		},
 	},
