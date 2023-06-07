@@ -13,6 +13,7 @@ local wibox = require("wibox")
 local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -219,6 +220,20 @@ local volicon = make_fa_icon("", catppuccin.green)
 mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 local mytextclock = wibox.widget.textclock('<span color="#ca9ee6" font="Terminus Heavy 10">%d %B %H %M </span>', 5)
+local cw = calendar_widget({
+	theme = "catppuccin",
+	placement = "top_right",
+	start_sunday = true,
+	radius = 8,
+	-- with customized next/previous (see table above)
+	previous_month_button = 1,
+	next_month_button = 3,
+})
+mytextclock:connect_signal("button::press", function(_, _, _, button)
+	if button == 1 then
+		cw.toggle()
+	end
+end)
 
 screen.connect_signal("request::desktop_decoration", function(s)
 	-- Each screen has its own tag table.
@@ -328,7 +343,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 							charging_color = catppuccin.green,
 							warning_msg_title = "Houston, we have a problem!",
 							warning_msg_text = "Plug the battery now, b*tch!",
-							warning_msg_position = "top_left",
+							warning_msg_position = "top_right",
 						}),
 						layout = wibox.layout.align.horizontal,
 					},
