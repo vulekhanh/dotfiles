@@ -65,9 +65,9 @@ naughty.config.defaults.border_width = 2
 naughty.config.defaults.shape = function(cr, w, h)
 	gears.shape.rounded_rect(cr, w, h, dpi(10))
 end
-theme.notification_bg = "#303446"
-theme.notification_fg = "#8caaee"
-theme.notification_border_color = "#8caaee"
+theme.notification_bg = "#24273a"
+theme.notification_fg = "#b7bdf8"
+theme.notification_border_color = "#8aadf4"
 theme.notification_shape = gears.shape.rounded_rect
 
 -- Variables set for theming notifications:
