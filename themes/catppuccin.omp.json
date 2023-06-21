@@ -1,101 +1,67 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-        "os": "#ACB0BE",
-        "closer": "p:os",
-        "pink": "#F4B8E4",
-        "yellow": "#e5c890",
-        "lavender": "#BABBF1",
-        "blue":  "#8CAAEE",
-        "white": "#ffffff",
-        "green": "#a6da95",
-        "teal": "#8bd5ca",
-        "red": "#ed8796",
-        "peach": "#ef9f76",
-        "mauve": "#ca9ee6"
+    "os": "#ACB0BE",
+    "closer": "p:os",
+    "pink": "#F5BDE6",
+    "lavender": "#B7BDF8",
+    "blue": "#8AADF4"
   },
   "blocks": [
     {
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "p:pink",
-          "leading_diamond": "<p:pink> \ue200 </>",
-          "properties": {
-            "display_host": true
-          },
-          "style": "diamond",
-          "template": "\uebc6 {{ .UserName }} <p:white>on <p:blue>\uF303 {{ .HostName}}</>",
+          "foreground": "p:os",
+          "style": "plain",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "foreground": "p:blue",
+          "style": "plain",
+          "template": "{{ .UserName }}@{{ .HostName }} ",
           "type": "session"
         },
         {
-          "foreground": "#ee79d1",
-          "properties": {
-            "branch_icon": "\ue725 ",
-            "fetch_stash_count": true,
-            "fetch_status": true,
-            "fetch_upstream_icon": true,
-            "fetch_worktree_count": true
-          },
-          "style": "diamond",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
-          "type": "git"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "right",
-      "segments": [
-      {
-        "type": "text",
-        "style": "plain",
-        "foreground": "#E06C75",
-        "template": "<p:yellow>󰮯  <p:red>\udb80\udea0  <p:peach>\udb80\udea0  <p:pink>\udb80\udea0  <p:blue>\udb80\udea0 "
-      }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
           "foreground": "p:pink",
-          "leading_diamond": "<p:blue> \ue285 </><#ffafd2>{</>",
           "properties": {
-            "folder_icon": "\uf07b",
-            "folder_separator_icon": "  ",
-            "home_icon": "home",
-            "style": "agnoster_full"
+            "folder_icon": "..\ue5fe..",
+            "home_icon": "~",
+            "style": "agnoster_short"
           },
-          "style": "diamond",
-          "template": "  {{ .Path }} ",
-          "trailing_diamond": "<#ffafd2>}</>",
+          "style": "plain",
+          "template": "{{ .Path }} ",
           "type": "path"
         },
         {
-          "foreground": "p:green",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}p:red{{ end }}"
-          ],
+          "foreground": "p:lavender",
           "properties": {
-            "always_enabled": true
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
           },
+          "template": "{{ .HEAD }} ",
           "style": "plain",
-          "template": " \ue286 ",
-          "type": "exit"
+          "type": "git"
+        },
+        {
+          "style": "plain",
+          "foreground": "p:closer",
+          "template": "\uf105",
+          "type": "text"
         }
       ],
       "type": "prompt"
     }
   ],
-  "console_title_template": "{{ .Folder }}",
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#FEF5ED",
-    "template": "\ue285 "
-  },
+  "final_space": true,
   "version": 2
 }

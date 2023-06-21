@@ -6,10 +6,10 @@
 #: individual font faces and even specify special fonts for particular
 #: characters.
 
-font_family      Fira Code Medium Nerd Font Complete
-bold_font        auto 
-italic_font      auto
-bold_italic_font auto
+font_family      FiraCode Nerd Font Reg
+bold_font        FiraCode Nerd Font Bold 
+italic_font      FiraCode Nerd Font Med
+bold_italic_font FiraCode Nerd Font SemBd
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -1017,7 +1017,7 @@ tab_bar_style fade
 
 #: The foreground and background colors.
 
-# background_opacity 1.0
+ background_opacity 0.8
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -2291,6 +2291,6 @@ tab_bar_style fade
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Catppuccin-Frappe
 include current-theme.conf
 # END_KITTY_THEME
