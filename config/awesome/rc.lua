@@ -110,7 +110,7 @@ local noir = {
 -- This is used later as the default terminal and editor to run.
 local modkey = "Mod4"
 local altkey = "Mod1"
-local browser = "firefox"
+local browser = "microsoft-edge-stable"
 local multi_monitor = "arandr"
 local terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
