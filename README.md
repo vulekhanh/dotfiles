@@ -14,7 +14,7 @@ AwesomeWM is a dynamic tiling window manager. It is highly customizable and you 
 - [Nitch](https://github.com/ssleert/nitch) - like neofetch, but it's way faster
 - [Ranger](https://ranger.github.io/) - Console file manager
 - [Zoxide](https://github.com/ajeetdsouza/zoxide) - Tired of using `cd` command? Try this out
-- Neovim - Built from scratch. Comes with tons of useful keybindings and plugins.
+- [Neovim](https://neovim.io/) - Built from scratch. Comes with tons of useful keybindings and plugins.
 
 ## Screenshots
 ### More themes will come in the future.
