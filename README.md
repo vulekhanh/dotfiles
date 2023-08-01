@@ -27,6 +27,10 @@ AwesomeWM is a dynamic tiling window manager. It is highly customizable and you 
 - Noir:
 ![Screenshot_2023-05-26-08-48-21_1920x1080](https://github.com/vulekhanh/dotfiles/assets/61068720/13664fc3-d35b-4459-bf59-799f792f00de)
 
+## installation
+To install all the required **packages** you can run the `install.sh` script
+**You need to install the [Gum](https://github.com/charmbracelet/gum) package.** Simply run `sudo pacman -S gum`, without `gum` the script will not work!
+Gum is a tool for glamorous shell scripts. Makes your bash scripts Fancy.
 
 ## Contributors
 Special thanks to:
