@@ -31,3 +31,5 @@ else
   gum style --foreground "#eb4034" --margin "1 2" --bold "yay not found!"
   gum confirm "Would you like to install it?" && yayInstallation || gum style --foreground "#eb4034" --margin "1 2" --bold "Yay isn't installed!"
 fi
+
+gum confirm "Would you like to automatically link the configs?" && ./symlink.sh || gum style --foreground "#19a9bf" --bold --margin "1 2" "All required packages are now installed!"
