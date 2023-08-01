@@ -1,9 +1,13 @@
 configDir='../config'
 
+printG() {
+  gum style --foreground 215 --margin "1 2" --bold "$1"
+}
+
 # create symbolic link for kitty config
 if [ -e ~/.config/kitty/kitty.conf ]; then
-  echo "Kitty config found"
-  echo "Moving kitty.conf to kitty.conf.bak"
+  printG "Kitty config found"
+  printG "Moving kitty.conf to kitty.conf.bak"
   mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.bak
   ln -s $configDir/kitty/kitty.conf ~/.config/kitty/
 else
@@ -12,8 +16,8 @@ fi
 
 # create symbolic link for neovim
 if [ -e ~/.config/nvim/init.lua ]; then
-  echo "Neovim config found"
-  echo "Backing up old configurations..."
+  printG "Neovim config found"
+  printG "Backing up old configurations..."
   mv ~/.config/nvim/ ~/.config/nvim-backup
   ln -s $configDir/nvim/ ~/.config/
 else
@@ -21,11 +25,11 @@ else
 fi
 
 # create symlinks for awesome, picom
-echo "\nIf config exists, we will delete it\n"
+gum style --foreground "#eb4034" --bold --margin "1 2" "If AwesomeWM config exists, than we'll delete it!"
 sudo rm -r ~/.config/awesome/themes/multicolor/icons
 if [ -e ~/.config/awesome/ ]; then
-  echo "Awesome dir found!"
-  echo "Deleting old config dir and update with the latest..."
+  printG "Awesome dir found!"
+  printG "Deleting old config dir and update with the latest..."
   rm -r ~/.config/awesome/
   ln -s $configDir/awesome/ ~/.config/
 else
@@ -36,8 +40,8 @@ ln -s $configDir/picom/picom.conf ~/.config/picom/
 
 # create symbolic links for .zshrc
 if [ -e ~/.zshrc ]; then
-  echo "ZSH config found"
-  echo "Moveing .zshrc to .zshrc.bak"
+  printG "ZSH config found"
+  printG "Moveing .zshrc to .zshrc.bak"
   mv ~/.zshrc ~/.zshrc.bak
   ln -s $configDir/zsh/.zshrc ~/.zshrc
 else
@@ -46,8 +50,8 @@ fi
 
 # create symlink for neofetch
 if [ -e ~/.config/neofetch/config.conf ]; then
-  echo "Neofetch config found"
-  echo "Moveing neofetch/config.conf to neofetch/config.conf.bak"
+  printG "Neofetch config found"
+  printG "Moveing neofetch/config.conf to neofetch/config.conf.bak"
   mv ~/.config/neofetch/config.conf ~/.config/neofetch/config.conf.bak
   ln $configDir/neofetch/config.conf ~/.config/neofetch/
 else
@@ -56,10 +60,10 @@ fi
 
 # Rofi config
 if [ -e ~/.config/rofi/ ]; then
-  echo "Rofi config directory found"
+  printG "Rofi config directory found"
   if [ -e ~/.config/rofi/config.rasi ]; then
-    echo "Rofi config found"
-    echo "Moving config.rasi to config.rasi.bak"
+    printG "Rofi config found"
+    printG "Moving config.rasi to config.rasi.bak"
     mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
     ln -s $configDir/rofi/config/* ~/.config/rofi/
   else
@@ -67,6 +71,6 @@ if [ -e ~/.config/rofi/ ]; then
     ln -s $configDir/rofi/config/* ~/.config/rofi/
   fi
 else
-  echo "Creating symlink for rofi config directory"
+  printG "Creating symlink for rofi config directory"
   ln -s $configDir/rofi/ ~/.config/
 fi
