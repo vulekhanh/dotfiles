@@ -5,7 +5,7 @@ greenColor="#32a852"
 gum style --foreground 212 --margin "1 2" --padding "1 2" --bold --border thick --border-foreground 215 --align center "Welcome To The Installer"
 
 # Installing OH-MY-ZSH
-gum spin --spinner meter --show-output --title "Installing OH-MY-ZSH" -- sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+gum spin --spinner meter --title "Installing OH-MY-ZSH" -- sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Installing OH-MY-ZSH Plugins
 gum spin --spinner line --title "Installing OH-MY-ZSH Plugin:zsh-syntax-highlighting" -- git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
