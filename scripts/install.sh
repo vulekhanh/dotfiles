@@ -24,7 +24,7 @@ yayInstallation() {
   popd
 }
 
-gum style --foreground=$margin --margin "1 2" "Installing Required Packages"
+gum style --foreground=$greenColor --margin "1 2" "Installing Required Packages"
 if which yay >/dev/null; then
   yay -S oh-my-posh-bin awesome-git picom-git rofi github-cli ranger qimgv p7zip lazydocker microsoft-edge-stable-bin ttf-droid ttf-firacode-nerd git pacman-contrib neovim python-pynvim nodejs npm exa bat unzip lazygit alsa-utils alsa-firmware bluez bluez-utils lxappearance maim xdotool xclip pulseaudio pulseaudio-alsa pulseaudio-bluetooth arandr brightnessctl zoxide iw ttf-font-awesome docker kitty pavucontrol python-pillow cava lspci --needed
 else
