@@ -4,16 +4,18 @@ if not status_ok then
 end
 bufferline.setup({
   options = {
+    themable = true,
     offsets = {
       {
         filetype = "NvimTree",
         text = "File Explorer",
+        highlight = "Directory",
         text_align = "center",
         separator = true,
       },
     },
     indicator = {
-      icon = " ",
+      icon = "  ",
       style = "icon",
     },
     buffer_close_icon = "",
