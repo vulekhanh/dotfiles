@@ -28,7 +28,7 @@ dashboard.section.header.val = {
 }
 
 local function footer()
- return "I'm using Arch btw 󰌽 "
+ return "Everything will be Okay~~ 󰌽 "
 end
 
 dashboard.section.footer.val = footer()
