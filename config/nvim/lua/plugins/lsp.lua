@@ -10,5 +10,7 @@ return {
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
-  }
+  },
+  { "nvim-treesitter/nvim-treesitter" },
+  { "windwp/nvim-ts-autotag" }
 }
